@@ -1,0 +1,145 @@
+{
+    "characters": [
+      {
+        "id": 1,
+        "name": "Jinwoo le Chasseur",
+        "race": "Humain",
+        "classe": "Ombre",
+        "niveau": 50,
+        "statistiques": {
+          "force": 95,
+          "agilite": 88,
+          "defense": 70,
+          "pouvoir": 120
+        },
+        "experience": 50000,
+        "evolution": {
+          "niveau_suivant": 51,
+          "augmentation": {
+            "force": 5,
+            "agilite": 4,
+            "defense": 3,
+            "pouvoir": 6
+          }
+        },
+        "equipements": [
+          {
+            "nom": "Dagues du Roi Démon",
+            "type": "Arme",
+            "bonus": {"attaque": 50, "agilite": 10}
+          },
+          {
+            "nom": "Cape des Ombres",
+            "type": "Armure",
+            "bonus": {"defense": 20, "pouvoir": 15}
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Igris le Chevalier",
+        "race": "Ombre",
+        "classe": "Chevalier",
+        "niveau": 45,
+        "statistiques": {
+          "force": 85,
+          "agilite": 60,
+          "defense": 100,
+          "pouvoir": 80
+        },
+        "experience": 45000,
+        "evolution": {
+          "niveau_suivant": 46,
+          "augmentation": {
+            "force": 4,
+            "agilite": 3,
+            "defense": 5,
+            "pouvoir": 4
+          }
+        },
+        "equipements": [
+          {
+            "nom": "Lame Royale",
+            "type": "Arme",
+            "bonus": {"attaque": 40, "force": 5}
+          },
+          {
+            "nom": "Armure de Chevalier Sombre",
+            "type": "Armure",
+            "bonus": {"defense": 30, "pouvoir": 10}
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Beru le Monarque",
+        "race": "Insectoïde",
+        "classe": "Souverain",
+        "niveau": 60,
+        "statistiques": {
+          "force": 120,
+          "agilite": 90,
+          "defense": 80,
+          "pouvoir": 100
+        },
+        "experience": 60000,
+        "evolution": {
+          "niveau_suivant": 61,
+          "augmentation": {
+            "force": 6,
+            "agilite": 5,
+            "defense": 4,
+            "pouvoir": 6
+          }
+        },
+        "equipements": [
+          {
+            "nom": "Griffes du Monarque",
+            "type": "Arme",
+            "bonus": {"attaque": 55, "agilite": 12}
+          },
+          {
+            "nom": "Carapace Royale",
+            "type": "Armure",
+            "bonus": {"defense": 35, "pouvoir": 20}
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Tusk l'Archimage",
+        "race": "Ogre",
+        "classe": "Mage",
+        "niveau": 55,
+        "statistiques": {
+          "force": 50,
+          "agilite": 40,
+          "defense": 60,
+          "pouvoir": 150
+        },
+        "experience": 55000,
+        "evolution": {
+          "niveau_suivant": 56,
+          "augmentation": {
+            "force": 2,
+            "agilite": 2,
+            "defense": 3,
+            "pouvoir": 10
+          }
+        },
+        "equipements": [
+          {
+            "nom": "Bâton du Sage Immortel",
+            "type": "Arme",
+            "bonus": {"pouvoir": 60, "defense": 10}
+          },
+          {
+            "nom": "Robe de Magie Ancestrale",
+            "type": "Armure",
+            "bonus": {"defense": 25, "pouvoir": 30}
+          }
+        ]
+      }
+    ]
+  }
+  
