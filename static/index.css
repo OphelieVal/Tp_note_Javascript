@@ -1,9 +1,3 @@
-header {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-grow: 1;
-}
+/** Utilisation de BootsWatch pour le style **/ 
+@import '~bootswatch/dist/cosmo/bootstrap.min.css';
 
-ul {
-    list-style-type: none;
-}
