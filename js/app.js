@@ -1,6 +1,6 @@
 import Favourite from "./views/pages/Favourite.js";
 import CharacterAll from "./views/pages/CharacterAll.js";
-import Utils from "./services/Utils.js";
+import Utils from "./services/outils/Utils.js";
 import DetailsCharacter from "./views/pages/DetailsCharacter.js";
 
 const routes = {
