@@ -5,8 +5,8 @@ import { Pouvoir } from "../classes/Pouvoir.js";
 
 export default class CharacterProvider {
 
-    // récupère tous les personnages
-    static fetchCharacters = async (limit = 10) => {
+    // renvoie une liste avec des objets Character, une avec des objets Equipements et une avec des objets Pouvoir
+    static fetchCharacters = async () => {
         const options = {
             method : 'GET',
             headers : {
@@ -14,30 +14,36 @@ export default class CharacterProvider {
             }
         };
         try {
-            const response = await fetch(`${ENDPOINT}?_limit=${limit}`,options);
-            const json = await (response.json());
-            
-            let equipements = [];
-            let pouvoirs = [];
-            let characters = [];
+            const responseChars = await fetch(`${ENDPOINT}characters`,options);
+            const charsJSON = await responseChars.json();
 
-            json.equipements.forEach(equip_data => {
+            const responseEquip = await fetch(`${ENDPOINT}equipements`,options);
+            const equipJSON = await responseEquip.json();
+
+            const responsePouv = await fetch(`${ENDPOINT}pouvoirs`,options);
+            const pouvJSON = await responsePouv.json();
+
+            let equipementsAll = [];
+            let pouvoirsAll = [];
+            let charactersAll = [];
+
+            equipJSON.forEach(equip_data => {
                 let equip = new Equipement(equip_data.id, equip_data.nom, equip_data.type, equip_data.bonus);
-                equipements.push(equip);
+                equipementsAll.push(equip);
             });
 
-            json.pouvoirs.forEach(pouvoir_data => {
+            pouvJSON.forEach(pouvoir_data => {
                 let pouv = new Pouvoir(pouvoir_data.id, pouvoir_data.nom, pouvoir_data.description);
-                pouvoirs.push(pouv);
+                pouvoirsAll.push(pouv);
             });
 
-            json.characters.forEach(character_data => {
+            charsJSON.forEach(character_data => {
                 let equipements_obj = character_data.equipements_ids.map(id => {
-                    return equipements.find(e => e.id === id);
+                    return equipementsAll.find(e => e.id === id);
                 });
                   
                 let pouvoirs_obj = character_data.pouvoirs_ids.map(id => {
-                    return pouvoirs.find(p => p.id === id);
+                    return pouvoirsAll.find(p => p.id === id);
                 });
 
                 let carac = new Character(
@@ -53,9 +59,9 @@ export default class CharacterProvider {
                     character_data.evolution.niveau_suivant,
                     equipements_obj,
                     pouvoirs_obj);
-                characters.push(carac);
+                charactersAll.push(carac);
             });
-            return {characters, equipements, pouvoirs};
+            return {charactersAll, equipementsAll, pouvoirsAll};
         } catch (err) {
             console.log('Error getting documents',err);
         }

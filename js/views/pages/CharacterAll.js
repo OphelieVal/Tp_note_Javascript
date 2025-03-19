@@ -1,23 +1,28 @@
 // Listing des personnages du data.json
-import CharacterProvider from "../../services/CharacterProvider.js";
+import CharacterProvider from "../../services/provider/CharacterProvider.js";
 import DetailsCharacter from "./DetailsCharacter.js";
 export default class CharacterAll {
     async render(){
-        let characters = await CharacterProvider.fetchCharacters(20);
-        console.log(characters);
+        let data = await CharacterProvider.fetchCharacters();
+        console.log(data);
+        let { charactersAll, equipementsAll, pouvoirsAll } = data;
+        console.log(charactersAll);
 
         let view = `
         <h2>Les personnages</h2>
-        <ul id='character_liste'>
-        ${characters.map(character=>
-            `
-            <img src="${character.img}" alt="image du character">
-            <a href="/character/${character.id}">${character.name}</a>
-            <p>Niveau : ${character.niveau}</p>
-            `
-        ).join('\n')}
+        <ul id="character_liste">
+          ${charactersAll.map(character => {
+              return `
+                <li>
+                  <img src="${character.img}" alt="Image de ${character.name}">
+                  <a href="#/character/${character.id}">${character.name}</a>
+                  <p>Niveau : ${character.niveau}</p>
+                </li>
+              `;
+            })
+            .join('')} 
         </ul>
-        `;
+      `;
         return view;
     }
 }
