@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Sung Jin-Woo",
-      "img": "./../js/views/static/img/image1.jpeg",
+      "img": "./../js/views/static/img/character1.jpeg",
       "race": "Humain",
       "classe": "Souverain de l'Ombre",
       "niveau": 150,
@@ -29,7 +29,7 @@
     {
       "id": 2,
       "name": "Cha Hae-In",
-      "img": "./../js/views/static/img/image2.jpeg",
+      "img": "./../js/views/static/img/character2.jpeg",
       "race": "Humaine",
       "classe": "Épéiste",
       "niveau": 95,
@@ -55,7 +55,7 @@
     {
       "id": 3,
       "name": "Yoo Jin-Ho",
-      "img": "./../js/views/static/img/image3.jpeg",
+      "img": "./../js/views/static/img/character3.jpeg",
       "race": "Humain",
       "classe": "Tank",
       "niveau": 40,
@@ -81,7 +81,7 @@
     {
       "id": 4,
       "name": "Sung Il-Hwan",
-      "img": "./../js/views/static/img/image4.jpeg",
+      "img": "./../js/views/static/img/character4.jpeg",
       "race": "Humain",
       "classe": "Chasseur de Rang S",
       "niveau": 110,
@@ -107,7 +107,7 @@
     {
       "id": 5,
       "name": "Go Gun-Hee",
-      "img": "./../js/views/static/img/image5.jpeg",
+      "img": "./../js/views/static/img/character5.jpeg",
       "race": "Humain",
       "classe": "Président des Chasseurs",
       "niveau": 130,
@@ -133,7 +133,7 @@
     {
       "id": 6,
       "name": "Baek Yoon-Ho",
-      "img": "./../js/views/static/img/image6.jpeg",
+      "img": "./../js/views/static/img/character6.jpeg",
       "race": "Humain",
       "classe": "Berserker",
       "niveau": 80,
@@ -159,7 +159,7 @@
     {
       "id": 7,
       "name": "Choi Jong-In",
-      "img": "./../js/views/static/img/image7.jpeg",
+      "img": "./../js/views/static/img/character7.jpeg",
       "race": "Humain",
       "classe": "Archimage",
       "niveau": 88,
@@ -185,7 +185,7 @@
     {
       "id": 8,
       "name": "Ma Dong-Wook",
-      "img": "./../js/views/static/img/image8.jpeg",
+      "img": "./../js/views/static/img/character8.jpeg",
       "race": "Humain",
       "classe": "Tank",
       "niveau": 70,
@@ -211,7 +211,7 @@
     {
       "id": 9,
       "name": "Song Chi-Yul",
-      "img": "./../js/views/static/img/image9.jpeg",
+      "img": "./../js/views/static/img/character9.jpeg",
       "race": "Humain",
       "classe": "Healer",
       "niveau": 30,
@@ -237,7 +237,7 @@
     {
       "id": 10,
       "name": "Park Hee-Jin",
-      "img": "./../js/views/static/img/image10.jpeg",
+      "img": "./../js/views/static/img/character10.jpeg",
       "race": "Humaine",
       "classe": "Archer",
       "niveau": 65,
@@ -263,7 +263,7 @@
     {
       "id": 11,
       "name": "Kim Cheol",
-      "img": "./../js/views/static/img/image11.jpeg",
+      "img": "./../js/views/static/img/character11.jpeg",
       "race": "Humain",
       "classe": "Épéiste",
       "niveau": 55,
@@ -289,7 +289,7 @@
     {
       "id": 12,
       "name": "Thomas Andre",
-      "img": "./../js/views/static/img/image12.jpeg",
+      "img": "./../js/views/static/img/character12.jpeg",
       "race": "Humain",
       "classe": "Tank",
       "niveau": 99,
@@ -315,7 +315,7 @@
     {
       "id": 13,
       "name": "Christopher Reed",
-      "img": "./../js/views/static/img/image13.jpeg",
+      "img": "./../js/views/static/img/character13.jpeg",
       "race": "Humain",
       "classe": "Mage",
       "niveau": 100,
@@ -341,7 +341,7 @@
     {
       "id": 14,
       "name": "Liu Zhigang",
-      "img": "./../js/views/static/img/image14.jpeg",
+      "img": "./../js/views/static/img/character14.jpeg",
       "race": "Humain",
       "classe": "Épéiste",
       "niveau": 85,
@@ -367,7 +367,7 @@
     {
       "id": 15,
       "name": "Goto Ryuji",
-      "img": "./../js/views/static/img/image15.jpeg",
+      "img": "./../js/views/static/img/character15.jpeg",
       "race": "Humain",
       "classe": "Assassin",
       "niveau": 72,
@@ -393,7 +393,7 @@
     {
       "id": 16,
       "name": "Lennart Niermann",
-      "img": "./../js/views/static/img/image16.jpeg",
+      "img": "./../js/views/static/img/character16.jpeg",
       "race": "Humain",
       "classe": "Archer",
       "niveau": 66,
@@ -419,7 +419,7 @@
     {
       "id": 17,
       "name": "Hwang Dong-Su",
-      "img": "./../js/views/static/img/image17.jpeg",
+      "img": "./../js/views/static/img/character17.jpeg",
       "race": "Humain",
       "classe": "Mage",
       "niveau": 75,
@@ -445,7 +445,7 @@
     {
       "id": 18,
       "name": "Bellion",
-      "img": "./../js/views/static/img/image18.jpeg",
+      "img": "./../js/views/static/img/character18.jpeg",
       "race": "Ombre",
       "classe": "Général",
       "niveau": 120,
@@ -471,7 +471,7 @@
     {
       "id": 19,
       "name": "Igris",
-      "img": "./../js/views/static/img/image19.jpeg",
+      "img": "./../js/views/static/img/character19.jpeg",
       "race": "Ombre",
       "classe": "Chevalier",
       "niveau": 90,
@@ -497,7 +497,7 @@
     {
       "id": 20,
       "name": "Beru",
-      "img": "./../js/views/static/img/image20.jpeg",
+      "img": "./../js/views/static/img/character20.jpeg",
       "race": "Insectoïde",
       "classe": "Souverain",
       "niveau": 60,
