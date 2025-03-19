@@ -1,17 +1,17 @@
 export class Character {
-    constructor(id, name, img, race, classe, niveau, statistiques, experience, evolution, niveau_suivant, equipements_id, pouvoirs_id) {
+    constructor(id, name, img, race, classe, niveau, statistiques, experience, evolution, niveau_suivant, equipements, pouvoirs) {
       this._id = id;
       this._name = name;
       this._img = img; // str du chemin
       this._race = race;
       this._classe = classe;
       this._niveau = niveau;
-      this._statistiques = statistiques; // tuple d'int de la forme ("force", "agilite", "defense", "pouvoir")
+      this._statistiques = statistiques; // tableau d'int de la forme [force, agilite, defense, pouvoir]
       this._experience = experience;
-      this._evolution = evolution; // tuple d'int de la forme ("force", "agilite", "defense", "pouvoir")
+      this._evolution = evolution; // tableau d'int de la forme [force, agilite, defense, pouvoir]
       this._niveau_suivant = niveau_suivant;
-      this._equipements_id = equipements_id; // liste d'int
-      this._pouvoirs_id = pouvoirs_id; // liste d'int
+      this._equipements = equipements; // liste d'objet Equipement
+      this._pouvoirs = pouvoirs; // liste d'objet Pouvoir
     }
     
     get id() {
@@ -43,12 +43,12 @@ export class Character {
     }
   
     get statistiques() {
-        // tuple d'int de la forme ("force", "agilite", "defense", "pouvoir")      
+        // tableau d'int de la forme [force, agilite, defense, pouvoir]      
         return this._statistiques;
     }
 
     set statistiques(tuple) {
-        // tuple d'int de la forme ("force", "agilite", "defense", "pouvoir")
+        // tableau d'int de la forme [force, agilite, defense, pouvoir]
         this._statistiques = tuple;
     }
   
@@ -61,12 +61,12 @@ export class Character {
     }
   
     get evolution() {
-        // tuple d'int de la forme ("force", "agilite", "defense", "pouvoir")
+        // tableau d'int de la forme [force, agilite, defense, pouvoir]
         return this._evolution;
     }
 
     set evolution(tuple) {
-        // tuple d'int de la forme ("force", "agilite", "defense", "pouvoir")
+        // tableau d'int de la forme [force, agilite, defense, pouvoir]
         this._evolution = tuple;
     }
 
@@ -78,28 +78,28 @@ export class Character {
         this._niveau_suivant = val;
     }
   
-    get equipements_id() {
-        return this._equipements_id;
+    get equipements() {
+        return this._equipements;
     }
 
     ajouter_equipement(val) {
-        this._equipements_id.append(val);
+        this._equipements.append(val);
     }
 
     supprimer_equipement(val){
-        this._equipements_id.remove(val);
+        this._equipements.remove(val);
     }
   
-    get pouvoirs_id() {
-        return this._pouvoirs_id;
+    get pouvoirs() {
+        return this._pouvoirs;
     }
 
     ajouter_pouvoir(val) {
-        this._equipements_id.append(val);
+        this._equipements.append(val);
     }
 
     supprimer_pouvoir(val){
-        this._equipements_id.remove(val);
+        this._equipements.remove(val);
     }
 }
   
