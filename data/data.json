@@ -3,6 +3,7 @@
       {
         "id": 1,
         "name": "Jinwoo le Chasseur",
+        "img" : "./../js/views/static/img/character1.jpeg",
         "race": "Humain",
         "classe": "Ombre",
         "niveau": 50,
