@@ -1,0 +1,9 @@
+header {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+}
+
+ul {
+    list-style-type: none;
+}
