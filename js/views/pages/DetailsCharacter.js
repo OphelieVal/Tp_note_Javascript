@@ -71,6 +71,8 @@ export default class DetailsCharacter{
                 <h3>Équipements</h3>
                 <ul>${equipementsHTML}</ul>
 
+                <hr />
+
                 <h3>Pouvoirs</h3>
                 <ul>${pouvoirsHTML}</ul>
 
