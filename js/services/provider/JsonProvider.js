@@ -39,12 +39,13 @@ export default class JsonProvider {
 
             charsJSON.forEach(character_data => {
                 let equipements_obj = character_data.equipements_ids.map(id => {
-                    return equipementsAll.find(e => e.id === id);
+                    return equipementsAll.find(e => e.id === String(id));
                 });
                   
                 let pouvoirs_obj = character_data.pouvoirs_ids.map(id => {
-                    return pouvoirsAll.find(p => p.id === id);
+                    return pouvoirsAll.find(p => p.id === String(id));
                 });
+
 
                 let carac = new Character(
                     character_data.id,
@@ -61,6 +62,7 @@ export default class JsonProvider {
                     pouvoirs_obj);
                 charactersAll.push(carac);
             });
+        
             return {charactersAll, equipementsAll, pouvoirsAll};
         } catch (err) {
             console.log('Error getting documents',err);

@@ -11,16 +11,29 @@ export default class CharacterAll {
         <ul id="character_liste">
           ${charactersAll.map(character => {
               return `
-                <li>
+              <a href="#/character/${character.id}" class="character-link">
+                <li class="character-item" data-id="${character.id}">
                   <img src="${character.img}" alt="Image de ${character.name}">
-                  <a href="#/character/${character.id}">${character.name}</a>
+                  <p>${character.name}</p>
                   <p>Niveau : ${character.niveau}</p>
                 </li>
+              </a>
               `;
             })
             .join('')} 
         </ul>
       `;
         return view;
-    }
+    };
+
+    async afterRender() {
+      document.querySelectorAll(".character-item").forEach(item => {
+          item.addEventListener("click", (event) => {
+              if (!event.target.classList.contains("character-link")) {
+                  let characterId = item.getAttribute("data-id");
+                  window.location.hash = `#/character/${characterId}`;
+              }
+          });
+      });
+  }
 }
