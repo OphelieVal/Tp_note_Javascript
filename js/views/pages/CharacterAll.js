@@ -1,6 +1,7 @@
 // Listing des personnages du data.json
 import CharacterProvider from "../../services/provider/JsonProvider.js";
-import DetailsCharacter from "./DetailsCharacter.js";
+
+
 export default class CharacterAll {
     async render(){
         let data = await CharacterProvider.fetchCharacters();

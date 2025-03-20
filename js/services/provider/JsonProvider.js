@@ -39,13 +39,12 @@ export default class JsonProvider {
 
             charsJSON.forEach(character_data => {
                 let equipements_obj = character_data.equipements_ids.map(id => {
-                    return equipementsAll.find(e => e.id === String(id));
+                    return equipementsAll.find(e => e.id === id);
                 });
                   
                 let pouvoirs_obj = character_data.pouvoirs_ids.map(id => {
-                    return pouvoirsAll.find(p => p.id === String(id));
+                    return pouvoirsAll.find(p => p.id === id);
                 });
-
 
                 let carac = new Character(
                     character_data.id,
@@ -70,59 +69,19 @@ export default class JsonProvider {
     };
 
     static getCharacter = async (id) => {
-        const options = {
-            method : 'GET',
-            headers : {
-                'Content-Type' : 'application/json'
-            }
-        };
-        try {
-            const responseChar = await fetch(`${ENDPOINT}characters/${id}`, options);
-            const characterData = await responseChar.json();
+        
+        let { charactersAll, equipementsAll, pouvoirsAll} = await this.fetchCharacters();
 
-            const responseEquip = await fetch(`${ENDPOINT}equipements`, options);
-            const equipJSON = await responseEquip.json();
+        if (!charactersAll) {
+            throw new Error("charactersAll est indéfini !");
+        }
 
-            const responsePouv = await fetch(`${ENDPOINT}pouvoirs`, options);
-            const pouvJSON = await responsePouv.json();
+        let character = charactersAll.find(c => Number(c.id) === Number(id));
 
-            let equipements_obj = characterData.equipements_ids
-                .map(equipId => equipJSON.find(e => e.id === equipId))
-                .filter(e => e !== undefined)  // Supprime les équipements inexistants
-                .map(equip => new Equipement(equip.id, equip.nom, equip.type, equip.bonus));
-
-            let pouvoirs_obj = characterData.pouvoirs_ids
-                .map(pouvId => pouvJSON.find(p => p.id === pouvId))
-                .filter(p => p !== undefined)  // Supprime les pouvoirs inexistants
-                .map(pouv => new Pouvoir(pouv.id, pouv.nom, pouv.description));
-
-            // Création de l'objet Character avec les données adaptées
-            return new Character(
-                characterData.id,
-                characterData.name,
-                characterData.img,
-                characterData.race,
-                characterData.classe,
-                characterData.niveau,
-                [
-                    characterData.statistiques.force,
-                    characterData.statistiques.agilite,
-                    characterData.statistiques.defense,
-                    characterData.statistiques.pouvoir
-                ],
-                characterData.experience,
-                [
-                    characterData.evolution.augmentation.force,
-                    characterData.evolution.augmentation.agilite,
-                    characterData.evolution.augmentation.defense,
-                    characterData.evolution.augmentation.pouvoir
-                ],
-                characterData.evolution.niveau_suivant,
-                equipements_obj,
-                pouvoirs_obj
-            );
-    } catch (err) {
+        return character;
+            
+    }; catch (err) {
         console.error('Error getting character details', err);
     };
-    }
 }
+

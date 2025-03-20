@@ -7,8 +7,9 @@ export default class DetailsCharacter{
     async render() {
         let request = Utils.parseRequestURL();
         let characterId = request.id;
+        console.log("ID du personnage :", characterId);
         let character = await JsonProvider.getCharacter(characterId);
-        console.log(character.equipements);
+        console.log("Personnage récupéré :", character);
         if (!character) {
             return `<h2>Personnage non trouvé</h2>`;
         }
