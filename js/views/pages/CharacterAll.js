@@ -8,6 +8,9 @@ export default class CharacterAll {
 
         let view = `
         <h2>LES PERSONNAGES</h2>
+          <div class="barre_recherche">
+            <input type="text" id="recherche" class="recherche" placeholder="Rechercher..." />
+          </div>
         ${this.renderBarreRecherche(charactersAll)}
         <ul id="character_liste">
           ${charactersAll.map(character => {
@@ -18,8 +21,7 @@ export default class CharacterAll {
                   <p>Niveau : ${character.niveau}</p>
                 </li>
               `;
-            })
-            .join('')} 
+            }).join('')} 
         </ul>
       `;
     return view;
@@ -27,23 +29,13 @@ export default class CharacterAll {
 
     // barre de recherche inspirée de : https://codemalin.fr/articles/creer-une-barre-de-recherche-javascript.html
     async renderBarreRecherche(characters) {
-      let view = `
-        <div class="barre_recherche">
-          <input type="text" id="recherche" class="recherche" placeholder="Rechercher..." />
-          <table class="res_recherche" id="res_recherche">
-            <tbody></tbody>
-          </table>
-        </div>
-      `;
+   
+      const recherche = document.getElementById('recherche');
+      const character_liste = document.querySelector('#character_liste');
 
-      document.body.innerHTML += view;
-
-      const barre_recherche = document.getElementById('recherche');
-      const res_recherche = document.querySelector('#res_recherche tbody');
-
-      barre_recherche.addEventListener('input', function(event) {
+      recherche.addEventListener('input', function(event) {
         const query = event.target.value.trim().toLowerCase();
-        res_recherche.innerHTML = '';
+        character_liste.innerHTML = '';
         
         if (query.length >= 3) {
           // Récupération des characters correspondant
@@ -53,28 +45,16 @@ export default class CharacterAll {
 
           // Affichage des résultats
           if (resultat.length > 0) {
-            resultat.forEach(item => {
-                const row = document.createElement('tr');
-                const nomCell = document.createElement('td');
-                nomCell.textContent = item.name;
-                row.appendChild(nomCell);
-
-                const descCell = document.createElement('td');
-                descCell.textContent = item.description;
-                row.appendChild(descCell);
-            
-                res_recherche.appendChild(row);
-            });
-          } else {
-              const row = document.createElement('tr');
-              const cell = document.createElement('td');
-              cell.colSpan = 2;
-              cell.textContent = 'Aucun résultat trouvé.';
-              row.appendChild(cell);
-              res_recherche.appendChild(row);
-          }
+            character_liste.innerHTML = resultat.map(char => 
+              `<li>
+                  <img src="${char.img}" alt="Image de ${char.name}">
+                  <a href="#/character/${char.id}">${char.name}</a>
+                  <p>Niveau : ${char.niveau}</p>
+              </li>`).join('');
+        } else {
+          character_liste.innerHTML = "<p>Aucun personnage trouvé.</p>";
         }
-      });
-    return view;
+    }
+    });
   }
 }
