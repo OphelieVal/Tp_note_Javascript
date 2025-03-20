@@ -7,5 +7,5 @@ Basé sur Solo Leveling
 
 ## Commandes utiles
 
-- pour lancer le json à partir de la racine : `npx json-server data/data.json`
-- pour lancer l'application : php -S localhost:8000 index.html
+- pour lancer le json à partir de la racine : `npx json-server --watch data/data.json --static ./img`
+- pour lancer l'application : php -S localhost:8000
