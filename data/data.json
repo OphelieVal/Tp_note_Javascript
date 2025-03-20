@@ -1,145 +1,638 @@
 {
-    "characters": [
-      {
-        "id": 1,
-        "name": "Jinwoo le Chasseur",
-        "race": "Humain",
-        "classe": "Ombre",
-        "niveau": 50,
-        "statistiques": {
-          "force": 95,
-          "agilite": 88,
-          "defense": 70,
-          "pouvoir": 120
-        },
-        "experience": 50000,
-        "evolution": {
-          "niveau_suivant": 51,
-          "augmentation": {
-            "force": 5,
-            "agilite": 4,
-            "defense": 3,
-            "pouvoir": 6
-          }
-        },
-        "equipements": [
-          {
-            "nom": "Dagues du Roi Démon",
-            "type": "Arme",
-            "bonus": {"attaque": 50, "agilite": 10}
-          },
-          {
-            "nom": "Cape des Ombres",
-            "type": "Armure",
-            "bonus": {"defense": 20, "pouvoir": 15}
-          }
-        ]
+  "characters": [
+    {
+      "id": 1,
+      "name": "Sung Jin-Woo",
+      "img": "./../js/views/static/img/character1.jpeg",
+      "race": "Humain",
+      "classe": "Souverain de l'Ombre",
+      "niveau": 150,
+      "statistiques": {
+        "force": 999,
+        "agilite": 999,
+        "defense": 800,
+        "pouvoir": 1200
       },
-      {
-        "id": 2,
-        "name": "Igris le Chevalier",
-        "race": "Ombre",
-        "classe": "Chevalier",
-        "niveau": 45,
-        "statistiques": {
-          "force": 85,
-          "agilite": 60,
-          "defense": 100,
-          "pouvoir": 80
-        },
-        "experience": 45000,
-        "evolution": {
-          "niveau_suivant": 46,
-          "augmentation": {
-            "force": 4,
-            "agilite": 3,
-            "defense": 5,
-            "pouvoir": 4
-          }
-        },
-        "equipements": [
-          {
-            "nom": "Lame Royale",
-            "type": "Arme",
-            "bonus": {"attaque": 40, "force": 5}
-          },
-          {
-            "nom": "Armure de Chevalier Sombre",
-            "type": "Armure",
-            "bonus": {"defense": 30, "pouvoir": 10}
-          }
-        ]
+      "experience": 200000,
+      "evolution": {
+        "niveau_suivant": 151,
+        "augmentation": {
+          "force": 10,
+          "agilite": 10,
+          "defense": 5,
+          "pouvoir": 15
+        }
       },
-      {
-        "id": 3,
-        "name": "Beru le Monarque",
-        "race": "Insectoïde",
-        "classe": "Souverain",
-        "niveau": 60,
-        "statistiques": {
-          "force": 120,
-          "agilite": 90,
-          "defense": 80,
-          "pouvoir": 100
-        },
-        "experience": 60000,
-        "evolution": {
-          "niveau_suivant": 61,
-          "augmentation": {
-            "force": 6,
-            "agilite": 5,
-            "defense": 4,
-            "pouvoir": 6
-          }
-        },
-        "equipements": [
-          {
-            "nom": "Griffes du Monarque",
-            "type": "Arme",
-            "bonus": {"attaque": 55, "agilite": 12}
-          },
-          {
-            "nom": "Carapace Royale",
-            "type": "Armure",
-            "bonus": {"defense": 35, "pouvoir": 20}
-          }
-        ]
+      "equipements_ids": [1, 2],
+      "pouvoirs_ids": [1, 2]
+    },
+    {
+      "id": 2,
+      "name": "Cha Hae-In",
+      "img": "./../js/views/static/img/character2.jpeg",
+      "race": "Humaine",
+      "classe": "Épéiste",
+      "niveau": 95,
+      "statistiques": {
+        "force": 300,
+        "agilite": 400,
+        "defense": 250,
+        "pouvoir": 280
       },
-      {
-        "id": 4,
-        "name": "Tusk l'Archimage",
-        "race": "Ogre",
-        "classe": "Mage",
-        "niveau": 55,
-        "statistiques": {
-          "force": 50,
-          "agilite": 40,
-          "defense": 60,
-          "pouvoir": 150
-        },
-        "experience": 55000,
-        "evolution": {
-          "niveau_suivant": 56,
-          "augmentation": {
-            "force": 2,
-            "agilite": 2,
-            "defense": 3,
-            "pouvoir": 10
-          }
-        },
-        "equipements": [
-          {
-            "nom": "Bâton du Sage Immortel",
-            "type": "Arme",
-            "bonus": {"pouvoir": 60, "defense": 10}
-          },
-          {
-            "nom": "Robe de Magie Ancestrale",
-            "type": "Armure",
-            "bonus": {"defense": 25, "pouvoir": 30}
-          }
-        ]
-      }
-    ]
-  }
-  
+      "experience": 95000,
+      "evolution": {
+        "niveau_suivant": 96,
+        "augmentation": {
+          "force": 6,
+          "agilite": 7,
+          "defense": 4,
+          "pouvoir": 5
+        }
+      },
+      "equipements_ids": [3, 4],
+      "pouvoirs_ids": [3, 4]
+    },
+    {
+      "id": 3,
+      "name": "Yoo Jin-Ho",
+      "img": "./../js/views/static/img/character3.jpeg",
+      "race": "Humain",
+      "classe": "Tank",
+      "niveau": 40,
+      "statistiques": {
+        "force": 120,
+        "agilite": 80,
+        "defense": 300,
+        "pouvoir": 60
+      },
+      "experience": 40000,
+      "evolution": {
+        "niveau_suivant": 41,
+        "augmentation": {
+          "force": 3,
+          "agilite": 2,
+          "defense": 10,
+          "pouvoir": 2
+        }
+      },
+      "equipements_ids": [5, 6],
+      "pouvoirs_ids": [5, 6]
+    },
+    {
+      "id": 4,
+      "name": "Sung Il-Hwan",
+      "img": "./../js/views/static/img/character4.jpeg",
+      "race": "Humain",
+      "classe": "Chasseur de Rang S",
+      "niveau": 110,
+      "statistiques": {
+        "force": 500,
+        "agilite": 600,
+        "defense": 400,
+        "pouvoir": 550
+      },
+      "experience": 120000,
+      "evolution": {
+        "niveau_suivant": 111,
+        "augmentation": {
+          "force": 8,
+          "agilite": 9,
+          "defense": 5,
+          "pouvoir": 7
+        }
+      },
+      "equipements_ids": [7, 8],
+      "pouvoirs_ids": [7, 8]
+    },
+    {
+      "id": 5,
+      "name": "Go Gun-Hee",
+      "img": "./../js/views/static/img/character5.jpeg",
+      "race": "Humain",
+      "classe": "Président des Chasseurs",
+      "niveau": 130,
+      "statistiques": {
+        "force": 600,
+        "agilite": 500,
+        "defense": 700,
+        "pouvoir": 900
+      },
+      "experience": 150000,
+      "evolution": {
+        "niveau_suivant": 131,
+        "augmentation": {
+          "force": 9,
+          "agilite": 7,
+          "defense": 10,
+          "pouvoir": 12
+        }
+      },
+      "equipements_ids": [9, 10],
+      "pouvoirs_ids": [9, 10]
+    },
+    {
+      "id": 6,
+      "name": "Baek Yoon-Ho",
+      "img": "./../js/views/static/img/character6.jpeg",
+      "race": "Humain",
+      "classe": "Berserker",
+      "niveau": 80,
+      "statistiques": {
+        "force": 350,
+        "agilite": 250,
+        "defense": 300,
+        "pouvoir": 200
+      },
+      "experience": 80000,
+      "evolution": {
+        "niveau_suivant": 81,
+        "augmentation": {
+          "force": 5,
+          "agilite": 3,
+          "defense": 5,
+          "pouvoir": 4
+        }
+      },
+      "equipements_ids": [1, 7],
+      "pouvoirs_ids": [2, 6]
+    },
+    {
+      "id": 7,
+      "name": "Choi Jong-In",
+      "img": "./../js/views/static/img/character7.jpeg",
+      "race": "Humain",
+      "classe": "Archimage",
+      "niveau": 88,
+      "statistiques": {
+        "force": 200,
+        "agilite": 200,
+        "defense": 250,
+        "pouvoir": 400
+      },
+      "experience": 88000,
+      "evolution": {
+        "niveau_suivant": 89,
+        "augmentation": {
+          "force": 3,
+          "agilite": 2,
+          "defense": 4,
+          "pouvoir": 8
+        }
+      },
+      "equipements_ids": [7, 8],
+      "pouvoirs_ids": [7, 8]
+    },
+    {
+      "id": 8,
+      "name": "Ma Dong-Wook",
+      "img": "./../js/views/static/img/character8.jpeg",
+      "race": "Humain",
+      "classe": "Tank",
+      "niveau": 70,
+      "statistiques": {
+        "force": 220,
+        "agilite": 100,
+        "defense": 400,
+        "pouvoir": 120
+      },
+      "experience": 70000,
+      "evolution": {
+        "niveau_suivant": 71,
+        "augmentation": {
+          "force": 4,
+          "agilite": 2,
+          "defense": 10,
+          "pouvoir": 3
+        }
+      },
+      "equipements_ids": [6, 10],
+      "pouvoirs_ids": [5, 6]
+    },
+    {
+      "id": 9,
+      "name": "Song Chi-Yul",
+      "img": "./../js/views/static/img/character9.jpeg",
+      "race": "Humain",
+      "classe": "Healer",
+      "niveau": 30,
+      "statistiques": {
+        "force": 80,
+        "agilite": 90,
+        "defense": 100,
+        "pouvoir": 200
+      },
+      "experience": 30000,
+      "evolution": {
+        "niveau_suivant": 31,
+        "augmentation": {
+          "force": 2,
+          "agilite": 3,
+          "defense": 3,
+          "pouvoir": 7
+        }
+      },
+      "equipements_ids": [2, 8],
+      "pouvoirs_ids": [1, 8]
+    },
+    {
+      "id": 10,
+      "name": "Park Hee-Jin",
+      "img": "./../js/views/static/img/character10.jpeg",
+      "race": "Humaine",
+      "classe": "Archer",
+      "niveau": 65,
+      "statistiques": {
+        "force": 150,
+        "agilite": 300,
+        "defense": 120,
+        "pouvoir": 80
+      },
+      "experience": 65000,
+      "evolution": {
+        "niveau_suivant": 66,
+        "augmentation": {
+          "force": 4,
+          "agilite": 8,
+          "defense": 3,
+          "pouvoir": 2
+        }
+      },
+      "equipements_ids": [1, 2],
+      "pouvoirs_ids": [3, 9]
+    },
+    {
+      "id": 11,
+      "name": "Kim Cheol",
+      "img": "./../js/views/static/img/character11.jpeg",
+      "race": "Humain",
+      "classe": "Épéiste",
+      "niveau": 55,
+      "statistiques": {
+        "force": 240,
+        "agilite": 220,
+        "defense": 180,
+        "pouvoir": 150
+      },
+      "experience": 55000,
+      "evolution": {
+        "niveau_suivant": 56,
+        "augmentation": {
+          "force": 5,
+          "agilite": 5,
+          "defense": 4,
+          "pouvoir": 4
+        }
+      },
+      "equipements_ids": [3, 4],
+      "pouvoirs_ids": [4, 10]
+    },
+    {
+      "id": 12,
+      "name": "Thomas Andre",
+      "img": "./../js/views/static/img/character12.jpeg",
+      "race": "Humain",
+      "classe": "Tank",
+      "niveau": 99,
+      "statistiques": {
+        "force": 600,
+        "agilite": 350,
+        "defense": 600,
+        "pouvoir": 300
+      },
+      "experience": 99000,
+      "evolution": {
+        "niveau_suivant": 100,
+        "augmentation": {
+          "force": 8,
+          "agilite": 5,
+          "defense": 8,
+          "pouvoir": 5
+        }
+      },
+      "equipements_ids": [5, 6],
+      "pouvoirs_ids": [2, 3]
+    },
+    {
+      "id": 13,
+      "name": "Christopher Reed",
+      "img": "./../js/views/static/img/character13.jpeg",
+      "race": "Humain",
+      "classe": "Mage",
+      "niveau": 100,
+      "statistiques": {
+        "force": 200,
+        "agilite": 200,
+        "defense": 300,
+        "pouvoir": 800
+      },
+      "experience": 100000,
+      "evolution": {
+        "niveau_suivant": 101,
+        "augmentation": {
+          "force": 3,
+          "agilite": 3,
+          "defense": 5,
+          "pouvoir": 10
+        }
+      },
+      "equipements_ids": [7, 8],
+      "pouvoirs_ids": [4, 7]
+    },
+    {
+      "id": 14,
+      "name": "Liu Zhigang",
+      "img": "./../js/views/static/img/character14.jpeg",
+      "race": "Humain",
+      "classe": "Épéiste",
+      "niveau": 85,
+      "statistiques": {
+        "force": 400,
+        "agilite": 350,
+        "defense": 300,
+        "pouvoir": 250
+      },
+      "experience": 85000,
+      "evolution": {
+        "niveau_suivant": 86,
+        "augmentation": {
+          "force": 6,
+          "agilite": 5,
+          "defense": 4,
+          "pouvoir": 4
+        }
+      },
+      "equipements_ids": [1, 9],
+      "pouvoirs_ids": [5, 6]
+    },
+    {
+      "id": 15,
+      "name": "Goto Ryuji",
+      "img": "./../js/views/static/img/character15.jpeg",
+      "race": "Humain",
+      "classe": "Assassin",
+      "niveau": 72,
+      "statistiques": {
+        "force": 280,
+        "agilite": 420,
+        "defense": 200,
+        "pouvoir": 210
+      },
+      "experience": 72000,
+      "evolution": {
+        "niveau_suivant": 73,
+        "augmentation": {
+          "force": 6,
+          "agilite": 10,
+          "defense": 3,
+          "pouvoir": 3
+        }
+      },
+      "equipements_ids": [1, 2],
+      "pouvoirs_ids": [1, 9]
+    },
+    {
+      "id": 16,
+      "name": "Lennart Niermann",
+      "img": "./../js/views/static/img/character16.jpeg",
+      "race": "Humain",
+      "classe": "Archer",
+      "niveau": 66,
+      "statistiques": {
+        "force": 160,
+        "agilite": 320,
+        "defense": 150,
+        "pouvoir": 90
+      },
+      "experience": 66000,
+      "evolution": {
+        "niveau_suivant": 67,
+        "augmentation": {
+          "force": 4,
+          "agilite": 8,
+          "defense": 4,
+          "pouvoir": 3
+        }
+      },
+      "equipements_ids": [2, 8],
+      "pouvoirs_ids": [3, 5]
+    },
+    {
+      "id": 17,
+      "name": "Hwang Dong-Su",
+      "img": "./../js/views/static/img/character17.jpeg",
+      "race": "Humain",
+      "classe": "Mage",
+      "niveau": 75,
+      "statistiques": {
+        "force": 200,
+        "agilite": 200,
+        "defense": 200,
+        "pouvoir": 500
+      },
+      "experience": 75000,
+      "evolution": {
+        "niveau_suivant": 76,
+        "augmentation": {
+          "force": 3,
+          "agilite": 3,
+          "defense": 3,
+          "pouvoir": 8
+        }
+      },
+      "equipements_ids": [4, 7],
+      "pouvoirs_ids": [8, 10]
+    },
+    {
+      "id": 18,
+      "name": "Bellion",
+      "img": "./../js/views/static/img/character18.jpeg",
+      "race": "Ombre",
+      "classe": "Général",
+      "niveau": 120,
+      "statistiques": {
+        "force": 600,
+        "agilite": 500,
+        "defense": 550,
+        "pouvoir": 650
+      },
+      "experience": 120000,
+      "evolution": {
+        "niveau_suivant": 121,
+        "augmentation": {
+          "force": 7,
+          "agilite": 6,
+          "defense": 6,
+          "pouvoir": 9
+        }
+      },
+      "equipements_ids": [2, 9],
+      "pouvoirs_ids": [1, 5]
+    },
+    {
+      "id": 19,
+      "name": "Igris",
+      "img": "./../js/views/static/img/character19.jpeg",
+      "race": "Ombre",
+      "classe": "Chevalier",
+      "niveau": 90,
+      "statistiques": {
+        "force": 500,
+        "agilite": 350,
+        "defense": 400,
+        "pouvoir": 300
+      },
+      "experience": 90000,
+      "evolution": {
+        "niveau_suivant": 91,
+        "augmentation": {
+          "force": 5,
+          "agilite": 4,
+          "defense": 5,
+          "pouvoir": 4
+        }
+      },
+      "equipements_ids": [3, 9],
+      "pouvoirs_ids": [2, 4]
+    },
+    {
+      "id": 20,
+      "name": "Beru",
+      "img": "./../js/views/static/img/character20.jpeg",
+      "race": "Insectoïde",
+      "classe": "Souverain",
+      "niveau": 60,
+      "statistiques": {
+        "force": 120,
+        "agilite": 90,
+        "defense": 80,
+        "pouvoir": 100
+      },
+      "experience": 60000,
+      "evolution": {
+        "niveau_suivant": 61,
+        "augmentation": {
+          "force": 6,
+          "agilite": 5,
+          "defense": 4,
+          "pouvoir": 6
+        }
+      },
+      "equipements_ids": [5, 6],
+      "pouvoirs_ids": [5, 6]
+    }
+  ],
+  "equipements": [
+    {
+      "id": 1,
+      "nom": "Dagues du Roi Démon",
+      "type": "Arme",
+      "bonus": { "attaque": 50, "agilite": 10 }
+    },
+    {
+      "id": 2,
+      "nom": "Cape des Ombres",
+      "type": "Armure",
+      "bonus": { "defense": 20, "pouvoir": 15 }
+    },
+    {
+      "id": 3,
+      "nom": "Lame Royale",
+      "type": "Arme",
+      "bonus": { "attaque": 40, "force": 5 }
+    },
+    {
+      "id": 4,
+      "nom": "Armure de Chevalier Sombre",
+      "type": "Armure",
+      "bonus": { "defense": 30, "pouvoir": 10 }
+    },
+    {
+      "id": 5,
+      "nom": "Griffes du Monarque",
+      "type": "Arme",
+      "bonus": { "attaque": 55, "agilite": 12 }
+    },
+    {
+      "id": 6,
+      "nom": "Carapace Royale",
+      "type": "Armure",
+      "bonus": { "defense": 35, "pouvoir": 20 }
+    },
+    {
+      "id": 7,
+      "nom": "Bâton du Sage Immortel",
+      "type": "Arme",
+      "bonus": { "pouvoir": 60, "defense": 10 }
+    },
+    {
+      "id": 8,
+      "nom": "Robe de Magie Ancestrale",
+      "type": "Armure",
+      "bonus": { "defense": 25, "pouvoir": 30 }
+    },
+    {
+      "id": 9,
+      "nom": "Épée du Jugement",
+      "type": "Arme",
+      "bonus": { "attaque": 70, "force": 20 }
+    },
+    {
+      "id": 10,
+      "nom": "Bouclier du Titan",
+      "type": "Armure",
+      "bonus": { "defense": 50, "pouvoir": 25 }
+    }
+  ],
+  "pouvoirs": [
+    {
+      "id": 1,
+      "nom": "Invocation d'Ombres",
+      "description": "Permet d'invoquer des créatures de l'ombre pour combattre."
+    },
+    {
+      "id": 2,
+      "nom": "Régénération Accélérée",
+      "description": "Soigne rapidement les blessures."
+    },
+    {
+      "id": 3,
+      "nom": "Lame de Sang",
+      "description": "Transforme le sang en une arme mortelle."
+    },
+    {
+      "id": 4,
+      "nom": "Frappe Sombre",
+      "description": "Une attaque puissante à base d'énergie ténébreuse."
+    },
+    {
+      "id": 5,
+      "nom": "Cri du Monarque",
+      "description": "Affaiblit les ennemis et augmente la puissance des alliés."
+    },
+    {
+      "id": 6,
+      "nom": "Explosion Royale",
+      "description": "Une attaque destructrice qui génère une onde de choc."
+    },
+    {
+      "id": 7,
+      "nom": "Déflagration Magique",
+      "description": "Lance une énorme boule d'énergie magique."
+    },
+    {
+      "id": 8,
+      "nom": "Barrière Mystique",
+      "description": "Crée un bouclier magique réduisant les dégâts subis."
+    },
+    {
+      "id": 9,
+      "nom": "Jugement Divin",
+      "description": "Une frappe divine infligeant des dégâts massifs aux ennemis."
+    },
+    {
+      "id": 10,
+      "nom": "Frappe Fantôme",
+      "description": "Une attaque qui ignore les défenses ennemies."
+    }
+  ]
+}
