@@ -1,6 +1,5 @@
 // Listing des personnages du data.json
 import CharacterProvider from "../../services/provider/CharacterProvider.js";
-import DetailsCharacter from "./DetailsCharacter.js";
 export default class CharacterAll {
     async render(){
         let data = await CharacterProvider.fetchCharacters();
@@ -23,9 +22,6 @@ export default class CharacterAll {
             }).join('')} 
         </ul>
       `;
-      document.getElementById('content').innerHTML = view;
-
-      this.renderBarreRecherche(charactersAll);
     return view;
     }
 
@@ -39,24 +35,21 @@ export default class CharacterAll {
         const query = event.target.value.trim().toLowerCase();
         character_liste.innerHTML = '';
         
-        if (query.length >= 3) {
-          // Récupération des characters correspondant
-          const resultat = characters.filter(char => 
-            char.name.toLowerCase().includes(query)
-        );
+        // Récupération des characters correspondant
+        const resultat = characters.filter(char => 
+        char.name.toLowerCase().includes(query));
 
-          // Affichage des résultats
-          if (resultat.length > 0) {
-            character_liste.innerHTML = resultat.map(char => 
-              `<li>
-                  <img src="${char.img}" alt="Image de ${char.name}">
-                  <a href="#/character/${char.id}">${char.name}</a>
-                  <p>Niveau : ${char.niveau}</p>
-              </li>`).join('');
+        // Affichage des résultats
+        if (resultat.length > 0) {
+          character_liste.innerHTML = resultat.map(char => 
+            `<li>
+                <img src="${char.img}" alt="Image de ${char.name}">
+                <a href="#/character/${char.id}">${char.name}</a>
+                <p>Niveau : ${char.niveau}</p>
+            </li>`).join('');
         } else {
           character_liste.innerHTML = "<p>Aucun personnage trouvé.</p>";
         }
-    }
-    });
-  }
+    })
+  };
 }

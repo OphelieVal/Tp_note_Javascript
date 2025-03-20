@@ -2,6 +2,7 @@ import Favourite from "./views/pages/Favourite.js";
 import CharacterAll from "./views/pages/CharacterAll.js";
 import Utils from "./services/outils/Utils.js";
 import DetailsCharacter from "./views/pages/DetailsCharacter.js";
+import CharacterProvider from "./services/provider/CharacterProvider.js";
 
 const routes = {
     '/' : CharacterAll,
@@ -20,6 +21,11 @@ const router = async () => {
     let page = routes[parsedURL] ? new routes[parsedURL] : new CharacterAll;
     console.log(page);
     content.innerHTML = await page.render();
+
+    if (page instanceof CharacterAll) {
+        let data = await CharacterProvider.fetchCharacters();
+        page.renderBarreRecherche(data.charactersAll);
+    }
 }
 
 window.addEventListener('hashchange',router)
