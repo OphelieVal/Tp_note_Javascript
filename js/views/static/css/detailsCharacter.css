@@ -1,0 +1,54 @@
+#character {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre tous les éléments horizontalement */
+    text-align: center; /* Centre le texte */
+    max-width: 600px; /* Ajuste la largeur si nécessaire */
+    margin: 0 auto; /* Centre la section sur la page */
+}
+
+#character img {
+    width: 100%; /* Ajuste la taille de l'image selon tes besoins */
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+#rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.star {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+#fav-btn {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#fav-btn:hover {
+    background-color: #0056b3;
+}
+
+hr {
+    width : 50%
+}
+
+h3 {
+    color: #ff304f;
+}
+
