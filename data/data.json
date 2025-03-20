@@ -519,7 +519,217 @@
       },
       "equipements_ids": [5, 6],
       "pouvoirs_ids": [5, 6]
+    },
+
+    {
+      "id": 21,
+      "name": "Woo Jin-chul",
+      "img": "./../js/views/static/img/character21.jpeg",
+      "race": "Humain",
+      "classe": "Chasseur rang A",
+      "niveau": 60,
+      "statistiques": {
+        "force": 280,
+        "agilite": 230,
+        "defense": 210,
+        "pouvoir": 180
+      },
+      "experience": 70000,
+      "evolution": {
+        "niveau_suivant": 61,
+        "augmentation": {
+          "force": 12,
+          "agilite": 10,
+          "defense": 8,
+          "pouvoir": 9
+        }
+      },
+      "equipements_ids": [11, 12],
+      "pouvoirs_ids": [11, 12]
+    },
+    {
+      "id": 22,
+      "name": "Kang Tae Shik",
+      "img": "./../js/views/static/img/character22.jpeg",
+      "race": "Humain",
+      "classe": "Chasseur Fantôme",
+      "niveau": 58,
+      "statistiques": {
+        "force": 250,
+        "agilite": 190,
+        "defense": 220,
+        "pouvoir": 170
+      },
+      "experience": 65000,
+      "evolution": {
+        "niveau_suivant": 59,
+        "augmentation": {
+          "force": 10,
+          "agilite": 8,
+          "defense": 6,
+          "pouvoir": 7
+        }
+      },
+      "equipements_ids": [13, 14],
+      "pouvoirs_ids": [13, 14]
+    },
+    {
+      "id": 23,
+      "name": "Min Byung Gyu",
+      "img": "./../js/views/static/img/character23.jpeg", 
+      "race": "Humain",
+      "classe": "Healer",
+      "niveau": 54,
+      "statistiques": {
+        "force": 230,
+        "agilite": 210,
+        "defense": 170,
+        "pouvoir": 180
+      },
+      "experience": 58000,
+      "evolution": {
+        "niveau_suivant": 55,
+        "augmentation": {
+          "force": 8,
+          "agilite": 10,
+          "defense": 6,
+          "pouvoir": 5
+        }
+      },
+      "equipements_ids": [15, 16],
+      "pouvoirs_ids": [15, 16]
+    },
+    {
+      "id": 24,
+      "name": "Izawa Ippei",
+      "img": "./../js/views/static/img/character24.jpeg", 
+      "race": "Humain",
+      "classe": "Chasseur Tempête",
+      "niveau": 56,
+      "statistiques": {
+        "force": 240,
+        "agilite": 230,
+        "defense": 200,
+        "pouvoir": 190
+      },
+      "experience": 60000,
+      "evolution": {
+        "niveau_suivant": 57,
+        "augmentation": {
+          "force": 12,
+          "agilite": 10,
+          "defense": 8,
+          "pouvoir": 6
+        }
+      },
+      "equipements_ids": [19, 20],
+      "pouvoirs_ids": [19, 20]
+    },
+    {
+      "id": 25,
+      "name": "Tawata Kanae",
+      "img": "./../js/views/static/img/character25.jpeg", 
+      "race": "Humain",
+      "classe": "Chasseur de l'Inframonde",
+      "niveau": 52,
+      "statistiques": {
+        "force": 220,
+        "agilite": 180,
+        "defense": 210,
+        "pouvoir": 160
+      },
+      "experience": 53000,
+      "evolution": {
+        "niveau_suivant": 53,
+        "augmentation": {
+          "force": 7,
+          "agilite": 6,
+          "defense": 9,
+          "pouvoir": 5
+        }
+      },
+      "equipements_ids": [21, 22],
+      "pouvoirs_ids": [21, 22]
+    },
+    {
+      "id": 26,
+      "name": "L'Administrateur",
+      "img": "./../js/views/static/img/character26.jpeg",
+      "race": "Inconnu",
+      "classe": "Déchu",
+      "niveau": 62,
+      "statistiques": {
+        "force": 300,
+        "agilite": 210,
+        "defense": 250,
+        "pouvoir": 350
+      },
+      "experience": 85000,
+      "evolution": {
+        "niveau_suivant": 63,
+        "augmentation": {
+          "force": 10,
+          "agilite": 8,
+          "defense": 9,
+          "pouvoir": 12
+        }
+      },
+      "equipements_ids": [23, 24],
+      "pouvoirs_ids": [23, 24]
+    },
+    {
+      "id": 27,
+      "name": "Vulcan",
+      "img": "./../js/views/static/img/character27.jpeg",
+      "race": "Demon",
+      "classe": "Ogre",
+      "niveau": 48,
+      "statistiques": {
+        "force": 150,
+        "agilite": 180,
+        "defense": 140,
+        "pouvoir": 300
+      },
+      "experience": 42000,
+      "evolution": {
+        "niveau_suivant": 49,
+        "augmentation": {
+          "force": 6,
+          "agilite": 7,
+          "defense": 4,
+          "pouvoir": 12
+        }
+      },
+      "equipements_ids": [25, 26],
+      "pouvoirs_ids": [25, 26]
+    },
+    {
+      "id": 28,
+      "name": "Baruka",
+      "img": "./../js/views/static/img/character28.jpeg",
+      "race": "Elfe des glaces",
+      "classe": "Assassin",
+      "niveau": 80,
+      "statistiques": {
+        "force": 500,
+        "agilite": 220,
+        "defense": 300,
+        "pouvoir": 600
+      },
+      "experience": 120000,
+      "evolution": {
+        "niveau_suivant": 81,
+        "augmentation": {
+          "force": 15,
+          "agilite": 10,
+          "defense": 20,
+          "pouvoir": 25
+        }
+      },
+      "equipements_ids": [27, 28],
+      "pouvoirs_ids": [27, 28]
     }
+
   ],
   "equipements": [
     {
@@ -581,7 +791,116 @@
       "nom": "Bouclier du Titan",
       "type": "Armure",
       "bonus": { "defense": 50, "pouvoir": 25 }
+    },
+    {
+      "id": 11,
+      "nom": "Capuche du Chasseur Sombre",
+      "type": "Armure",
+      "bonus": { "defense": 45, "agilite": 20 }
+    },
+    {
+      "id": 12,
+      "nom": "Lame de l'Esprit Sombre",
+      "type": "Arme",
+      "bonus": { "attaque": 60, "agilite": 15 }
+    },
+    {
+      "id": 13,
+      "nom": "Gant de l'Assassin Fantôme",
+      "type": "Arme",
+      "bonus": { "attaque": 55, "agilite": 18 }
+    },
+    {
+      "id": 14,
+      "nom": "Armure du Chasseur Fantôme",
+      "type": "Armure",
+      "bonus": { "defense": 60, "agilite": 25 }
+    },
+    {
+      "id": 15,
+      "nom": "Dagues de l'Assassin Fantôme",
+      "type": "Arme",
+      "bonus": { "attaque": 50, "agilite": 15 }
+    },
+    {
+      "id": 16,
+      "nom": "Cape d'Ombre",
+      "type": "Armure",
+      "bonus": { "defense": 40, "agilite": 20 }
+    },
+    {
+      "id": 17,
+      "nom": "Bâton Céleste",
+      "type": "Arme",
+      "bonus": { "attaque": 70, "pouvoir": 25 }
+    },
+    {
+      "id": 18,
+      "nom": "Robe Magique de l'Aube",
+      "type": "Armure",
+      "bonus": { "defense": 50, "pouvoir": 15 }
+    },
+    {
+      "id": 19,
+      "nom": "Épée de la Tempête",
+      "type": "Arme",
+      "bonus": { "attaque": 80, "force": 20 }
+    },
+    {
+      "id": 20,
+      "nom": "Garde Tempête",
+      "type": "Armure",
+      "bonus": { "defense": 60, "agilite": 25 }
+    },
+    {
+      "id": 21,
+      "nom": "Arc de l'Inframonde",
+      "type": "Arme",
+      "bonus": { "attaque": 60, "agilite": 15 }
+    },
+    {
+      "id": 22,
+      "nom": "Cuirasse de l'Inframonde",
+      "type": "Armure",
+      "bonus": { "defense": 50, "pouvoir": 10 }
+    },
+    {
+      "id": 23,
+      "nom": "Épée du Seigneur Démon",
+      "type": "Arme",
+      "bonus": { "attaque": 90, "pouvoir": 40 }
+    },
+    {
+      "id": 24,
+      "nom": "Armure de Métal d'Obsidienne",
+      "type": "Armure",
+      "bonus": { "defense": 100, "force": 30 }
+    },
+    {
+      "id": 25,
+      "nom": "Hache du Seigneur Démon",
+      "type": "Arme",
+      "bonus": { "attaque": 120, "force": 40 }
+    },
+    {
+      "id": 26,
+      "nom": "Robe du Mage de Guerre",
+      "type": "Armure",
+      "bonus": { "defense": 30, "pouvoir": 20 }
+    },
+    {
+      "id": 27,
+      "nom": "Dague Elfique",
+      "type": "Arme",
+      "bonus": { "attaque": 50, "agilite": 30 }
+    },
+    {
+      "id": 28,
+      "nom": "Robe Elfique",
+      "type": "Armure",
+      "bonus": { "defense": 40, "agilite": 20 }
     }
+    
   ],
   "pouvoirs": [
     {
@@ -633,6 +952,96 @@
       "id": 10,
       "nom": "Frappe Fantôme",
       "description": "Une attaque qui ignore les défenses ennemies."
-    }
+    },
+    {
+      "id": 11,
+      "nom": "Ombre Dévorante",
+      "description": "Invoque une ombre gigantesque qui engloutit l'ennemi, réduisant sa santé au fur et à mesure de son emprisonnement."
+    },
+    {
+      "id": 12,
+      "nom": "Danse des Ombres",
+      "description": "Permet à l'utilisateur de se téléporter instantanément dans les ombres environnantes et d'attaquer avec une vitesse fulgurante."
+    },
+    {
+      "id": 13,
+      "nom": "Rayon Spectral",
+      "description": "Canalise l'énergie spectrale pour lancer un rayon dévastateur qui frappe ses ennemis à distance, leur infligeant de lourds dégâts."
+    },
+    {
+      "id": 14,
+      "nom": "Frappe Fantomatique",
+      "description": "Se déplace instantanément dans l'ombre pour attaquer avec une rapidité surnaturelle, traversant ses ennemis sans qu'ils puissent réagir."
+    },
+    {
+      "id": 15,
+      "nom": "Frappe Spectrale",
+      "description": "Crée une vague d'énergie spectrale qui traverse ses ennemis et les détruit à distance."
+    },
+    {
+      "id": 16,
+      "nom": "Masque de l'Invisible",
+      "description": "Permet de devenir invisible pendant un court laps de temps, parfait pour l'assassinat furtif."
+    },
+    {
+      "id": 17,
+      "nom": "Onde Céleste",
+      "description": "Invoque un rayon de lumière divine qui frappe ses ennemis à distance."
+    },
+    {
+      "id": 18,
+      "nom": "Barrière Céleste",
+      "description": "Crée un bouclier magique protecteur qui réduit les dégâts subis par les alliés à proximité."
+    },
+    {
+      "id": 19,
+      "nom": "Foudre Divine",
+      "description": "Invoque une rafale de foudre divine qui frappe tous les ennemis à portée."
+    },
+    {
+      "id": 20,
+      "nom": "Vortex Tempétueux",
+      "description": "Crée un vortex de vent et de foudre qui inflige des dégâts massifs tout en repoussant les ennemis."
+    },
+    {
+      "id": 21,
+      "nom": "Flèche d'Ombre",
+      "description": "Tire une flèche d'énergie noire qui perfore les ennemis et les entraîne dans l'ombre."
+    },
+    {
+      "id": 22,
+      "nom": "Robe de l'Ombre",
+      "description": "Crée un champ de ténèbres autour de l'utilisateur qui cache ses mouvements et augmente sa vitesse."
+    },
+    {
+      "id": 23,
+      "nom": "Fureur Démoniaque",
+      "description": "Libère une vague d'énergie démoniaque qui augmente la puissance de l'utilisateur et inflige des dégâts massifs à tous les ennemis à proximité."
+    },
+    {
+      "id": 24,
+      "nom": "Téléportation d'Ombre",
+      "description": "Permet à Metus de se déplacer instantanément à travers les ombres, évitant les attaques et surprenant les ennemis."
+    },
+    {
+      "id": 25,
+      "nom": "Flamme de l'Inferno",
+      "description": "Lance une énorme boule de feu qui dévaste tout sur son passage, infligeant d'énormes dégâts à une large zone."
+    },
+    {
+      "id": 26,
+      "nom": "Barrière d'Arcanes",
+      "description": "Crée une barrière magique protectrice qui réduit considérablement les dégâts reçus par l'utilisateur et ses alliés."
+    },
+    {
+      "id": 27,
+      "nom": "Frappe Cataclysmique",
+      "description": "Exécute un coup dévastateur avec la hache qui génère une onde de choc sismique, annihilant tout sur son passage."
+    },
+    {
+      "id": 8,
+      "nom": "Régénération Glaciale",
+      "description": "Régénère lentement la santé de Baruka en canalisant l'air autour de lui."
+    } 
   ]
 }
