@@ -45,12 +45,17 @@ export default class CharacterAll {
 
         // Affichage des résultats
         if (resultat.length > 0) {
-          character_liste.innerHTML = resultat.map(char => 
-            `<li>
-                <img src="${char.img}" alt="Image de ${char.name}">
-                <a href="#/character/${char.id}">${char.name}</a>
-                <p>Niveau : ${char.niveau}</p>
-            </li>`).join('');
+          character_liste.innerHTML = resultat.map(char => {
+              return `
+                <a href="#/character/${char.id}" class="character-link">
+                  <li class="character-item" data-id="${char.id}">
+                    <img src="${char.img}" alt="Image de ${char.name}">
+                    <p>${char.name}</p>
+                    <p>Niveau : ${char.niveau}</p>
+                  </li>
+                </a>
+              `;
+            }).join('')
         } else {
           character_liste.innerHTML = "<p>Aucun personnage trouvé.</p>";
         }
