@@ -4,12 +4,10 @@ import DetailsCharacter from "./DetailsCharacter.js";
 export default class CharacterAll {
     async render(){
         let data = await CharacterProvider.fetchCharacters();
-        console.log(data);
         let { charactersAll, equipementsAll, pouvoirsAll } = data;
-        console.log(charactersAll);
 
         let view = `
-        <h2>Les personnages</h2>
+        <h2>LES PERSONNAGES</h2>
         <ul id="character_liste">
           ${charactersAll.map(character => {
               return `
