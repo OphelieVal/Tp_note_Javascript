@@ -39,11 +39,11 @@ export default class JsonProvider {
 
             charsJSON.forEach(character_data => {
                 let equipements_obj = character_data.equipements_ids.map(id => {
-                    return equipementsAll.find(e => e.id === id);
+                    return equipementsAll.find(e => Number(e.id) === Number(id));
                 });
-                  
+
                 let pouvoirs_obj = character_data.pouvoirs_ids.map(id => {
-                    return pouvoirsAll.find(p => p.id === id);
+                    return pouvoirsAll.find(p => Number(p.id) === Number(id));
                 });
 
                 let carac = new Character(
