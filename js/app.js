@@ -2,7 +2,7 @@ import Favourite from "./views/pages/Favourite.js";
 import CharacterAll from "./views/pages/CharacterAll.js";
 import Utils from "./services/outils/Utils.js";
 import DetailsCharacter from "./views/pages/DetailsCharacter.js";
-import CharacterProvider from "./services/provider/CharacterProvider.js";
+import JsonProvider from "./services/provider/JsonProvider.js";
 
 const routes = {
     '/' : CharacterAll,
@@ -23,7 +23,7 @@ const router = async () => {
     content.innerHTML = await page.render();
 
     if (page instanceof CharacterAll) {
-        let data = await CharacterProvider.fetchCharacters();
+        let data = await JsonProvider.fetchCharacters();
         page.renderBarreRecherche(data.charactersAll);
     }
 }
