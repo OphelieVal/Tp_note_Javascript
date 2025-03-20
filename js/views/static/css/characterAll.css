@@ -69,3 +69,23 @@ h2::after {
     margin: 0 1rem 1rem 1rem;
 }
 
+.barre_recherche {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recherche {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ff304f;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.res_recherche {
+    width: 80%;
+    border-collapse: collapse;
+}

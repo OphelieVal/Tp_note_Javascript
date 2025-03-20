@@ -9,15 +9,9 @@ export default class CharacterAll {
         let view = `
         <h2>LES PERSONNAGES</h2>
 
-        <div class="search-container">
-            <input type="text" id="search-box" class="search-box" placeholder="Rechercher..." />
-            <table class="search-results" id="results-table">
-                <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
+        <div class="barre_recherche">
+            <input type="text" id="recherche" class="recherche" placeholder="Rechercher..." />
+            <table class="res_recherche" id="results-table">
                 <tbody>
                 <!-- Les résultats de la recherche apparaîtront ici -->
                 </tbody>
