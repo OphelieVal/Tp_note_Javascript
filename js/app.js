@@ -6,7 +6,7 @@ import DetailsCharacter from "./views/pages/DetailsCharacter.js";
 const routes = {
     '/' : CharacterAll,
     '/characters' : CharacterAll,
-    '/characters/:id': DetailsCharacter,
+    "/character/:id": DetailsCharacter,
     '/favourite' : Favourite
 };
 
