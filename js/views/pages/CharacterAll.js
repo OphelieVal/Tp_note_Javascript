@@ -11,7 +11,6 @@ export default class CharacterAll {
           <div class="barre_recherche">
             <input type="text" id="recherche" class="recherche" placeholder="Rechercher..." />
           </div>
-        ${this.renderBarreRecherche(charactersAll)}
         <ul id="character_liste">
           ${charactersAll.map(character => {
               return `
@@ -24,6 +23,9 @@ export default class CharacterAll {
             }).join('')} 
         </ul>
       `;
+      document.getElementById('content').innerHTML = view;
+
+      this.renderBarreRecherche(charactersAll);
     return view;
     }
 
