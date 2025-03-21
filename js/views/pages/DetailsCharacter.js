@@ -20,7 +20,7 @@ export default class DetailsCharacter{
         let equipementsHTML = character.equipements.length > 0
         ? character.equipements.map(e => `
           <div class="equipement-card">
-            <img src="${e.image}" alt="${e.nom}" class="equipement-image">
+            <img src="${e.img}" alt="${e.nom}" class="equipement-image">
             <div class="equipement-info">
               <strong>${e.nom}</strong><br>
               <small>(${e.type})</small><br>
