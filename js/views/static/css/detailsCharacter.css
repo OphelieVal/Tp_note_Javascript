@@ -52,3 +52,27 @@ h3 {
     color: #ff304f;
 }
 
+.equipement-card {
+    width: 120px;
+    height: 160px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: inline-block;
+    vertical-align: top;
+    background-color: #f9f9f9;
+  }
+
+  .equipement-image {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 5px;
+  }
+
+  .equipement-info {
+    font-size: 0.85em;
+  }

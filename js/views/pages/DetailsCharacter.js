@@ -18,8 +18,18 @@ export default class DetailsCharacter{
         let [augForce, augAgilite, augDefense, augPouvoir] = character.evolution
         
         let equipementsHTML = character.equipements.length > 0
-            ? character.equipements.map(e => `<li><strong>${e.nom}</strong> (${e.type}, Bonus: ${e.bonus})</li>`).join("")
-            : "<li>Aucun équipement</li>";
+        ? character.equipements.map(e => `
+          <div class="equipement-card">
+            <img src="${e.image}" alt="${e.nom}" class="equipement-image">
+            <div class="equipement-info">
+              <strong>${e.nom}</strong><br>
+              <small>(${e.type})</small><br>
+              <span>Bonus: ${e.bonus}</span>
+            </div>
+          </div>
+        `).join("")
+        : "<p>Aucun équipement</p>";
+      
 
         let pouvoirsHTML = character.pouvoirs.length > 0
             ? character.pouvoirs.map(p => `<li><strong>${p.nom}</strong>: ${p.description}</li>`).join("")
