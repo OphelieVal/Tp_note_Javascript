@@ -28,7 +28,7 @@ export default class JsonProvider {
             let charactersAll = [];
 
             equipJSON.forEach(equip_data => {
-                let equip = new Equipement(equip_data.id, equip_data.nom, equip_data.type, equip_data.bonus);
+                let equip = new Equipement(equip_data.id, equip_data.nom, equip_data.type, equip_data.bonus, equip_data.img);
                 equipementsAll.push(equip);
             });
 

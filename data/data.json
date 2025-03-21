@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Sung Jin-Woo",
-      "img": "./../js/views/static/img/character/character1.jpeg",
+      "img": "./../js/views/static/img/characters/character1.jpeg",
       "race": "Humain",
       "classe": "Souverain de l'Ombre",
       "niveau": 150,
@@ -29,7 +29,7 @@
     {
       "id": 2,
       "name": "Cha Hae-In",
-      "img": "./../js/views/static/img/character/character2.jpeg",
+      "img": "./../js/views/static/img/characters/character2.jpeg",
       "race": "Humaine",
       "classe": "Épéiste",
       "niveau": 95,
@@ -55,7 +55,7 @@
     {
       "id": 3,
       "name": "Yoo Jin-Ho",
-      "img": "./../js/views/static/img/character/character3.jpeg",
+      "img": "./../js/views/static/img/characters/character3.jpeg",
       "race": "Humain",
       "classe": "Tank",
       "niveau": 40,
@@ -81,7 +81,7 @@
     {
       "id": 4,
       "name": "Sung Il-Hwan",
-      "img": "./../js/views/static/img/character/character4.jpeg",
+      "img": "./../js/views/static/img/characters/character4.jpeg",
       "race": "Humain",
       "classe": "Chasseur de Rang S",
       "niveau": 110,
@@ -107,7 +107,7 @@
     {
       "id": 5,
       "name": "Go Gun-Hee",
-      "img": "./../js/views/static/img/character/character5.jpeg",
+      "img": "./../js/views/static/img/characters/character5.jpeg",
       "race": "Humain",
       "classe": "Président des Chasseurs",
       "niveau": 130,
@@ -133,7 +133,7 @@
     {
       "id": 6,
       "name": "Baek Yoon-Ho",
-      "img": "./../js/views/static/img/character/character6.jpeg",
+      "img": "./../js/views/static/img/characters/character6.jpeg",
       "race": "Humain",
       "classe": "Berserker",
       "niveau": 80,
@@ -159,7 +159,7 @@
     {
       "id": 7,
       "name": "Choi Jong-In",
-      "img": "./../js/views/static/img/character/character7.jpeg",
+      "img": "./../js/views/static/img/characters/character7.jpeg",
       "race": "Humain",
       "classe": "Archimage",
       "niveau": 88,
@@ -185,7 +185,7 @@
     {
       "id": 8,
       "name": "Ma Dong-Wook",
-      "img": "./../js/views/static/img/character/character8.jpeg",
+      "img": "./../js/views/static/img/characters/character8.jpeg",
       "race": "Humain",
       "classe": "Tank",
       "niveau": 70,
@@ -211,7 +211,7 @@
     {
       "id": 9,
       "name": "Song Chi-Yul",
-      "img": "./../js/views/static/img/character/character9.jpeg",
+      "img": "./../js/views/static/img/characters/character9.jpeg",
       "race": "Humain",
       "classe": "Healer",
       "niveau": 30,
@@ -237,7 +237,7 @@
     {
       "id": 10,
       "name": "Park Hee-Jin",
-      "img": "./../js/views/static/img/character/character10.jpeg",
+      "img": "./../js/views/static/img/characters/character10.jpeg",
       "race": "Humaine",
       "classe": "Archer",
       "niveau": 65,
@@ -263,7 +263,7 @@
     {
       "id": 11,
       "name": "Kim Chul",
-      "img": "./../js/views/static/img/character/character11.jpeg",
+      "img": "./../js/views/static/img/characters/character11.jpeg",
       "race": "Humain",
       "classe": "Épéiste",
       "niveau": 55,
@@ -289,7 +289,7 @@
     {
       "id": 12,
       "name": "Thomas Andre",
-      "img": "./../js/views/static/img/character/character12.jpeg",
+      "img": "./../js/views/static/img/characters/character12.jpeg",
       "race": "Humain",
       "classe": "Tank",
       "niveau": 99,
@@ -315,7 +315,7 @@
     {
       "id": 13,
       "name": "Christopher Reed",
-      "img": "./../js/views/static/img/character/character13.jpeg",
+      "img": "./../js/views/static/img/characters/character13.jpeg",
       "race": "Humain",
       "classe": "Mage",
       "niveau": 100,
@@ -341,7 +341,7 @@
     {
       "id": 14,
       "name": "Liu Zhigang",
-      "img": "./../js/views/static/img/character/character14.jpeg",
+      "img": "./../js/views/static/img/characters/character14.jpeg",
       "race": "Humain",
       "classe": "Épéiste",
       "niveau": 85,
@@ -367,7 +367,7 @@
     {
       "id": 15,
       "name": "Goto Ryuji",
-      "img": "./../js/views/static/img/character/character15.jpeg",
+      "img": "./../js/views/static/img/characters/character15.jpeg",
       "race": "Humain",
       "classe": "Assassin",
       "niveau": 72,
@@ -393,7 +393,7 @@
     {
       "id": 16,
       "name": "Lennart Niermann",
-      "img": "./../js/views/static/img/character/character16.jpeg",
+      "img": "./../js/views/static/img/characters/character16.jpeg",
       "race": "Humain",
       "classe": "Archer",
       "niveau": 66,
@@ -419,7 +419,7 @@
     {
       "id": 17,
       "name": "Hwang Dong-Su",
-      "img": "./../js/views/static/img/character/character17.jpeg",
+      "img": "./../js/views/static/img/characters/character17.jpeg",
       "race": "Humain",
       "classe": "Mage",
       "niveau": 75,
@@ -445,7 +445,7 @@
     {
       "id": 18,
       "name": "Bellion",
-      "img": "./../js/views/static/img/character/character18.jpeg",
+      "img": "./../js/views/static/img/characters/character18.jpeg",
       "race": "Ombre",
       "classe": "Général",
       "niveau": 120,
@@ -471,7 +471,7 @@
     {
       "id": 19,
       "name": "Igris",
-      "img": "./../js/views/static/img/character/character19.jpeg",
+      "img": "./../js/views/static/img/characters/character19.jpeg",
       "race": "Ombre",
       "classe": "Chevalier",
       "niveau": 90,
@@ -497,7 +497,7 @@
     {
       "id": 20,
       "name": "Beru",
-      "img": "./../js/views/static/img/character/character20.jpeg",
+      "img": "./../js/views/static/img/characters/character20.jpeg",
       "race": "Insectoïde",
       "classe": "Souverain",
       "niveau": 60,
@@ -524,7 +524,7 @@
     {
       "id": 21,
       "name": "Woo Jin-chul",
-      "img": "./../js/views/static/img/character/character21.jpeg",
+      "img": "./../js/views/static/img/characters/character21.jpeg",
       "race": "Humain",
       "classe": "Chasseur rang A",
       "niveau": 60,
@@ -550,7 +550,7 @@
     {
       "id": 22,
       "name": "Kang Tae Shik",
-      "img": "./../js/views/static/img/character/character22.jpeg",
+      "img": "./../js/views/static/img/characters/character22.jpeg",
       "race": "Humain",
       "classe": "Chasseur Fantôme",
       "niveau": 58,
@@ -576,7 +576,7 @@
     {
       "id": 23,
       "name": "Min Byung Gyu",
-      "img": "./../js/views/static/img/character/character23.jpeg", 
+      "img": "./../js/views/static/img/characters/character23.jpeg", 
       "race": "Humain",
       "classe": "Healer",
       "niveau": 54,
@@ -602,7 +602,7 @@
     {
       "id": 24,
       "name": "Izawa Ippei",
-      "img": "./../js/views/static/img/character/character24.jpeg", 
+      "img": "./../js/views/static/img/characters/character24.jpeg", 
       "race": "Humain",
       "classe": "Chasseur Tempête",
       "niveau": 56,
@@ -628,7 +628,7 @@
     {
       "id": 25,
       "name": "Tawata Kanae",
-      "img": "./../js/views/static/img/character/character25.jpeg", 
+      "img": "./../js/views/static/img/characters/character25.jpeg", 
       "race": "Humain",
       "classe": "Chasseur de l'Inframonde",
       "niveau": 52,
@@ -654,7 +654,7 @@
     {
       "id": 26,
       "name": "L'Administrateur",
-      "img": "./../js/views/static/img/character/character26.jpeg",
+      "img": "./../js/views/static/img/characters/character26.jpeg",
       "race": "Inconnu",
       "classe": "Déchu",
       "niveau": 62,
@@ -680,7 +680,7 @@
     {
       "id": 27,
       "name": "Vulcan",
-      "img": "./../js/views/static/img/character/character27.jpeg",
+      "img": "./../js/views/static/img/characters/character27.jpeg",
       "race": "Demon",
       "classe": "Ogre",
       "niveau": 48,
@@ -706,7 +706,7 @@
     {
       "id": 28,
       "name": "Baruka",
-      "img": "./../js/views/static/img/character/character28.jpeg",
+      "img": "./../js/views/static/img/characters/character28.jpeg",
       "race": "Elfe des glaces",
       "classe": "Assassin",
       "niveau": 80,
@@ -736,7 +736,8 @@
       "id": 1,
       "nom": "Dagues du Roi Démon",
       "type": "Arme",
-      "bonus": { "attaque": 50, "agilite": 10 }
+      "bonus": { "attaque": 50, "agilite": 10 },
+      "img": "./../js/views/static/img/equipements/equipement1.jpeg"
     },
     {
       "id": 2,

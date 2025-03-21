@@ -15,21 +15,25 @@ export default class DetailsCharacter{
         }
 
         let [force, agilite, defense, pouvoir] = character.statistiques;
-        let [augForce, augAgilite, augDefense, augPouvoir] = character.evolution
+        let [augForce, augAgilite, augDefense, augPouvoir] = character.evolution;
         
         let equipementsHTML = character.equipements.length > 0
-        ? character.equipements.map(e => `
-          <div class="equipement-card">
-            <img src="${e.img}" alt="${e.nom}" class="equipement-image">
-            <div class="equipement-info">
-              <strong>${e.nom}</strong><br>
-              <small>(${e.type})</small><br>
-              <span>Bonus: ${e.bonus}</span>
+        ? character.equipements.map(e => {
+            let bonusTexte = "";
+
+            for (let cle in e.bonus) {
+              bonusTexte += `${cle}: ${e.bonus[cle]}<br>`;
+            }
+            `<div class="equipement-card">
+                <img src="${e.img}" alt="${e.nom}" class="equipement-image">
+                <div class="equipement-info">
+                  <strong>${e.nom}</strong><br>
+                  <small>(${e.type})</small><br>
+                  <span>Bonus: ${bonusTexte}</span>
+                </div>
             </div>
-          </div>
-        `).join("")
-        : "<p>Aucun équipement</p>";
-      
+        `}).join("")
+            : "<p>Aucun équipement</p>";
 
         let pouvoirsHTML = character.pouvoirs.length > 0
             ? character.pouvoirs.map(p => `<li><strong>${p.nom}</strong>: ${p.description}</li>`).join("")
