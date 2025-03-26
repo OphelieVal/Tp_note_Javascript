@@ -22,7 +22,7 @@ export default class DetailsCharacter{
             let bonusTexte = "";
 
             for (let cle in e.bonus) {
-              bonusTexte += `${cle}: ${e.bonus[cle]}<br>`;
+                bonusTexte += `${cle}: ${e.bonus[cle]}<br>`;
             }
             return `<div class="equipement-card" data-id="${e.id}">
                 <img src="${e.img}" alt="${e.nom}" class="equipement-image">
@@ -115,15 +115,13 @@ export default class DetailsCharacter{
         document.querySelectorAll(".equipement-card").forEach((card) => {
             card.addEventListener("click", async () => {
             let equipmentId = card.getAttribute("data-id");
-            window.location.hash = `#/equipement/${equipmentId}`;
+            window.location.hash = `#/equipements/${equipmentId}`;
             if (confirm("Voulez-vous supprimer cet équipement ?")) {
                 await JsonProvider.deleteEquipment(characterId, equipmentId);
                 card.remove();
                 }
             });
         });
-      
-    }
-        
+    } 
 } 
         
