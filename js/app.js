@@ -4,6 +4,7 @@ import Utils from "./services/outils/Utils.js";
 import DetailsCharacter from "./views/pages/DetailsCharacter.js";
 import JsonProvider from "./services/provider/JsonProvider.js";
 
+
 const routes = {
     '/' : CharacterAll,
     '/characters' : CharacterAll,
@@ -28,10 +29,12 @@ const router = async () => {
     }
 
     if (page instanceof DetailsCharacter) {
-        content.innerHTML = await page.render();
         await page.afterRender();
     }
+    
 }
+
 
 window.addEventListener('hashchange',router)
 window.addEventListener('load',router);
+

@@ -736,7 +736,8 @@
       "id": 1,
       "nom": "Dagues du Roi Démon",
       "type": "Arme",
-      "bonus": { "attaque": 50, "agilite": 10 }
+      "bonus": { "attaque": 50, "agilite": 10 },
+      "img": "./../js/views/static/img/character8.jpeg"
     },
     {
       "id": 2,

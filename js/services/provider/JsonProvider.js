@@ -28,7 +28,7 @@ export default class JsonProvider {
             let charactersAll = [];
 
             equipJSON.forEach(equip_data => {
-                let equip = new Equipement(equip_data.id, equip_data.nom, equip_data.type, equip_data.bonus);
+                let equip = new Equipement(equip_data.id, equip_data.nom, equip_data.type, equip_data.bonus, equip_data.img);
                 equipementsAll.push(equip);
             });
 
@@ -83,5 +83,12 @@ export default class JsonProvider {
     }; catch (err) {
         console.error('Error getting character details', err);
     };
+
+    static updateCharacter (nouveauCharacter) {
+        let characters = JSON.parse(localStorage.getItem("characters")) || [];
+        let index = characters.findIndex(c => c._id == nouveauCharacter.id);
+        characters[index] = nouveauCharacter;
+        localStorage.setItem("characters", JSON.stringify(characters));
+    }
 }
 

@@ -86,9 +86,10 @@ export class Character {
         this._equipements.append(val);
     }
 
-    supprimer_equipement(val){
-        this._equipements.remove(val);
+    supprimer_equipement(equipId) {
+        this._equipements = this._equipements.filter(e => e.id != equipId);
     }
+    
   
     get pouvoirs() {
         return this._pouvoirs;
