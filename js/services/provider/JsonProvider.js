@@ -83,5 +83,28 @@ export default class JsonProvider {
     }; catch (err) {
         console.error('Error getting character details', err);
     };
-}
+
+
+    static async deleteEquipment(characterId, equipmentId) {
+        const options = {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ characterId, equipmentId })
+        };
+
+        try {
+            const response = await fetch(`${ENDPOINT}equipements/${equipmentId}`,options);
+            if (!response.ok) {
+              throw new Error("Erreur HTTP " + response.status);
+            }
+            const result = await response.json();
+            return result;
+            } catch (error) {
+            console.error("Erreur dans deleteEquipment :", error);
+            return { success: false, message: error.message };
+        }
+    }
+};
 

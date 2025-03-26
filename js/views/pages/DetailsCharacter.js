@@ -16,7 +16,7 @@ export default class DetailsCharacter{
 
         let [force, agilite, defense, pouvoir] = character.statistiques;
         let [augForce, augAgilite, augDefense, augPouvoir] = character.evolution;
-        
+
         let equipementsHTML = character.equipements.length > 0
         ? character.equipements.map(e => {
             let bonusTexte = "";
@@ -24,7 +24,7 @@ export default class DetailsCharacter{
             for (let cle in e.bonus) {
               bonusTexte += `${cle}: ${e.bonus[cle]}<br>`;
             }
-            `<div class="equipement-card">
+            return `<div class="equipement-card" data-id="${e.id}">
                 <img src="${e.img}" alt="${e.nom}" class="equipement-image">
                 <div class="equipement-info">
                   <strong>${e.nom}</strong><br>
@@ -38,7 +38,6 @@ export default class DetailsCharacter{
         let pouvoirsHTML = character.pouvoirs.length > 0
             ? character.pouvoirs.map(p => `<li><strong>${p.nom}</strong>: ${p.description}</li>`).join("")
             : "<li>Aucun pouvoir</li>";
-
         
         let view = `
             <head>
@@ -98,6 +97,9 @@ export default class DetailsCharacter{
         };
 
     async afterRender() {
+        let request = Utils.parseRequestURL();
+        const characterId = request.id;
+
         document.getElementById("fav-btn").addEventListener("click", () => {
             alert("Ajouté aux favoris !");
         });
@@ -107,7 +109,20 @@ export default class DetailsCharacter{
                 let rating = event.target.getAttribute("data-value");
                 alert(`Vous avez noté ${rating} étoiles !`);
             });
+        }); 
+
+        // supprimer un élément
+        document.querySelectorAll(".equipement-card").forEach((card) => {
+            card.addEventListener("click", async () => {
+            let equipmentId = card.getAttribute("data-id");
+            window.location.hash = `#/equipement/${equipmentId}`;
+            if (confirm("Voulez-vous supprimer cet équipement ?")) {
+                await JsonProvider.deleteEquipment(characterId, equipmentId);
+                card.remove();
+                }
+            });
         });
+      
     }
         
 } 

@@ -21,6 +21,9 @@ const router = async () => {
     let page = routes[parsedURL] ? new routes[parsedURL] : new CharacterAll;
     console.log(page);
     content.innerHTML = await page.render();
+    if (typeof page.afterRender === "function") {
+        page.afterRender();
+    }
 
     if (page instanceof CharacterAll) {
         let data = await JsonProvider.fetchCharacters();
