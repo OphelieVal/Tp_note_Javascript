@@ -63,6 +63,7 @@ export default class JsonProvider {
                 charactersAll.push(carac);
             });
         
+            console.log(charactersAll);
             return {charactersAll, equipementsAll, pouvoirsAll};
         } catch (err) {
             console.log('Error getting documents',err);
@@ -85,18 +86,19 @@ export default class JsonProvider {
         console.error('Error getting character details', err);
     };
 
-    static async updateCharacter(characterId, updatedCharacter) {
+    static async updateCharacter(characterId, newNote) {
         const options = {
             method: 'PUT', 
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(updatedCharacter)
         };
-    
+        
         try {
             // Récupération du personnage existant pour le mettre à jour avec la nouvelle note
             let character = await JsonProvider.getCharacter(characterId);
+
+            character.note = newNote || character.note;
 
             // Si le personnage n'existe pas, lever une erreur
             if (!character) {
@@ -105,10 +107,11 @@ export default class JsonProvider {
 
             // Si nous avons un changement sur la note, par exemple, mettons à jour la note
             character.note = updatedCharacter.note || character.note;
-            
+
             const response = await fetch(`${ENDPOINT}characters/${characterId}`, options);
             if (response.ok) {
                 console.log(`Personnage ${characterId} mis à jour avec succès !`);
+                console.log(character)
                 return await response.json(); 
             } else {
                 throw new Error(`Erreur lors de la mise à jour du personnage ${characterId}`);

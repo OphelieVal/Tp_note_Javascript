@@ -108,30 +108,11 @@ export default class DetailsCharacter{
                     // Afficher un message d'alerte à l'utilisateur
                     alert(`Vous avez noté ${rating} étoiles !`);
             
+                    let request = Utils.parseRequestURL();
                     let characterId = request.id;
-                    let character = await JsonProvider.getCharacter(characterId);
-            
-                    // Mettre à jour la note dans l'objet du personnage
-                    character.note = parseInt(rating);
-            
-                    // Créer un objet de mise à jour avec les nouvelles informations
-                    const updatedCharacter = {
-                        ...character, // On garde toutes les autres propriétés du personnage
-                        note: character.note // Mise à jour de la note
-                    };
-            
+
                     // Mettre à jour le personnage dans la base de données (ou API)
-                    await JsonProvider.updateCharacter(characterId, updatedCharacter);
-            
-                    // Mettre à jour l'affichage des étoiles en fonction de la note
-                    document.querySelectorAll(".star").forEach(starElement => {
-                        starElement.classList.remove("filled"); // Réinitialiser toutes les étoiles
-            
-                        if (parseInt(starElement.getAttribute("data-value")) <= parseInt(rating)) {
-                            // Ajouter la classe "filled" aux étoiles jusqu'à la note sélectionnée
-                            starElement.classList.add("filled");
-                        }
-                    });
+                    await JsonProvider.updateCharacter(characterId, rating);
                 });
             });
         }
