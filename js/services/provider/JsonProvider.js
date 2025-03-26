@@ -69,7 +69,6 @@ export default class JsonProvider {
     };
 
     static getCharacter = async (id) => {
-        
         let { charactersAll, equipementsAll, pouvoirsAll} = await this.fetchCharacters();
 
         if (!charactersAll) {
@@ -83,5 +82,21 @@ export default class JsonProvider {
     }; catch (err) {
         console.error('Error getting character details', err);
     };
-}
 
+
+    static updateCharacter = async (id, rating) => {
+
+        try {
+            let character = await this.getCharacter(id);
+            console.log(character);
+            character.note = rating;
+            console.log(character)
+
+
+        }
+        catch (err) {
+            console.log('Error updating character',err);
+        }
+        
+    }
+}

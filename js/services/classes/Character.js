@@ -1,11 +1,12 @@
 export class Character {
-    constructor(id, name, img, race, classe, niveau, statistiques, experience, evolution, niveau_suivant, equipements, pouvoirs) {
+    constructor(id, name, img, race, classe, niveau, note, statistiques, experience, evolution, niveau_suivant, equipements, pouvoirs) {
       this._id = id;
       this._name = name;
       this._img = img; // str du chemin
       this._race = race;
       this._classe = classe;
       this._niveau = niveau;
+      this._note = note;
       this._statistiques = statistiques; // tableau d'int de la forme [force, agilite, defense, pouvoir]
       this._experience = experience;
       this._evolution = evolution; // tableau d'int de la forme [force, agilite, defense, pouvoir]
@@ -40,6 +41,14 @@ export class Character {
 
     set niveau(val) {
         this._niveau = val;
+    }
+
+    get note() {
+        return this._note;
+    }
+
+    set note(val) {
+        this._note = val;
     }
   
     get statistiques() {
