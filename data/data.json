@@ -7,6 +7,7 @@
       "race": "Humain",
       "classe": "Souverain de l'Ombre",
       "niveau": 150,
+      "note" : 5,
       "statistiques": {
         "force": 999,
         "agilite": 999,
@@ -33,6 +34,7 @@
       "race": "Humaine",
       "classe": "Épéiste",
       "niveau": 95,
+      "note" : 5,
       "statistiques": {
         "force": 300,
         "agilite": 400,
@@ -59,6 +61,7 @@
       "race": "Humain",
       "classe": "Tank",
       "niveau": 40,
+      "note" : 3,
       "statistiques": {
         "force": 120,
         "agilite": 80,
@@ -85,6 +88,7 @@
       "race": "Humain",
       "classe": "Chasseur de Rang S",
       "niveau": 110,
+      "note" : 5,
       "statistiques": {
         "force": 500,
         "agilite": 600,
@@ -111,6 +115,7 @@
       "race": "Humain",
       "classe": "Président des Chasseurs",
       "niveau": 130,
+      "note" : 5,
       "statistiques": {
         "force": 600,
         "agilite": 500,
@@ -137,6 +142,7 @@
       "race": "Humain",
       "classe": "Berserker",
       "niveau": 80,
+      "note" : 4,
       "statistiques": {
         "force": 350,
         "agilite": 250,
@@ -163,6 +169,7 @@
       "race": "Humain",
       "classe": "Archimage",
       "niveau": 88,
+      "note" : 4,
       "statistiques": {
         "force": 200,
         "agilite": 200,
@@ -189,6 +196,7 @@
       "race": "Humain",
       "classe": "Tank",
       "niveau": 70,
+      "note" : 3,
       "statistiques": {
         "force": 220,
         "agilite": 100,
@@ -215,6 +223,7 @@
       "race": "Humain",
       "classe": "Healer",
       "niveau": 30,
+      "note" : 4,
       "statistiques": {
         "force": 80,
         "agilite": 90,
@@ -241,6 +250,7 @@
       "race": "Humaine",
       "classe": "Archer",
       "niveau": 65,
+      "note" : 3,
       "statistiques": {
         "force": 150,
         "agilite": 300,
@@ -267,6 +277,7 @@
       "race": "Humain",
       "classe": "Épéiste",
       "niveau": 55,
+      "note" : 1,
       "statistiques": {
         "force": 240,
         "agilite": 220,
@@ -293,6 +304,7 @@
       "race": "Humain",
       "classe": "Tank",
       "niveau": 99,
+      "note" : 5,
       "statistiques": {
         "force": 600,
         "agilite": 350,
@@ -319,6 +331,7 @@
       "race": "Humain",
       "classe": "Mage",
       "niveau": 100,
+      "note" : 4,
       "statistiques": {
         "force": 200,
         "agilite": 200,
@@ -345,6 +358,7 @@
       "race": "Humain",
       "classe": "Épéiste",
       "niveau": 85,
+      "note" : 4,
       "statistiques": {
         "force": 400,
         "agilite": 350,
@@ -371,6 +385,7 @@
       "race": "Humain",
       "classe": "Assassin",
       "niveau": 72,
+      "note" : 3,
       "statistiques": {
         "force": 280,
         "agilite": 420,
@@ -397,6 +412,7 @@
       "race": "Humain",
       "classe": "Archer",
       "niveau": 66,
+      "note" : 3,
       "statistiques": {
         "force": 160,
         "agilite": 320,
@@ -423,6 +439,7 @@
       "race": "Humain",
       "classe": "Mage",
       "niveau": 75,
+      "note" : 2,
       "statistiques": {
         "force": 200,
         "agilite": 200,
@@ -449,6 +466,7 @@
       "race": "Ombre",
       "classe": "Général",
       "niveau": 120,
+      "note" : 5,
       "statistiques": {
         "force": 600,
         "agilite": 500,
@@ -475,6 +493,7 @@
       "race": "Ombre",
       "classe": "Chevalier",
       "niveau": 90,
+      "note" : 5,
       "statistiques": {
         "force": 500,
         "agilite": 350,
@@ -501,6 +520,7 @@
       "race": "Insectoïde",
       "classe": "Souverain",
       "niveau": 60,
+      "note" : 5,
       "statistiques": {
         "force": 120,
         "agilite": 90,
@@ -528,6 +548,7 @@
       "race": "Humain",
       "classe": "Chasseur rang A",
       "niveau": 60,
+      "note" : 4,
       "statistiques": {
         "force": 280,
         "agilite": 230,
@@ -554,6 +575,7 @@
       "race": "Humain",
       "classe": "Chasseur Fantôme",
       "niveau": 58,
+      "note" : 1,
       "statistiques": {
         "force": 250,
         "agilite": 190,
@@ -580,6 +602,7 @@
       "race": "Humain",
       "classe": "Healer",
       "niveau": 54,
+      "note" : 4,
       "statistiques": {
         "force": 230,
         "agilite": 210,
@@ -606,6 +629,7 @@
       "race": "Humain",
       "classe": "Chasseur Tempête",
       "niveau": 56,
+      "note" : 3,
       "statistiques": {
         "force": 240,
         "agilite": 230,
@@ -632,6 +656,7 @@
       "race": "Humain",
       "classe": "Chasseur de l'Inframonde",
       "niveau": 52,
+      "note" : 3,
       "statistiques": {
         "force": 220,
         "agilite": 180,
@@ -653,11 +678,12 @@
     },
     {
       "id": 26,
-      "name": "L'Administrateur",
+      "name": "L'Architecte",
       "img": "./../js/views/static/img/character26.jpeg",
       "race": "Inconnu",
       "classe": "Déchu",
       "niveau": 62,
+      "note" : 4,
       "statistiques": {
         "force": 300,
         "agilite": 210,
@@ -684,6 +710,7 @@
       "race": "Demon",
       "classe": "Ogre",
       "niveau": 48,
+      "note" : 4,
       "statistiques": {
         "force": 150,
         "agilite": 180,
@@ -710,6 +737,7 @@
       "race": "Elfe des glaces",
       "classe": "Assassin",
       "niveau": 80,
+      "note" : 3,
       "statistiques": {
         "force": 500,
         "agilite": 220,

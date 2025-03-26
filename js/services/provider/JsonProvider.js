@@ -53,6 +53,7 @@ export default class JsonProvider {
                     character_data.race,
                     character_data.classe,
                     character_data.niveau,
+                    character_data.note,
                     [character_data.statistiques.force, character_data.statistiques.agilite, character_data.statistiques.defense, character_data.statistiques.pouvoir],
                     character_data.experience,
                     [character_data.evolution.augmentation.force, character_data.evolution.augmentation.agilite, character_data.evolution.augmentation.defense, character_data.evolution.augmentation.pouvoir],
@@ -83,5 +84,41 @@ export default class JsonProvider {
     }; catch (err) {
         console.error('Error getting character details', err);
     };
+
+    static async updateCharacter(characterId, updatedCharacter) {
+        const options = {
+            method: 'PUT', 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedCharacter)
+        };
+    
+        try {
+            // Récupération du personnage existant pour le mettre à jour avec la nouvelle note
+            let character = await JsonProvider.getCharacter(characterId);
+
+            // Si le personnage n'existe pas, lever une erreur
+            if (!character) {
+                throw new Error(`Personnage ${characterId} non trouvé`);
+            }
+
+            // Si nous avons un changement sur la note, par exemple, mettons à jour la note
+            character.note = updatedCharacter.note || character.note;
+            
+            const response = await fetch(`${ENDPOINT}characters/${characterId}`, options);
+            if (response.ok) {
+                console.log(`Personnage ${characterId} mis à jour avec succès !`);
+                return await response.json(); 
+            } else {
+                throw new Error(`Erreur lors de la mise à jour du personnage ${characterId}`);
+            }
+        } catch (err) {
+            console.error('Error updating character', err);
+        }
+    }
+    
+
 }
+
 
