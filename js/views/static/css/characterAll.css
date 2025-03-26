@@ -2,13 +2,13 @@
 header {
     padding: 15px 0;
     display: flex;
-    justify-content: center; /* Centrer tous les éléments du header */
+    justify-content: center; 
     align-items: center;
     width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding-left: 30px;
     padding-right: 30px;
-    position: relative; /* Pour mieux contrôler le placement du titre */
+    position: relative; 
 }
 
 header h1 {

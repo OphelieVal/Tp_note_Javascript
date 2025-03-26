@@ -1,4 +1,3 @@
-// Listing des personnages du data.json
 import JsonProvider from "../../services/provider/JsonProvider.js";
 
 

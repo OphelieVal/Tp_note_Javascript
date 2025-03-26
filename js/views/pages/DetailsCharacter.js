@@ -1,7 +1,7 @@
-// Détail d'un personnage avec possibilité de notation et de mise en favoris
 import JsonProvider from "../../services/provider/JsonProvider.js";
 import Utils from "../../services/outils/Utils.js"; 
 import { Character } from "../../services/classes/Character.js";
+import { Favoris } from "../../services/classes/Favoris.js";
 
 export default class DetailsCharacter{
     async render() {
@@ -65,7 +65,7 @@ export default class DetailsCharacter{
                     <li><strong>Défense :</strong> +${augDefense}</li>
                     <li><strong>Pouvoir :</strong> +${augPouvoir}</li>
                 </ul>
-
+ 
                 <hr />
 
                 <h3>Équipements</h3>
@@ -76,25 +76,40 @@ export default class DetailsCharacter{
                 <h3>Pouvoirs</h3>
                 <ul>${pouvoirsHTML}</ul>
 
-                <button id="fav-btn">Ajouter aux favoris</button>
+                <button id="fav-btn" data-id="${character.id}">Ajouter aux favoris</button>
             </section>
         `;
         return view;
         
         };
 
-    async afterRender() {
-        document.getElementById("fav-btn").addEventListener("click", () => {
-            alert("Ajouté aux favoris !");
-        });
-
-        document.querySelectorAll(".star").forEach(star => {
-            star.addEventListener("click", (event) => {
-                let rating = event.target.getAttribute("data-value");
-                alert(`Vous avez noté ${rating} étoiles !`);
+        async afterRender() {
+            let btnFavori = document.getElementById("fav-btn");
+            let characterId = btnFavori.getAttribute("data-id");
+        
+            function majBoutonFavori() {
+                btnFavori.textContent = Favoris.estFavori(characterId) ? "Retirer des favoris" : "Ajouter aux favoris";
+            }
+        
+            majBoutonFavori();
+        
+            btnFavori.addEventListener("click", () => {
+                if (Favoris.estFavori(characterId)) {
+                    Favoris.retirerFavori(characterId);
+                    window.location.hash = "#/Favourite";
+                } else {
+                    Favoris.ajouterFavori(characterId);
+                }
+                majBoutonFavori();
             });
-        });
-    }
+        
+            document.querySelectorAll(".star").forEach(star => {
+                star.addEventListener("click", (event) => {
+                    let rating = event.target.getAttribute("data-value");
+                    alert(`Vous avez noté ${rating} étoiles !`);
+                });
+            });
+        }
         
 } 
         
