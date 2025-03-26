@@ -29,6 +29,11 @@ const router = async () => {
         let data = await JsonProvider.fetchCharacters();
         page.renderBarreRecherche(data.charactersAll);
     }
+
+    if (page instanceof DetailsCharacter) {
+        content.innerHTML = await page.render();
+        await page.afterRender();
+    }
 }
 
 window.addEventListener('hashchange',router)
