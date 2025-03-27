@@ -2,6 +2,7 @@ import JsonProvider from "../../services/provider/JsonProvider.js";
 import Utils from "../../services/outils/Utils.js"; 
 import { Character } from "../../services/classes/Character.js";
 import { Favoris } from "../../services/classes/Favoris.js";
+import { Notation } from "../../services/classes/Notation.js";
 
 export default class DetailsCharacter{
     async render() {
@@ -25,6 +26,9 @@ export default class DetailsCharacter{
             ? character.pouvoirs.map(p => `<li><strong>${p.nom}</strong>: ${p.description}</li>`).join("")
             : "<li>Aucun pouvoir</li>";
 
+        let currentRating = Notation.getNote(characterId);
+
+        console.log(currentRating);
         
         let view = `
             <head>
@@ -35,11 +39,9 @@ export default class DetailsCharacter{
                 <img src="${character.img}" alt="Image de ${character.name}">
                 <!-- Système de notation -->
                 <div id="rating">
-                    <span class="star" data-value="1">⭐</span>
-                    <span class="star" data-value="2">⭐</span>
-                    <span class="star" data-value="3">⭐</span>
-                    <span class="star" data-value="4">⭐</span>
-                    <span class="star" data-value="5">⭐</span>
+                    ${[1, 2, 3, 4, 5].map(i => 
+                        `<span class="star ${i <= currentRating ? 'filled' : ''}" data-value="${i}">★</span>`
+                    ).join('')}
                 </div>
                 <p><strong>Race :</strong> ${character.race}</p>
                 <p><strong>Classe :</strong> ${character.classe}</p>
@@ -104,8 +106,20 @@ export default class DetailsCharacter{
             });
         
             document.querySelectorAll(".star").forEach(star => {
-                star.addEventListener("click", (event) => {
+                star.addEventListener("click", async (event) => {
                     let rating = event.target.getAttribute("data-value");
+
+                    //await JsonProvider.updateCharacter(characterId, rating);
+
+                    Notation.ajouterNote(characterId, rating);
+
+                    document.querySelectorAll(".star").forEach(starElement => {
+                        starElement.classList.remove("filled");
+                        if (parseInt(starElement.getAttribute("data-value")) <= parseInt(rating)) {
+                            starElement.classList.add("filled");
+                        }
+                    });
+
                     alert(`Vous avez noté ${rating} étoiles !`);
                 });
             });

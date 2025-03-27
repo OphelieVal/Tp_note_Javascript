@@ -53,6 +53,7 @@ export default class JsonProvider {
                     character_data.race,
                     character_data.classe,
                     character_data.niveau,
+                    character_data.note,
                     [character_data.statistiques.force, character_data.statistiques.agilite, character_data.statistiques.defense, character_data.statistiques.pouvoir],
                     character_data.experience,
                     [character_data.evolution.augmentation.force, character_data.evolution.augmentation.agilite, character_data.evolution.augmentation.defense, character_data.evolution.augmentation.pouvoir],
@@ -61,6 +62,7 @@ export default class JsonProvider {
                     pouvoirs_obj);
                 charactersAll.push(carac);
             });
+            console.log(charactersAll);
         
             return {charactersAll, equipementsAll, pouvoirsAll};
         } catch (err) {
@@ -85,14 +87,11 @@ export default class JsonProvider {
 
 
     static updateCharacter = async (id, rating) => {
-
         try {
             let character = await this.getCharacter(id);
             console.log(character);
-            character.note = rating;
+            character.note = parseInt(rating);
             console.log(character)
-
-
         }
         catch (err) {
             console.log('Error updating character',err);

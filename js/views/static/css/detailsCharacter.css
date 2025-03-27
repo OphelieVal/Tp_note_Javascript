@@ -52,3 +52,11 @@ h3 {
     color: #ff304f;
 }
 
+.star {
+    font-size: 2rem;
+    cursor: pointer; 
+}
+
+.star.filled {
+    color: gold; 
+}
