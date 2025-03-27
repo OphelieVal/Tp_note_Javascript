@@ -13,7 +13,6 @@ export default class JsonProvider {
                 'Content-Type' : 'application/json'
             }
         };
-        try {
             const responseChars = await fetch(`${ENDPOINT}characters`,options);
             const charsJSON = await responseChars.json();
 
@@ -61,34 +60,18 @@ export default class JsonProvider {
                     pouvoirs_obj);
                 charactersAll.push(carac);
             });
+
+            localStorage.setItem("charactersAll", JSON.stringify(charactersAll));
+            localStorage.setItem("equipementsAll", JSON.stringify(equipementsAll));
+            localStorage.setItem("pouvoirsAll", JSON.stringify(pouvoirsAll));
         
             return {charactersAll, equipementsAll, pouvoirsAll};
-        } catch (err) {
-            console.log('Error getting documents',err);
-        }
     };
 
-    static getCharacter = async (id) => {
-        
-        let { charactersAll, equipementsAll, pouvoirsAll} = await this.fetchCharacters();
-
-        if (!charactersAll) {
-            throw new Error("charactersAll est indéfini !");
-        }
-
-        let character = charactersAll.find(c => Number(c.id) === Number(id));
-
-        return character;
-            
-    }; catch (err) {
-        console.error('Error getting character details', err);
-    };
-
-    static updateCharacter (nouveauCharacter) {
-        let characters = JSON.parse(localStorage.getItem("characters")) || [];
-        let index = characters.findIndex(c => c._id == nouveauCharacter.id);
-        characters[index] = nouveauCharacter;
-        localStorage.setItem("characters", JSON.stringify(characters));
+    static getCharacters = async () =>{
+        const {charactersAll, equipementsAll, pouvoirsAll} = await this.fetchCharacters();
+        return charactersAll;
     }
+
 }
 

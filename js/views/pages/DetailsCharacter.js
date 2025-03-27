@@ -9,17 +9,21 @@ export default class DetailsCharacter{
         let request = Utils.parseRequestURL();
         let characterId = request.id;
         console.log("ID du personnage :", characterId);
-        let character = await JsonProvider.getCharacter(characterId);
+        let characters = await JsonProvider.getCharacters();
+        let character = characters.find(c => c._id == characterId);
         console.log("Personnage récupéré :", character);
         if (!character) {
             return `<h2>Personnage non trouvé</h2>`;
         }
 
-        let [force, agilite, defense, pouvoir] = character.statistiques;
-        let [augForce, augAgilite, augDefense, augPouvoir] = character.evolution
+        this.character = character;
+
+
+        let [force, agilite, defense, pouvoir] = character._statistiques;
+        let [augForce, augAgilite, augDefense, augPouvoir] = character._evolution
         
-        let equipementsHTML = character.equipements.length > 0
-            ? character.equipements.map(e => `
+        let equipementsHTML = character._equipements.length > 0
+            ? character._equipements.map(e => `
                 <div class="equipement-card" data-id="${e.id}">
                     <img src="${e.img}" alt="${e.nom}" class="equipement-img">
                     <span class="remove-equipement" data-id="${e.id}">❌</span>
@@ -28,17 +32,17 @@ export default class DetailsCharacter{
             `).join("")
             : "<p>Aucun équipement</p>";
 
-        let pouvoirsHTML = character.pouvoirs.length > 0
-            ? character.pouvoirs.map(p => `<li><strong>${p.nom}</strong>: ${p.description}</li>`).join("")
+        let pouvoirsHTML = character._pouvoirs.length > 0
+            ? character._pouvoirs.map(p => `<li><strong>${p.nom}</strong>: ${p.description}</li>`).join("")
             : "<li>Aucun pouvoir</li>";
         
         let view = `
             <head>
                 <link rel="stylesheet" href="js/views/static/css/detailsCharacter.css">
             </head>
-            <h2>${character.name}</h2>
+            <h2>${character._name}</h2>
             <section id="character">
-                <img src="${character.img}" alt="Image de ${character.name}">
+                <img src="${character._img}" alt="Image de ${character._name}">
                 <!-- Système de notation -->
                 <div id="rating">
                     <span class="star" data-value="1">⭐</span>
@@ -47,9 +51,9 @@ export default class DetailsCharacter{
                     <span class="star" data-value="4">⭐</span>
                     <span class="star" data-value="5">⭐</span>
                 </div>
-                <p><strong>Race :</strong> ${character.race}</p>
-                <p><strong>Classe :</strong> ${character.classe}</p>
-                <p><strong>Niveau :</strong> ${character.niveau}</p>
+                <p><strong>Race :</strong> ${character._race}</p>
+                <p><strong>Classe :</strong> ${character._classe}</p>
+                <p><strong>Niveau :</strong> ${character._niveau}</p>
 
                 <h3>Statistiques</h3>
                 <ul>
@@ -62,8 +66,8 @@ export default class DetailsCharacter{
                 <hr />
 
                 <h3>Expérience et Évolution</h3>
-                <p><strong>Expérience :</strong> ${character.experience}</p>
-                <p><strong>Niveau suivant :</strong> ${character.niveau_suivant}</p>
+                <p><strong>Expérience :</strong> ${character._experience}</p>
+                <p><strong>Niveau suivant :</strong> ${character._niveau_suivant}</p>
                 <p><strong>Augmentations :</strong></p>
                 <ul>
                     <li><strong>Force :</strong> +${augForce}</li>
@@ -100,13 +104,10 @@ export default class DetailsCharacter{
         };
 
         async afterRender() {
-            let request = Utils.parseRequestURL();
-            let characId = request.id;
-            let character = await JsonProvider.getCharacter(characId);
-
             let btnFavori = document.getElementById("fav-btn");
             let characterId = btnFavori.getAttribute("data-id");
-        
+
+
             function majBoutonFavori() {
                 btnFavori.textContent = Favoris.estFavori(characterId) ? "Retirer des favoris" : "Ajouter aux favoris";
             }
@@ -133,13 +134,12 @@ export default class DetailsCharacter{
             document.querySelectorAll(".remove-equipement").forEach(cross => {
                 cross.addEventListener("click", async (event) => {
                     let equipId = event.target.getAttribute("data-id");
-                    character.supprimer_equipement(equipId);
-                    JsonProvider.updateCharacter(character);
+                    Character.supprimerEquipement(character.id, equipId);
                     const card = event.target.closest(".equipement-card");
                     if (card) card.remove();
 
                     const container = document.querySelector(".equipement-container");
-                    if (this.character.equipements.length === 0 && container) {
+                    if (this.character._equipements.length === 0 && container) {
                         container.innerHTML = "<p>Aucun équipement</p>";
                     }
                     alert("Équipement retiré !");
