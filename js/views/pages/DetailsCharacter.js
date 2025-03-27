@@ -3,6 +3,7 @@ import Utils from "../../services/outils/Utils.js";
 import { Character } from "../../services/classes/Character.js";
 import { Favoris } from "../../services/classes/Favoris.js";
 import { Notation } from "../../services/classes/Notation.js";
+import Swal from "../../../node_modules/sweetalert2/src/sweetalert2.js";
 
 export default class DetailsCharacter{
     async render() {
@@ -31,8 +32,10 @@ export default class DetailsCharacter{
         console.log(currentRating);
         
         let view = `
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <head>
                 <link rel="stylesheet" href="js/views/static/css/detailsCharacter.css">
+                <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
             </head>
             <h2>${character.name}</h2>
             <section id="character">
@@ -109,8 +112,6 @@ export default class DetailsCharacter{
                 star.addEventListener("click", async (event) => {
                     let rating = event.target.getAttribute("data-value");
 
-                    //await JsonProvider.updateCharacter(characterId, rating);
-
                     Notation.ajouterNote(characterId, rating);
 
                     document.querySelectorAll(".star").forEach(starElement => {
@@ -120,7 +121,14 @@ export default class DetailsCharacter{
                         }
                     });
 
-                    alert(`Vous avez noté ${rating} étoiles !`);
+
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `Vous avez noté ${rating} étoiles`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
                 });
             });
         }

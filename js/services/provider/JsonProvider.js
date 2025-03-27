@@ -85,17 +85,4 @@ export default class JsonProvider {
         console.error('Error getting character details', err);
     };
 
-
-    static updateCharacter = async (id, rating) => {
-        try {
-            let character = await this.getCharacter(id);
-            console.log(character);
-            character.note = parseInt(rating);
-            console.log(character)
-        }
-        catch (err) {
-            console.log('Error updating character',err);
-        }
-        
-    }
 }
