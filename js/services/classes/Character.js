@@ -87,7 +87,7 @@ export class Character {
     }
 
     supprimer_equipement(val){
-        this._equipements.remove(val);
+        this._equipements.slice(val);
     }
   
     get pouvoirs() {
@@ -101,5 +101,46 @@ export class Character {
     supprimer_pouvoir(val){
         this._equipements.remove(val);
     }
-}
+
+
+
+
+
+
+
+
+
+ 
+        supprimer_equipement(equipmentId) {
+            this._equipements = this._equipements.filter(e => e._id !== equipmentId);
+            this.saveToLocalStorage();
+        }
+    
+        saveToLocalStorage() {
+            let characters = JSON.parse(localStorage.getItem("characters")) || [];
+            // Trouver l'index du personnage courant
+            const index = characters.findIndex(c => c._id === this._id);
+            
+            if (index !== -1) {
+                // Mettre à jour le personnage dans le tableau
+                characters[index] = {
+                    _id: this._id,
+                    _name: this._name,
+                    _img: this._img,
+                    _race: this._race,
+                    _classe: this._classe,
+                    _niveau: this._niveau,
+                    _statistiques: this._statistiques,
+                    _experience: this._experience,
+                    _evolution: this._evolution,
+                    _niveau_suivant: this._niveau_suivant,
+                    _equipements: this._equipements,
+                    _pouvoirs: this._pouvoirs
+                };
+                localStorage.setItem("characters", JSON.stringify(characters));
+            }
+        }
+
+    }
+        
   

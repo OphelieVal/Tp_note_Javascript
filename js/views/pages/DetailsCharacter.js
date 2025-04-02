@@ -17,23 +17,19 @@ export default class DetailsCharacter{
         let [force, agilite, defense, pouvoir] = character.statistiques;
         let [augForce, augAgilite, augDefense, augPouvoir] = character.evolution;
 
-        let equipementsHTML = character.equipements.length > 0
-        ? character.equipements.map(e => {
-            let bonusTexte = "";
-
-            for (let cle in e.bonus) {
-                bonusTexte += `${cle}: ${e.bonus[cle]}<br>`;
-            }
-            return `<div class="equipement-card" data-id="${e.id}">
-                <img src="${e.img}" alt="${e.nom}" class="equipement-image">
-                <div class="equipement-info">
-                  <strong>${e.nom}</strong><br>
-                  <small>(${e.type})</small><br>
-                  <span>Bonus: ${bonusTexte}</span>
-                </div>
-            </div>
-        `}).join("")
-            : "<p>Aucun équipement</p>";
+        let equipementsHTML = (character.equipements && character.equipements.length > 0)
+        ? character.equipements
+            .filter(e => e !== undefined)
+            .map(e => {
+              return `<div class="equipement-card" data-id="${e.id}">
+                        <img src="${e.img}" alt="${e.nom}" class="equipement-image">
+                        <div class="equipement-info">
+                          <strong>${e.nom}</strong>
+                        </div>
+                      </div>`;
+            }).join("")
+        : "<p>Aucun équipement</p>";
+      
 
         let pouvoirsHTML = character.pouvoirs.length > 0
             ? character.pouvoirs.map(p => `<li><strong>${p.nom}</strong>: ${p.description}</li>`).join("")
@@ -91,6 +87,17 @@ export default class DetailsCharacter{
 
                 <button id="fav-btn" data-id="${character.id}">Ajouter aux favoris</button>
             </section>
+
+            
+            <!-- Popup caché par défaut -->
+            <div id="popup-overlay" class="popup-overlay" style="display: none;">
+                <div class="popup-content">
+                    <h2 id="popup-title"></h2>
+                    <p id="popup-details"></p>
+                    <button id="popup-delete-btn">Supprimer</button>
+                    <button id="popup-close-btn">Fermer</button>
+                </div>
+            </div>
         `;
         return view;
         
@@ -135,18 +142,58 @@ export default class DetailsCharacter{
             });
         });
 
-                // supprimer un élément
-                document.querySelectorAll(".equipement-card").forEach((card) => {
-                    card.addEventListener("click", async () => {
-                    let equipmentId = card.getAttribute("data-id");
-                    window.location.hash = `#/equipements/${equipmentId}`;
-                    if (confirm("Voulez-vous supprimer cet équipement ?")) {
-                        await JsonProvider.deleteEquipment(characterId, equipmentId);
-                        card.remove();
-                        }
-                    });
-                });
-    }
-        
-} 
+        let storedCharacters = JSON.parse(localStorage.getItem("characters")) || [];
+        console.log(storedCharacters)
+        let character = await JsonProvider.getCharacter(characterId);
+    
+        console.log(character)
+
+         let popupOverlay = document.getElementById("popup-overlay");
+         let popupTitle = document.getElementById("popup-title");
+         let popupDetails = document.getElementById("popup-details");
+         let popupDeleteBtn = document.getElementById("popup-delete-btn");
+         let popupCloseBtn = document.getElementById("popup-close-btn");
+ 
+         console.log("Popup overlay :", popupOverlay);
+         
+         function closePopup() {
+             popupOverlay.style.display = "none";
+         }
+         popupCloseBtn.addEventListener("click", closePopup);
+ 
+         document.querySelectorAll(".equipement-card").forEach((card) => {
+             card.addEventListener("click", async () => {
+                console.log("Carte cliquée", card);
+                 let equipmentId = card.getAttribute("data-id");
+                 let equipment = character.equipements.find(e => e.id === equipmentId);
+                 console.log(equipment)
+                 if (!equipment) return;
+ 
+                 popupTitle.textContent = equipment.nom;
+                 
+                 let bonusText = "";
+                 for (let cle in equipment.bonus) {
+                     bonusText += `${cle}: ${equipment.bonus[cle]}<br>`;
+                 }
+                 popupDetails.innerHTML = `
+                     <strong>Type :</strong> ${equipment.type}<br>
+                     <strong>Bonus :</strong><br>
+                     ${bonusText}
+                 `;
+ 
+                 popupOverlay.style.display = "block";
+ 
+                 popupDeleteBtn.onclick = async () => {
+                     if (confirm(`Voulez-vous supprimer l'équipement "${equipment.nom}" ?`)) {
+                        character.supprimer_equipement(equipmentId);
+                         card.remove();
+                         closePopup();
+                         character = await JsonProvider.getCharacter(characterId);
+
+                     }
+                 };
+             });
+         });
+     }
+ }
         

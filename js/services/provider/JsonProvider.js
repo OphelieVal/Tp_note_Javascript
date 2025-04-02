@@ -45,7 +45,6 @@ export default class JsonProvider {
                 let pouvoirs_obj = character_data.pouvoirs_ids.map(id => {
                     return pouvoirsAll.find(p => Number(p.id) === Number(id));
                 });
-
                 let carac = new Character(
                     character_data.id,
                     character_data.name,
@@ -60,51 +59,49 @@ export default class JsonProvider {
                     equipements_obj,
                     pouvoirs_obj);
                 charactersAll.push(carac);
+           
             });
-        
             return {charactersAll, equipementsAll, pouvoirsAll};
         } catch (err) {
             console.log('Error getting documents',err);
         }
     };
-
+ 
     static getCharacter = async (id) => {
-        
-        let { charactersAll, equipementsAll, pouvoirsAll} = await this.fetchCharacters();
-
-        if (!charactersAll) {
-            throw new Error("charactersAll est indéfini !");
-        }
-
-        let character = charactersAll.find(c => Number(c.id) === Number(id));
-
-        return character;
-            
-    }; catch (err) {
-        console.error('Error getting character details', err);
-    };
-
-
-    static async deleteEquipment(characterId, equipmentId) {
-        const options = {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ characterId, equipmentId })
-        };
-
-        try {
-            const response = await fetch(`${ENDPOINT}equipements/${equipmentId}`,options);
-            if (!response.ok) {
-              throw new Error("Erreur HTTP " + response.status);
+        let stored = localStorage.getItem("characters");
+        if (stored) {
+          let characters = JSON.parse(stored);
+          let characterData = characters.find(c => Number(c._id) === Number(id));
+          if (characterData) {
+            let equipements = characterData._equipements.map(e =>
+              new Equipement(e._id, e._nom, e._type, e._bonus, e._img)
+            );
+            let pouvoirs = characterData._pouvoirs.map(p =>
+              new Pouvoir(p._id, p._nom, p._description)
+            );
+            let character = new Character(
+              characterData._id,
+              characterData._name,
+              characterData._img,
+              characterData._race,
+              characterData._classe,
+              characterData._niveau,
+              characterData._statistiques,
+              characterData._experience,
+              characterData._evolution,
+              characterData._niveau_suivant,
+              equipements,
+              pouvoirs
+            )
+            if (character) {
+                let storedChars = JSON.parse(localStorage.getItem("characters")) || [];
+                storedChars = storedChars.filter(c => c && Number(c._id) !== Number(id));
+                storedChars.push(character);
+                localStorage.setItem("characters", JSON.stringify(storedChars));
             }
-            const result = await response.json();
-            return result;
-            } catch (error) {
-            console.error("Erreur dans deleteEquipment :", error);
-            return { success: false, message: error.message };
+            return character;
+            }
         }
-    }
+    };
 };
 

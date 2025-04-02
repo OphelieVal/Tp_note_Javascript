@@ -949,16 +949,6 @@
       "img": "./../js/views/static/img/equipements/equipement6.jpg"
     },
     {
-      "id": "7",
-      "nom": "Bâton du Sage Immortel",
-      "type": "Arme",
-      "bonus": {
-        "pouvoir": 60,
-        "defense": 10
-      },
-      "img": "./../js/views/static/img/equipements/equipement7.jpg"
-    },
-    {
       "id": "8",
       "nom": "Robe de Magie Ancestrale",
       "type": "Armure",
