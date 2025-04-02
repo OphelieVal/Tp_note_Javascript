@@ -8,23 +8,26 @@ export default class CharacterFight {
     }
 
     async render() {
-        let data = await JsonProvider.fetchCharacters();
-        let { charactersAll } = data;
 
         let view = `
         <head>
+          <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+          <link href="js/views/static/css/combat.css" rel="stylesheet">
+
         </head>
-        <h2>CHOISISSEZ DEUX PERSONNAGES</h2>
+        <h2 class="title">CHOISISSEZ DEUX PERSONNAGES</h2>
         <div id="selection-container">
           <div class="character-slot" data-index="0">
-            <p>Personnage 1</p>
+            <p class="title-container">Personnage 1</p>
+            <button class="select-button">Choisir</button>
             <div class="dropdown hidden">
               <label for="personnages-0">Choisir un personnage :</label>
               <select id="personnages-0"></select>
             </div>
           </div>
           <div class="character-slot" data-index="1">
-            <p>Personnage 2</p>
+            <p class="title-container">Personnage 2</p>
+            <button class="select-button">Choisir</button>
             <div class="dropdown hidden">
               <label for="personnages-1">Choisir un personnage :</label>
               <select id="personnages-1"></select>
@@ -166,7 +169,7 @@ export default class CharacterFight {
 
       document.getElementById("fight-result").innerHTML = `
           <p>${gagnant.name} a gagné le combat !</p>
-          <p>Il remporte <strong>${expGagnee} EXP</strong> !</p>
+          <p>Le personnage remporte <strong>${expGagnee} EXP</strong> !</p>
       `;
 
       await this.ajouterExperience(gagnant, expGagnee);
@@ -195,13 +198,16 @@ export default class CharacterFight {
         // ✅ Recalculer la nouvelle limite d'expérience
         expMax = personnage.niveau * 2 * 1000;
 
+
+
         Swal.fire({
           title: "Félicitations!",
           text: "Votre personnage a évolué !",
-          imageUrl: "../static/img/${personnage.id}",
-          imageWidth: 400,
-          imageHeight: 200,
-          imageAlt: "Custom image"
+          confirmButtonText: "OK", 
+          allowOutsideClick: false,
+          allowEscapeKey: false, 
+          allowEnterKey: false, 
+          backdrop: true,
         });
     }
 

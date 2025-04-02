@@ -34,17 +34,17 @@
       "img": "./../js/views/static/img/character2.jpeg",
       "race": "Humaine",
       "classe": "Épéiste",
-      "niveau": 98,
+      "niveau": 104,
       "note": 5,
       "statistiques": {
-        "force": 318,
-        "agilite": 421,
-        "defense": 262,
-        "pouvoir": 295
+        "force": 354,
+        "agilite": 463,
+        "defense": 286,
+        "pouvoir": 325
       },
-      "experience": 3040,
+      "experience": 7160,
       "evolution": {
-        "niveau_suivant": 99,
+        "niveau_suivant": 105,
         "augmentation": {
           "force": 6,
           "agilite": 7,
@@ -133,17 +133,17 @@
       "img": "./../js/views/static/img/character5.jpeg",
       "race": "Humain",
       "classe": "Président des Chasseurs",
-      "niveau": 130,
+      "niveau": 131,
       "note": 4,
       "statistiques": {
-        "force": 600,
-        "agilite": 500,
-        "defense": 700,
-        "pouvoir": 900
+        "force": 609,
+        "agilite": 507,
+        "defense": 710,
+        "pouvoir": 912
       },
-      "experience": 150000,
+      "experience": 4480,
       "evolution": {
-        "niveau_suivant": 131,
+        "niveau_suivant": 132,
         "augmentation": {
           "force": 9,
           "agilite": 7,
@@ -152,12 +152,12 @@
         }
       },
       "equipements_ids": [
-        9,
-        10
+        "9",
+        "10"
       ],
       "pouvoirs_ids": [
-        9,
-        10
+        "9",
+        "10"
       ]
     },
     {
@@ -174,7 +174,7 @@
         "defense": 300,
         "pouvoir": 200
       },
-      "experience": 80500,
+      "experience": 86800,
       "evolution": {
         "niveau_suivant": 81,
         "augmentation": {

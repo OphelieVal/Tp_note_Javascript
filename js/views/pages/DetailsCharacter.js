@@ -13,7 +13,7 @@ export default class DetailsCharacter{
         let character = await JsonProvider.getCharacter(characterId);
         console.log("Personnage récupéré :", character);
         if (!character) {
-            return `<h2>Personnage non trouvé</h2>`;
+            return `<h2 class="title">Personnage non trouvé</h2>`;
         }
 
         let [force, agilite, defense, pouvoir] = character.statistiques;
@@ -37,7 +37,7 @@ export default class DetailsCharacter{
                 <link rel="stylesheet" href="js/views/static/css/detailsCharacter.css">
                 <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
             </head>
-            <h2>${character.name}</h2>
+            <h2 class="title">${character.name}</h2>
             <section id="character">
                 <img src="${character.img}" alt="Image de ${character.name}">
                 <!-- Système de notation -->
