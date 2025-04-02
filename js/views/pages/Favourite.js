@@ -33,7 +33,7 @@ export default class Favourite{
                 <head>
                     <link rel="stylesheet" href="js/views/static/css/favourite.css">
                 </head>
-                <h2> Retrouvez vos personnages favouris ! </h2>
+                <h2> RETROUVEZ VOS PERSONNAGES FAVORIS ! </h2>
                 <div id="favourites-list">${charactersHTML}</div>
             `;
         } catch (err) {
