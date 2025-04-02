@@ -85,4 +85,49 @@ export default class JsonProvider {
         console.error('Error getting character details', err);
     };
 
+    static updateCharacter = async (character) => {
+        const options = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                id: character.id,
+                name: character.name,
+                img: character.img,
+                race: character.race,
+                classe: character.classe,
+                niveau: character.niveau,
+                note: character.note,
+                statistiques: {
+                    force: character.statistiques.force,
+                    agilite: character.statistiques.agilite,
+                    defense: character.statistiques.defense,
+                    pouvoir: character.statistiques.pouvoir
+                },
+                experience: character.experience,
+                evolution: {
+                    niveau_suivant: character.niveau + 1,
+                    augmentation: {
+                        force: character.evolution.augmentation.force,
+                        agilite: character.evolution.augmentation.agilite,
+                        defense: character.evolution.augmentation.defense,
+                        pouvoir: character.evolution.augmentation.pouvoir
+                    }
+                },
+                equipements_ids: character.equipements.map(e => e.id),
+                pouvoirs_ids: character.pouvoirs.map(p => p.id)
+            })
+        };
+    
+        try {
+            const response = await fetch(`${ENDPOINT}characters/${character.id}`, options);
+            if (!response.ok) throw new Error("Échec de la mise à jour du personnage");
+            console.log(`Personnage ${character.name} mis à jour avec succès`);
+        } catch (err) {
+            console.error("Erreur lors de la mise à jour du personnage", err);
+        }
+    };
+    
+
 }

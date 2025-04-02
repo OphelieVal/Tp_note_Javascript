@@ -163,179 +163,37 @@ export default class CharacterFight {
   
       // Calcul de l'expérience gagnée (proportionnelle à la différence de stats)
       expGagnee = Math.abs(statsTotal1 - statsTotal2) * 10;
-      
-      // Affichage du résultat
+
       document.getElementById("fight-result").innerHTML = `
           <p>${gagnant.name} a gagné le combat !</p>
           <p>Il remporte <strong>${expGagnee} EXP</strong> !</p>
       `;
   }
-  
+
+  // Fonction pour gérer l'ajout d'expérience et la montée de niveau
+  async ajouterExperience(personnage, expGagnee) {
+    personnage.experience += expGagnee;
+    let expMax = personnage.niveau * 2 * 1000;
+
+    while (personnage.experience >= expMax) {
+        // ✅ Augmenter le niveau
+        personnage.niveau++;
+
+        // ✅ Appliquer les augmentations
+        personnage.statistiques[0] += personnage.evolution.evolution[0];
+        personnage.statistiques[1] += personnage.evolution.evolution[1];
+        personnage.statistiques[2] += personnage.evolution.evolution[2];
+        personnage.statistiques[3] += personnage.evolution.evolution[3];
+
+        // ✅ Retirer l'expérience utilisée pour monter de niveau
+        personnage.experience -= expMax;
+
+        // ✅ Recalculer la nouvelle limite d'expérience
+        expMax = personnage.niveau * 2 * 1000;
+    }
+
+    // ✅ Mise à jour du personnage dans le JSON via API
+    await JsonProvider.updateCharacter(personnage);
+    console.log(personnage);
+  }
 }
-
-
-
-
-
-
-      //  let data = await JsonProvider.fetchCharacters();
-      //  let { charactersAll, equipementsAll, pouvoirsAll } = data;
-//
-      //  // Ajout des événements pour afficher/cacher le menu déroulant
-      //  this.addDropdownListeners(charactersAll);
-//
-      //  // Ajout des événements pour la sélection des personnages
-      //  document.querySelectorAll(".dropdown-item").forEach(item => {
-      //      item.addEventListener("click", (event) => {
-      //          let charId = event.target.getAttribute("data-id");
-      //          let character = charactersAll.find(c => c.id == charId);
-      //          let slotIndex = event.target.closest(".character-slot").getAttribute("data-index");
-//
-      //          if (this.selectedCharacters.includes(character)) return;
-//
-      //          // Mettre à jour le personnage sélectionné
-      //          this.selectedCharacters[slotIndex] = character;
-      //          event.target.closest(".dropdown").classList.add("hidden");
-//
-      //          // Mettre à jour l'affichage du personnage
-      //          let slot = event.target.closest(".character-slot");
-      //          slot.innerHTML = `
-      //            <p>${character.name}</p>
-      //            <img src="${character.img}" alt="${character.name}">
-      //            <p>Stats: ${this.calculateStats(character, equipementsAll, pouvoirsAll).stats}</p>
-      //            <button class="deselect-button" data-index="${slotIndex}">X</button>
-      //          `;
-//
-      //          // Si deux personnages sont sélectionnés, activer le bouton de combat
-      //          if (this.selectedCharacters[0] && this.selectedCharacters[1]) {
-      //              document.getElementById("fight-button").disabled = false;
-      //          }
-//
-      //          // Ajouter les listeners de désélection des personnages
-      //          this.addDeselectListeners();
-      //      });
-      //  });
-//
-      //  // Gérer le clic sur le bouton "Combattre"
-      //  document.getElementById("fight-button").addEventListener("click", () => {
-      //      let result = this.simulateFight(this.selectedCharacters, equipementsAll, pouvoirsAll);
-      //      document.getElementById("fight-result").innerHTML = `<p>${result}</p>`;
-      //      this.selectedCharacters = [null, null];
-    //      this.render(); // Re-render the page to reset dropdowns
-  //      });
-  //  }
-//
-  //  addDropdownListeners(charactersAll) {
-  //      // Ajouter l'événement pour afficher/cacher le menu déroulant au clic sur le bouton "+"
-  //      document.querySelectorAll(".select-button").forEach(button => {
-  //          button.addEventListener("click", (event) => {
-  //              let dropdown = event.target.nextElementSibling;
-  //              dropdown.classList.toggle("hidden");
-  //          });
-  //      });
-//
-  //      // Ajouter l'événement pour sélectionner un personnage
-  //      document.querySelectorAll(".dropdown-item").forEach(item => {
-  //          item.addEventListener("click", (event) => {
-  //              let charId = event.target.getAttribute("data-id");
-  //              let character = charactersAll.find(c => c.id == charId);
-  //              let slotIndex = event.target.closest(".character-slot").getAttribute("data-index");
-//
-  //              if (this.selectedCharacters.includes(character)) return;
-//
-  //              // Mettre à jour le personnage sélectionné
-  //              this.selectedCharacters[slotIndex] = character;
-  //              event.target.closest(".dropdown").classList.add("hidden");
-//
-  //              // Mettre à jour l'affichage du personnage
-  //              let slot = event.target.closest(".character-slot");
-  //              slot.innerHTML = `
-  //                <p>${character.name}</p>
-  //                <img src="${character.img}" alt="${character.name}">
-  //                <p>Stats: ${this.calculateStats(character, equipementsAll, pouvoirsAll).stats}</p>
-  //                <button class="deselect-button" data-index="${slotIndex}">X</button>
-  //              `;
-//
-  //              // Si deux personnages sont sélectionnés, activer le bouton de combat
-  //              if (this.selectedCharacters[0] && this.selectedCharacters[1]) {
-  //                  document.getElementById("fight-button").disabled = false;
-  //              }
-//
-  //              // Ajouter les listeners de désélection des personnages
-  //              this.addDeselectListeners();
-  //          });
-  //      });
-  //  }
-//
-  //  addDeselectListeners() {
-  //      // Ajouter les événements pour supprimer un personnage sélectionné
-  //      document.querySelectorAll(".deselect-button").forEach(button => {
-  //          button.addEventListener("click", (event) => {
-  //              let index = event.target.getAttribute("data-index");
-  //              this.selectedCharacters[index] = null;
-//
-  //              // Réinitialiser le slot après suppression
-  //              let slot = event.target.closest(".character-slot");
-  //              slot.innerHTML = `
-  //                <p>Personnage ${parseInt(index) + 1}</p>
-  //                <button class="select-button">+</button>
-  //                <div class="dropdown hidden">
-  //                  ${this.renderDropdown()}
-  //                </div>
-  //              `;
-//
-  //              // Rappeler afterRender pour réinitialiser les événements
-  //              this.afterRender(); // Réactiver les événements après suppression
-  //          });
-  //      });
-  //  }
-//
-  //  renderDropdown() {
-  //      return JsonProvider.fetchCharacters().then(data => {
-  //          let { charactersAll } = data;
-  //          return charactersAll.map(character => `
-  //              <div class="dropdown-item" data-id="${character.id}">${character.name}</div>
-  //          `).join('');
-  //      });
-  //  }
-//
-  //  simulateFight(characters, equipementsAll, pouvoirsAll) {
-  //      let [char1, char2] = characters.map(char => this.calculateStats(char, equipementsAll, pouvoirsAll));
-  //      let winner = null;
-//
-  //      if (char1.stats > char2.stats) {
-  //          winner = char1;
-  //      } else if (char2.stats > char1.stats) {
-  //          winner = char2;
-  //      }
-//
-  //      if (winner) {
-  //          let coins = winner.stats * 10;
-  //          this.updateCoins(coins);
-  //          return `${winner.name} remporte le combat et gagne ${coins} pièces !`;
-  //      }
-  //      return "Match nul !";
-  //  }
-//
-  //  calculateStats(character, equipementsAll, pouvoirsAll) {
-  //      let stats = character.niveau;
-//
-  //      character.equipements.forEach(equipId => {
-  //          let equip = equipementsAll.find(e => e.id == equipId);
-  //          if (equip) stats += equip.bonus;
-  //      });
-//
-  //      character.pouvoirs.forEach(pouvoirId => {
-  //          let pouvoir = pouvoirsAll.find(p => p.id == pouvoirId);
-  //          if (pouvoir) stats += pouvoir.bonus;
-  //      });
-//
-  //      return { name: character.name, stats };
-  //  }
-//
-  //  updateCoins(amount) {
-  //      let coins = localStorage.getItem("coins") || 0;
-  //      coins = parseInt(coins) + amount;
-  //      localStorage.setItem("coins", coins);
-  //  }
-
