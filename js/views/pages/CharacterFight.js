@@ -1,4 +1,6 @@
 import JsonProvider from "../../services/provider/JsonProvider.js";
+import Swal from "../../../node_modules/sweetalert2/src/sweetalert2.js";
+
 
 export default class CharacterFight {
     constructor() {
@@ -16,7 +18,6 @@ export default class CharacterFight {
         <div id="selection-container">
           <div class="character-slot" data-index="0">
             <p>Personnage 1</p>
-            <button class="select-button">+</button>
             <div class="dropdown hidden">
               <label for="personnages-0">Choisir un personnage :</label>
               <select id="personnages-0"></select>
@@ -24,7 +25,6 @@ export default class CharacterFight {
           </div>
           <div class="character-slot" data-index="1">
             <p>Personnage 2</p>
-            <button class="select-button">+</button>
             <div class="dropdown hidden">
               <label for="personnages-1">Choisir un personnage :</label>
               <select id="personnages-1"></select>
@@ -168,28 +168,41 @@ export default class CharacterFight {
           <p>${gagnant.name} a gagné le combat !</p>
           <p>Il remporte <strong>${expGagnee} EXP</strong> !</p>
       `;
+
+      await this.ajouterExperience(gagnant, expGagnee);
   }
 
   // Fonction pour gérer l'ajout d'expérience et la montée de niveau
   async ajouterExperience(personnage, expGagnee) {
     personnage.experience += expGagnee;
-    let expMax = personnage.niveau * 2 * 1000;
+    let expMax = personnage.niveau * 2000;
+    
 
     while (personnage.experience >= expMax) {
+      console.log(personnage.experience);
         // ✅ Augmenter le niveau
         personnage.niveau++;
 
         // ✅ Appliquer les augmentations
-        personnage.statistiques[0] += personnage.evolution.evolution[0];
-        personnage.statistiques[1] += personnage.evolution.evolution[1];
-        personnage.statistiques[2] += personnage.evolution.evolution[2];
-        personnage.statistiques[3] += personnage.evolution.evolution[3];
+        personnage.statistiques[0] += personnage.evolution[0];
+        personnage.statistiques[1] += personnage.evolution[1];
+        personnage.statistiques[2] += personnage.evolution[2];
+        personnage.statistiques[3] += personnage.evolution[3];
 
         // ✅ Retirer l'expérience utilisée pour monter de niveau
         personnage.experience -= expMax;
 
         // ✅ Recalculer la nouvelle limite d'expérience
         expMax = personnage.niveau * 2 * 1000;
+
+        Swal.fire({
+          title: "Félicitations!",
+          text: "Votre personnage a évolué !",
+          imageUrl: "../static/img/${personnage.id}",
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: "Custom image"
+        });
     }
 
     // ✅ Mise à jour du personnage dans le JSON via API

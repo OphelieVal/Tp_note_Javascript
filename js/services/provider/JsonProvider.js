@@ -86,6 +86,7 @@ export default class JsonProvider {
     };
 
     static updateCharacter = async (character) => {
+        console.log("Personnage à mettre à jour :", character); 
         const options = {
             method: "PUT",
             headers: {
@@ -100,19 +101,19 @@ export default class JsonProvider {
                 niveau: character.niveau,
                 note: character.note,
                 statistiques: {
-                    force: character.statistiques.force,
-                    agilite: character.statistiques.agilite,
-                    defense: character.statistiques.defense,
-                    pouvoir: character.statistiques.pouvoir
+                    force: character.statistiques[0],
+                    agilite: character.statistiques[1],
+                    defense: character.statistiques[2],
+                    pouvoir: character.statistiques[3]
                 },
                 experience: character.experience,
                 evolution: {
                     niveau_suivant: character.niveau + 1,
                     augmentation: {
-                        force: character.evolution.augmentation.force,
-                        agilite: character.evolution.augmentation.agilite,
-                        defense: character.evolution.augmentation.defense,
-                        pouvoir: character.evolution.augmentation.pouvoir
+                        force: character.evolution[0],
+                        agilite: character.evolution[1],
+                        defense: character.evolution[2],
+                        pouvoir: character.evolution[3]
                     }
                 },
                 equipements_ids: character.equipements.map(e => e.id),
