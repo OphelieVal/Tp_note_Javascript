@@ -100,17 +100,17 @@
       "img": "./../js/views/static/img/character4.jpeg",
       "race": "Humain",
       "classe": "Chasseur de Rang S",
-      "niveau": 110,
+      "niveau": 111,
       "note": 5,
       "statistiques": {
-        "force": 500,
-        "agilite": 600,
-        "defense": 400,
-        "pouvoir": 550
+        "force": 508,
+        "agilite": 609,
+        "defense": 405,
+        "pouvoir": 557
       },
-      "experience": 120000,
+      "experience": 12000,
       "evolution": {
-        "niveau_suivant": 111,
+        "niveau_suivant": 112,
         "augmentation": {
           "force": 8,
           "agilite": 9,
@@ -119,12 +119,12 @@
         }
       },
       "equipements_ids": [
-        7,
-        8
+        "7",
+        "8"
       ],
       "pouvoirs_ids": [
-        7,
-        8
+        "7",
+        "8"
       ]
     },
     {
@@ -166,17 +166,17 @@
       "img": "./../js/views/static/img/character6.jpeg",
       "race": "Humain",
       "classe": "Berserker",
-      "niveau": 80,
+      "niveau": 81,
       "note": 4,
       "statistiques": {
-        "force": 350,
-        "agilite": 250,
-        "defense": 300,
-        "pouvoir": 200
+        "force": 355,
+        "agilite": 253,
+        "defense": 305,
+        "pouvoir": 204
       },
-      "experience": 86800,
+      "experience": 3300,
       "evolution": {
-        "niveau_suivant": 81,
+        "niveau_suivant": 82,
         "augmentation": {
           "force": 5,
           "agilite": 3,
