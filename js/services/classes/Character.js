@@ -81,14 +81,6 @@ export class Character {
     get equipements() {
         return this._equipements;
     }
-
-    ajouter_equipement(val) {
-        this._equipements.append(val);
-    }
-
-    supprimer_equipement(val){
-        this._equipements.slice(val);
-    }
   
     get pouvoirs() {
         return this._pouvoirs;
@@ -102,14 +94,12 @@ export class Character {
         this._equipements.remove(val);
     }
 
-
-
-
-
-
-
-
-
+    ajouter_equipement(equipement) {
+        if (!this._equipements.some(e => e.id === equipement.id)) {
+            this._equipements.push(equipement);
+            this.saveToLocalStorage();
+        }
+    }
  
         supprimer_equipement(equipmentId) {
             this._equipements = this._equipements.filter(e => e._id !== equipmentId);

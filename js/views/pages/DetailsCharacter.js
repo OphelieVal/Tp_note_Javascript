@@ -26,9 +26,28 @@ export default class DetailsCharacter{
                         <div class="equipement-info">
                           <strong>${e.nom}</strong>
                         </div>
-                      </div>`;
-            }).join("")
-        : "<p>Aucun équipement</p>";
+                      </div>
+                      <div class="equipement-card add-equipement">
+            <div class="equipement-add">+</div>
+            <div class="equipement-info">
+                <strong>Ajouter un équipement</strong>
+            </div>
+        </div>`
+            }).join("")  + 
+            // Ajouter UNE SEULE carte d'ajout après tous les équipements
+            `<div class="equipement-card add-equipement">
+                <div class="equipement-add">+</div>
+                <div class="equipement-info">
+                    <strong>Ajouter un équipement</strong>
+                </div>
+            </div>`
+        : `<div class="equipement-card add-equipement">
+                <div class="equipement-add">+</div>
+                <div class="equipement-info">
+                    <strong>Ajouter un équipement</strong>
+                </div>
+            </div>`
+        "<p>Aucun équipement</p>";
       
 
         let pouvoirsHTML = character.pouvoirs.length > 0
@@ -98,6 +117,15 @@ export default class DetailsCharacter{
                     <button id="popup-close-btn">Fermer</button>
                 </div>
             </div>
+
+            <!-- Popup pour ajouter un équipement -->
+    <div id="add-equipement-popup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <h2>Ajouter un équipement</h2>
+            <div id="equipement-list" class="equipement-list"></div>
+            <button id="popup-add-close-btn">Fermer</button>
+        </div>
+    </div>
         `;
         return view;
         
@@ -194,6 +222,54 @@ export default class DetailsCharacter{
                  };
              });
          });
+             // Gestion de l'ajout d'équipement
+    const addEquipementPopup = document.getElementById("add-equipement-popup");
+    const equipementList = document.getElementById("equipement-list");
+    const addEquipementCloseBtn = document.getElementById("popup-add-close-btn");
+
+    // Fonction pour charger les équipements disponibles
+    async function loadAvailableEquipements() {
+        const { equipementsAll } = await JsonProvider.fetchCharacters();
+        equipementList.innerHTML = equipementsAll.map(equip => `
+            <div class="available-equipement" data-id="${equip.id}">
+                <img src="${equip.img}" alt="${equip.nom}">
+                <div>
+                    <strong>${equip.nom}</strong>
+                    <p>Type: ${equip.type}</p>
+                </div>
+            </div>
+        `).join("");
+    }
+
+    // Ouvrir le popup d'ajout
+    document.querySelectorAll(".add-equipement").forEach(btn => {
+        btn.addEventListener("click", async () => {
+            await loadAvailableEquipements();
+            addEquipementPopup.style.display = "block";
+        });
+    });
+
+    // Fermer le popup d'ajout
+    addEquipementCloseBtn.addEventListener("click", () => {
+        addEquipementPopup.style.display = "none";
+    });
+
+    // Ajouter un équipement sélectionné
+    equipementList.addEventListener("click", async (e) => {
+        const equipCard = e.target.closest(".available-equipement");
+        if (!equipCard) return;
+
+        const equipId = equipCard.getAttribute("data-id");
+        const { equipementsAll } = await JsonProvider.fetchCharacters();
+        const equipToAdd = equipementsAll.find(e => e.id === equipId);
+
+        if (equipToAdd && !character.equipements.some(e => e.id === equipId)) {
+            character.ajouter_equipement(equipToAdd);
+            character.saveToLocalStorage(); // Assurez-vous que cette méthode existe dans votre classe Character
+            addEquipementPopup.style.display = "none";
+            window.location.reload(); // Recharger pour voir les changements
+        }
+    });
      }
  }
         

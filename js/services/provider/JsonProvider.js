@@ -38,9 +38,8 @@ export default class JsonProvider {
             });
 
             charsJSON.forEach(character_data => {
-                let equipements_obj = character_data.equipements_ids.map(id => {
-                    return equipementsAll.find(e => Number(e.id) === Number(id));
-                });
+                let equipements_obj = character_data.equipements_ids
+                    .map(id => equipementsAll.find(e => Number(e.id) === Number(id)));
 
                 let pouvoirs_obj = character_data.pouvoirs_ids.map(id => {
                     return pouvoirsAll.find(p => Number(p.id) === Number(id));
@@ -72,6 +71,7 @@ export default class JsonProvider {
         if (stored) {
           let characters = JSON.parse(stored);
           let characterData = characters.find(c => Number(c._id) === Number(id));
+          console.log(characterData)
           if (characterData) {
             let equipements = characterData._equipements.map(e =>
               new Equipement(e._id, e._nom, e._type, e._bonus, e._img)
@@ -102,6 +102,8 @@ export default class JsonProvider {
             return character;
             }
         }
+        let { charactersAll } = await this.fetchCharacters();
+        return charactersAll.find(c => Number(c.id) === Number(id));
     };
 };
 
