@@ -187,6 +187,7 @@ export default class CharacterFight {
         document.getElementById("fight-result").innerHTML = `
           <p>${gagnant.name} a gagné le combat !</p>
           <p>Le personnage remporte <strong>${expGagnee} EXP</strong> !</p>
+          
         `;        
       }, 3000);
 
@@ -201,7 +202,6 @@ export default class CharacterFight {
 
     while (personnage.experience >= expMax) {
       console.log(personnage.experience);
-        // Augmenter le niveau
         personnage.niveau++;
 
         // Appliquer les augmentations
