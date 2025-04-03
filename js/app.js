@@ -12,33 +12,31 @@ const routes = {
     '/favourite' : Favourite,
     '/combat' : CharacterFight
 };
-
 const router = async () => {
-    const content = document.querySelector('#content');
-
+    const content = document.querySelector("#content");
+  
     let request = Utils.parseRequestURL();
     console.log(request);
-    let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '');
-
-    let page = routes[parsedURL] ? new routes[parsedURL] : new CharacterAll;
+    let parsedURL =
+      (request.resource ? "/" + request.resource : "/") +
+      (request.id ? "/:id" : "") +
+      (request.verb ? "/" + request.verb : "");
+  
+    let page = routes[parsedURL] ? new routes[parsedURL]() : new CharacterAll();
     console.log(page);
     content.innerHTML = await page.render();
-
+  
     if (page instanceof CharacterAll) {
-        let data = await JsonProvider.fetchCharacters();
-        page.renderBarreRecherche(data.charactersAll);
+      await page.afterRender();
     }
-
     if (page instanceof DetailsCharacter) {
-        content.innerHTML = await page.render();
-        await page.afterRender();
+      await page.afterRender();
     }
-
     if (page instanceof CharacterFight) {
-        content.innerHTML = await page.render();
-        await page.afterRender();
+      await page.afterRender();
     }
-}
-
-window.addEventListener('hashchange',router)
-window.addEventListener('load',router);
+  };
+  
+  window.addEventListener("hashchange", router);
+  window.addEventListener("load", router);
+  
