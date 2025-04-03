@@ -26,28 +26,16 @@ export default class DetailsCharacter{
                         <div class="equipement-info">
                           <strong>${e.nom}</strong>
                         </div>
-                      </div>
-                      <div class="equipement-card add-equipement">
-            <div class="equipement-add">+</div>
-            <div class="equipement-info">
-                <strong>Ajouter un équipement</strong>
-            </div>
-        </div>`
-            }).join("")  + 
-            // Ajouter UNE SEULE carte d'ajout après tous les équipements
-            `<div class="equipement-card add-equipement">
+                      </div>`
+            }).join("")   
+            : "<p>Aucun équipement</p>";
+
+            equipementsHTML += `<div class="equipement-card add-equipement">
                 <div class="equipement-add">+</div>
                 <div class="equipement-info">
                     <strong>Ajouter un équipement</strong>
                 </div>
             </div>`
-        : `<div class="equipement-card add-equipement">
-                <div class="equipement-add">+</div>
-                <div class="equipement-info">
-                    <strong>Ajouter un équipement</strong>
-                </div>
-            </div>`
-        "<p>Aucun équipement</p>";
       
 
         let pouvoirsHTML = character.pouvoirs.length > 0
