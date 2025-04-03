@@ -7,13 +7,9 @@
       "race": "Humain",
       "classe": "Souverain de l'Ombre",
       "niveau": 150,
-      "statistiques": {
-        "force": 999,
-        "agilite": 999,
-        "defense": 800,
-        "pouvoir": 1200
-      },
-      "experience": 200000,
+      "note": 5,
+      "statistiques": {},
+      "experience": 212980,
       "evolution": {
         "niveau_suivant": 151,
         "augmentation": {
@@ -24,12 +20,12 @@
         }
       },
       "equipements_ids": [
-        3,
-        2
+        "3",
+        "2"
       ],
       "pouvoirs_ids": [
-        1,
-        2
+        "1",
+        "2"
       ]
     },
     {
@@ -38,16 +34,17 @@
       "img": "./../js/views/static/img/characters/character2.jpeg",
       "race": "Humaine",
       "classe": "Épéiste",
-      "niveau": 95,
+      "niveau": 104,
+      "note": 5,
       "statistiques": {
-        "force": 300,
-        "agilite": 400,
-        "defense": 250,
-        "pouvoir": 280
+        "force": 354,
+        "agilite": 463,
+        "defense": 286,
+        "pouvoir": 325
       },
-      "experience": 95000,
+      "experience": 7160,
       "evolution": {
-        "niveau_suivant": 96,
+        "niveau_suivant": 105,
         "augmentation": {
           "force": 6,
           "agilite": 7,
@@ -56,12 +53,12 @@
         }
       },
       "equipements_ids": [
-        3,
-        4
+        "3",
+        "4"
       ],
       "pouvoirs_ids": [
-        3,
-        4
+        "3",
+        "4"
       ]
     },
     {
@@ -71,6 +68,7 @@
       "race": "Humain",
       "classe": "Tank",
       "niveau": 40,
+      "note": 3,
       "statistiques": {
         "force": 120,
         "agilite": 80,
@@ -88,12 +86,12 @@
         }
       },
       "equipements_ids": [
-        5,
-        6
+        "5",
+        "6"
       ],
       "pouvoirs_ids": [
-        5,
-        6
+        "5",
+        "6"
       ]
     },
     {
@@ -102,16 +100,17 @@
       "img": "./../js/views/static/img/characters/character4.jpeg",
       "race": "Humain",
       "classe": "Chasseur de Rang S",
-      "niveau": 110,
+      "niveau": 111,
+      "note": 5,
       "statistiques": {
-        "force": 500,
-        "agilite": 600,
-        "defense": 400,
-        "pouvoir": 550
+        "force": 508,
+        "agilite": 609,
+        "defense": 405,
+        "pouvoir": 557
       },
-      "experience": 120000,
+      "experience": 12000,
       "evolution": {
-        "niveau_suivant": 111,
+        "niveau_suivant": 112,
         "augmentation": {
           "force": 8,
           "agilite": 9,
@@ -120,12 +119,12 @@
         }
       },
       "equipements_ids": [
-        7,
-        8
+        "7",
+        "8"
       ],
       "pouvoirs_ids": [
-        7,
-        8
+        "7",
+        "8"
       ]
     },
     {
@@ -134,16 +133,17 @@
       "img": "./../js/views/static/img/characters/character5.jpeg",
       "race": "Humain",
       "classe": "Président des Chasseurs",
-      "niveau": 130,
+      "niveau": 131,
+      "note": 4,
       "statistiques": {
-        "force": 600,
-        "agilite": 500,
-        "defense": 700,
-        "pouvoir": 900
+        "force": 609,
+        "agilite": 507,
+        "defense": 710,
+        "pouvoir": 912
       },
-      "experience": 150000,
+      "experience": 4480,
       "evolution": {
-        "niveau_suivant": 131,
+        "niveau_suivant": 132,
         "augmentation": {
           "force": 9,
           "agilite": 7,
@@ -152,12 +152,12 @@
         }
       },
       "equipements_ids": [
-        9,
-        10
+        "9",
+        "10"
       ],
       "pouvoirs_ids": [
-        9,
-        10
+        "9",
+        "10"
       ]
     },
     {
@@ -166,16 +166,17 @@
       "img": "./../js/views/static/img/characters/character6.jpeg",
       "race": "Humain",
       "classe": "Berserker",
-      "niveau": 80,
+      "niveau": 81,
+      "note": 4,
       "statistiques": {
-        "force": 350,
-        "agilite": 250,
-        "defense": 300,
-        "pouvoir": 200
+        "force": 355,
+        "agilite": 253,
+        "defense": 305,
+        "pouvoir": 204
       },
-      "experience": 80000,
+      "experience": 3300,
       "evolution": {
-        "niveau_suivant": 81,
+        "niveau_suivant": 82,
         "augmentation": {
           "force": 5,
           "agilite": 3,
@@ -184,12 +185,12 @@
         }
       },
       "equipements_ids": [
-        3,
-        7
+        "5",
+        "7"
       ],
       "pouvoirs_ids": [
-        2,
-        6
+        "2",
+        "6"
       ]
     },
     {
@@ -199,6 +200,7 @@
       "race": "Humain",
       "classe": "Archimage",
       "niveau": 88,
+      "note": 4,
       "statistiques": {
         "force": 200,
         "agilite": 200,
@@ -216,12 +218,12 @@
         }
       },
       "equipements_ids": [
-        7,
-        8
+        "7",
+        "8"
       ],
       "pouvoirs_ids": [
-        7,
-        8
+        "7",
+        "8"
       ]
     },
     {
@@ -231,6 +233,7 @@
       "race": "Humain",
       "classe": "Tank",
       "niveau": 70,
+      "note": 3,
       "statistiques": {
         "force": 220,
         "agilite": 100,
@@ -248,12 +251,12 @@
         }
       },
       "equipements_ids": [
-        6,
-        10
+        "6",
+        "10"
       ],
       "pouvoirs_ids": [
-        5,
-        6
+        "5",
+        "6"
       ]
     },
     {
@@ -261,8 +264,9 @@
       "name": "Song Chi-Yul",
       "img": "./../js/views/static/img/characters/character9.jpeg",
       "race": "Humain",
-      "classe": "Healer",
+      "classe": "Épéiste",
       "niveau": 30,
+      "note": 3,
       "statistiques": {
         "force": 80,
         "agilite": 90,
@@ -280,12 +284,12 @@
         }
       },
       "equipements_ids": [
-        2,
-        8
+        "2",
+        "8"
       ],
       "pouvoirs_ids": [
-        1,
-        8
+        "1",
+        "8"
       ]
     },
     {
@@ -293,8 +297,9 @@
       "name": "Park Hee-Jin",
       "img": "./../js/views/static/img/characters/character10.jpeg",
       "race": "Humaine",
-      "classe": "Archer",
+      "classe": "Healer",
       "niveau": 65,
+      "note": 3,
       "statistiques": {
         "force": 150,
         "agilite": 300,
@@ -312,12 +317,12 @@
         }
       },
       "equipements_ids": [
-        3,
-        2
+        "5",
+        "2"
       ],
       "pouvoirs_ids": [
-        3,
-        9
+        "3",
+        "9"
       ]
     },
     {
@@ -325,8 +330,9 @@
       "name": "Kim Chul",
       "img": "./../js/views/static/img/characters/character11.jpeg",
       "race": "Humain",
-      "classe": "Épéiste",
+      "classe": "Tank",
       "niveau": 55,
+      "note": 2,
       "statistiques": {
         "force": 240,
         "agilite": 220,
@@ -344,12 +350,12 @@
         }
       },
       "equipements_ids": [
-        3,
-        4
+        "3",
+        "4"
       ],
       "pouvoirs_ids": [
-        4,
-        10
+        "4",
+        "10"
       ]
     },
     {
@@ -359,6 +365,7 @@
       "race": "Humain",
       "classe": "Tank",
       "niveau": 99,
+      "note": 5,
       "statistiques": {
         "force": 600,
         "agilite": 350,
@@ -376,12 +383,12 @@
         }
       },
       "equipements_ids": [
-        5,
-        6
+        "5",
+        "6"
       ],
       "pouvoirs_ids": [
-        2,
-        3
+        "2",
+        "3"
       ]
     },
     {
@@ -391,6 +398,7 @@
       "race": "Humain",
       "classe": "Mage",
       "niveau": 100,
+      "note": 3,
       "statistiques": {
         "force": 200,
         "agilite": 200,
@@ -408,12 +416,12 @@
         }
       },
       "equipements_ids": [
-        7,
-        8
+        "7",
+        "8"
       ],
       "pouvoirs_ids": [
-        4,
-        7
+        "4",
+        "7"
       ]
     },
     {
@@ -423,6 +431,7 @@
       "race": "Humain",
       "classe": "Épéiste",
       "niveau": 85,
+      "note": 4,
       "statistiques": {
         "force": 400,
         "agilite": 350,
@@ -440,12 +449,12 @@
         }
       },
       "equipements_ids": [
-        1,
-        9
+        "1",
+        "9"
       ],
       "pouvoirs_ids": [
-        5,
-        6
+        "5",
+        "6"
       ]
     },
     {
@@ -453,8 +462,9 @@
       "name": "Goto Ryuji",
       "img": "./../js/views/static/img/characters/character15.jpeg",
       "race": "Humain",
-      "classe": "Assassin",
+      "classe": "Fighter",
       "niveau": 72,
+      "note": 3,
       "statistiques": {
         "force": 280,
         "agilite": 420,
@@ -472,12 +482,12 @@
         }
       },
       "equipements_ids": [
-        1,
-        2
+        "1",
+        "2"
       ],
       "pouvoirs_ids": [
-        1,
-        9
+        "1",
+        "9"
       ]
     },
     {
@@ -485,8 +495,9 @@
       "name": "Lennart Niermann",
       "img": "./../js/views/static/img/characters/character16.jpeg",
       "race": "Humain",
-      "classe": "Archer",
+      "classe": "Mage",
       "niveau": 66,
+      "note": 3,
       "statistiques": {
         "force": 160,
         "agilite": 320,
@@ -504,12 +515,12 @@
         }
       },
       "equipements_ids": [
-        2,
-        8
+        "2",
+        "8"
       ],
       "pouvoirs_ids": [
-        3,
-        5
+        "3",
+        "5"
       ]
     },
     {
@@ -517,8 +528,9 @@
       "name": "Hwang Dong-Su",
       "img": "./../js/views/static/img/characters/character17.jpeg",
       "race": "Humain",
-      "classe": "Mage",
+      "classe": "Tank",
       "niveau": 75,
+      "note": 2,
       "statistiques": {
         "force": 200,
         "agilite": 200,
@@ -536,12 +548,12 @@
         }
       },
       "equipements_ids": [
-        4,
-        7
+        "4",
+        "7"
       ],
       "pouvoirs_ids": [
-        8,
-        10
+        "8",
+        "10"
       ]
     },
     {
@@ -549,8 +561,9 @@
       "name": "Bellion",
       "img": "./../js/views/static/img/characters/character18.jpeg",
       "race": "Ombre",
-      "classe": "Général",
+      "classe": "Maréchal",
       "niveau": 120,
+      "note": 5,
       "statistiques": {
         "force": 600,
         "agilite": 500,
@@ -568,12 +581,12 @@
         }
       },
       "equipements_ids": [
-        2,
-        9
+        "2",
+        "9"
       ],
       "pouvoirs_ids": [
-        1,
-        5
+        "1",
+        "5"
       ]
     },
     {
@@ -583,6 +596,7 @@
       "race": "Ombre",
       "classe": "Chevalier",
       "niveau": 90,
+      "note": 5,
       "statistiques": {
         "force": 500,
         "agilite": 350,
@@ -600,12 +614,12 @@
         }
       },
       "equipements_ids": [
-        3,
-        9
+        "3",
+        "9"
       ],
       "pouvoirs_ids": [
-        2,
-        4
+        "2",
+        "4"
       ]
     },
     {
@@ -613,8 +627,9 @@
       "name": "Beru",
       "img": "./../js/views/static/img/characters/character20.jpeg",
       "race": "Insectoïde",
-      "classe": "Souverain",
+      "classe": "Général",
       "niveau": 60,
+      "note": 4,
       "statistiques": {
         "force": 120,
         "agilite": 90,
@@ -632,12 +647,12 @@
         }
       },
       "equipements_ids": [
-        5,
-        6
+        "5",
+        "6"
       ],
       "pouvoirs_ids": [
-        5,
-        6
+        "5",
+        "6"
       ]
     },
     {
@@ -645,8 +660,9 @@
       "name": "Woo Jin-chul",
       "img": "./../js/views/static/img/characters/character21.jpeg",
       "race": "Humain",
-      "classe": "Chasseur rang A",
+      "classe": "Fighter",
       "niveau": 60,
+      "note": 4,
       "statistiques": {
         "force": 280,
         "agilite": 230,
@@ -664,12 +680,12 @@
         }
       },
       "equipements_ids": [
-        11,
-        12
+        "11",
+        "12"
       ],
       "pouvoirs_ids": [
-        11,
-        12
+        "11",
+        "12"
       ]
     },
     {
@@ -677,8 +693,9 @@
       "name": "Kang Tae Shik",
       "img": "./../js/views/static/img/characters/character22.jpeg",
       "race": "Humain",
-      "classe": "Chasseur Fantôme",
+      "classe": "Assassin",
       "niveau": 58,
+      "note": 1,
       "statistiques": {
         "force": 250,
         "agilite": 190,
@@ -696,12 +713,12 @@
         }
       },
       "equipements_ids": [
-        13,
-        14
+        "13",
+        "14"
       ],
       "pouvoirs_ids": [
-        13,
-        14
+        "13",
+        "14"
       ]
     },
     {
@@ -711,6 +728,7 @@
       "race": "Humain",
       "classe": "Healer",
       "niveau": 54,
+      "note": 4,
       "statistiques": {
         "force": 230,
         "agilite": 210,
@@ -728,12 +746,12 @@
         }
       },
       "equipements_ids": [
-        15,
-        16
+        "15",
+        "16"
       ],
       "pouvoirs_ids": [
-        15,
-        16
+        "15",
+        "16"
       ]
     },
     {
@@ -741,8 +759,9 @@
       "name": "Izawa Ippei",
       "img": "./../js/views/static/img/characters/character24.jpeg",
       "race": "Humain",
-      "classe": "Chasseur Tempête",
+      "classe": "Chasseur",
       "niveau": 56,
+      "note": 2,
       "statistiques": {
         "force": 240,
         "agilite": 230,
@@ -760,12 +779,12 @@
         }
       },
       "equipements_ids": [
-        19,
-        20
+        "19",
+        "20"
       ],
       "pouvoirs_ids": [
-        19,
-        20
+        "19",
+        "20"
       ]
     },
     {
@@ -773,8 +792,9 @@
       "name": "Tawata Kanae",
       "img": "./../js/views/static/img/characters/character25.jpeg",
       "race": "Humain",
-      "classe": "Chasseur de l'Inframonde",
+      "classe": "Chasseuse",
       "niveau": 52,
+      "note": 3,
       "statistiques": {
         "force": 220,
         "agilite": 180,
@@ -792,12 +812,12 @@
         }
       },
       "equipements_ids": [
-        21,
-        22
+        "21",
+        "22"
       ],
       "pouvoirs_ids": [
-        21,
-        22
+        "21",
+        "22"
       ]
     },
     {
@@ -807,6 +827,7 @@
       "race": "Inconnu",
       "classe": "Déchu",
       "niveau": 62,
+      "note": 4,
       "statistiques": {
         "force": 300,
         "agilite": 210,
@@ -824,12 +845,12 @@
         }
       },
       "equipements_ids": [
-        23,
-        24
+        "23",
+        "24"
       ],
       "pouvoirs_ids": [
-        23,
-        24
+        "23",
+        "24"
       ]
     },
     {
@@ -837,8 +858,9 @@
       "name": "Vulcan",
       "img": "./../js/views/static/img/characters/character27.jpeg",
       "race": "Demon",
-      "classe": "Ogre",
+      "classe": "Berserker",
       "niveau": 48,
+      "note": 4,
       "statistiques": {
         "force": 150,
         "agilite": 180,
@@ -856,12 +878,12 @@
         }
       },
       "equipements_ids": [
-        25,
-        26
+        "25",
+        "26"
       ],
       "pouvoirs_ids": [
-        25,
-        26
+        "25",
+        "26"
       ]
     },
     {
@@ -871,6 +893,7 @@
       "race": "Elfe des glaces",
       "classe": "Assassin",
       "niveau": 80,
+      "note": 3,
       "statistiques": {
         "force": 500,
         "agilite": 220,
@@ -888,12 +911,12 @@
         }
       },
       "equipements_ids": [
-        27,
-        28
+        "27",
+        "28"
       ],
       "pouvoirs_ids": [
-        27,
-        28
+        "27",
+        "28"
       ]
     }
   ],
@@ -947,6 +970,16 @@
         "pouvoir": 20
       },
       "img": "./../js/views/static/img/equipements/equipement6.jpg"
+    },
+    {
+      "id": "7",
+      "nom": "Bâton du Sage Immortel",
+      "type": "Arme",
+      "bonus": {
+        "pouvoir": 60,
+        "defense": 10
+      },
+      "img": "./../js/views/static/img/equipements/equipement7.jpg"
     },
     {
       "id": "8",

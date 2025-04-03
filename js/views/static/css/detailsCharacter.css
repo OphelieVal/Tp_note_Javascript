@@ -152,3 +152,11 @@ h3 {
     margin-right: 15px;
 }
   
+.star {
+    font-size: 2rem;
+    cursor: pointer; 
+}
+
+.star.filled {
+    color: gold; 
+}

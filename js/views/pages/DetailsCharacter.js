@@ -2,6 +2,8 @@ import JsonProvider from "../../services/provider/JsonProvider.js";
 import Utils from "../../services/outils/Utils.js"; 
 import { Character } from "../../services/classes/Character.js";
 import { Favoris } from "../../services/classes/Favoris.js";
+import { Notation } from "../../services/classes/Notation.js";
+import Swal from "../../../node_modules/sweetalert2/src/sweetalert2.js";
 
 export default class DetailsCharacter{
     async render() {
@@ -11,11 +13,13 @@ export default class DetailsCharacter{
         let character = await JsonProvider.getCharacter(characterId);
         console.log("Personnage récupéré :", character);
         if (!character) {
-            return `<h2>Personnage non trouvé</h2>`;
+            return `<h2 class="title">Personnage non trouvé</h2>`;
         }
 
-        let [force, agilite, defense, pouvoir] = character.statistiques;
-        let [augForce, augAgilite, augDefense, augPouvoir] = character.evolution;
+        let [force, agilite, defense, pouvoir] = [character.statistiques[0], character.statistiques[1], character.statistiques[2], character.statistiques[3]];
+
+
+        let [augForce, augAgilite, augDefense, augPouvoir] = [character.evolution[0], character.evolution[1], character.evolution[2], character.evolution[3]];
 
         let equipementsHTML = (character.equipements && character.equipements.length > 0)
         ? character.equipements
@@ -34,27 +38,28 @@ export default class DetailsCharacter{
             </div>
         </div>`
             : "<p>Aucun équipement</p>";
-
-
-
-        let pouvoirsHTML = character.pouvoirs.length > 0
+        let pouvoirsHTML = (character.pouvoirs)
             ? character.pouvoirs.map(p => `<li><strong>${p.nom}</strong>: ${p.description}</li>`).join("")
             : "<li>Aucun pouvoir</li>";
+
+        let currentRating = Notation.getNote(characterId);
+
+        console.log(currentRating);
         
         let view = `
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <head>
                 <link rel="stylesheet" href="js/views/static/css/detailsCharacter.css">
+                <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
             </head>
-            <h2>${character.name}</h2>
+            <h2 class="title">${character.name}</h2>
             <section id="character">
                 <img src="${character.img}" alt="Image de ${character.name}" loading="lazy">
                 <!-- Système de notation -->
                 <div id="rating">
-                    <span class="star" data-value="1">⭐</span>
-                    <span class="star" data-value="2">⭐</span>
-                    <span class="star" data-value="3">⭐</span>
-                    <span class="star" data-value="4">⭐</span>
-                    <span class="star" data-value="5">⭐</span>
+                    ${[1, 2, 3, 4, 5].map(i => 
+                        `<span class="star ${i <= currentRating ? 'filled' : ''}" data-value="${i}">★</span>`
+                    ).join('')}
                 </div>
                 <p><strong>Race :</strong> ${character.race}</p>
                 <p><strong>Classe :</strong> ${character.classe}</p>
@@ -125,6 +130,45 @@ export default class DetailsCharacter{
     
         function majBoutonFavori() {
             btnFavori.textContent = Favoris.estFavori(characterId) ? "Retirer des favoris" : "Ajouter aux favoris";
+            function majBoutonFavori() {
+                btnFavori.textContent = Favoris.estFavori(characterId) ? "Retirer des favoris" : "Ajouter aux favoris";
+            }
+        
+            majBoutonFavori();
+        
+            btnFavori.addEventListener("click", () => {
+                if (Favoris.estFavori(characterId)) {
+                    Favoris.retirerFavori(characterId);
+                    window.location.hash = "#/Favourite";
+                } else {
+                    Favoris.ajouterFavori(characterId);
+                }
+                majBoutonFavori();
+            });
+        
+            document.querySelectorAll(".star").forEach(star => {
+                star.addEventListener("click", async (event) => {
+                    let rating = event.target.getAttribute("data-value");
+
+                    Notation.ajouterNote(characterId, rating);
+
+                    document.querySelectorAll(".star").forEach(starElement => {
+                        starElement.classList.remove("filled");
+                        if (parseInt(starElement.getAttribute("data-value")) <= parseInt(rating)) {
+                            starElement.classList.add("filled");
+                        }
+                    });
+
+
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `Vous avez noté ${rating} étoiles`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                });
+            });
         }
     
         majBoutonFavori();

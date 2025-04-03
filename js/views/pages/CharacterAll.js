@@ -7,7 +7,7 @@ export default class CharacterAll {
         let { charactersAll, equipementsAll, pouvoirsAll } = data;
 
         let view = `
-        <h2>LES PERSONNAGES</h2>
+        <h2 class="title">LES PERSONNAGES</h2>
           <div class="barre_recherche">
             <input type="text" id="recherche" class="recherche" placeholder="Rechercher..." />
           </div>

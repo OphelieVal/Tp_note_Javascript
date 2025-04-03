@@ -51,6 +51,7 @@ export default class JsonProvider {
                     character_data.race,
                     character_data.classe,
                     character_data.niveau,
+                    character_data.note,
                     [character_data.statistiques.force, character_data.statistiques.agilite, character_data.statistiques.defense, character_data.statistiques.pouvoir],
                     character_data.experience,
                     [character_data.evolution.augmentation.force, character_data.evolution.augmentation.agilite, character_data.evolution.augmentation.defense, character_data.evolution.augmentation.pouvoir],
@@ -60,6 +61,8 @@ export default class JsonProvider {
                 charactersAll.push(carac);
            
             });
+            console.log(charactersAll);
+        
             return {charactersAll, equipementsAll, pouvoirsAll};
         } catch (err) {
             console.log('Error getting documents',err);
@@ -103,5 +106,52 @@ export default class JsonProvider {
         let { charactersAll } = await this.fetchCharacters();
         return charactersAll.find(c => Number(c.id) === Number(id));
     };
-};
 
+
+    static updateCharacter = async (character) => {
+        console.log("Personnage à mettre à jour :", character); 
+        const options = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                id: character.id,
+                name: character.name,
+                img: character.img,
+                race: character.race,
+                classe: character.classe,
+                niveau: character.niveau,
+                note: character.note,
+                statistiques: {
+                    force: character.statistiques[0],
+                    agilite: character.statistiques[1],
+                    defense: character.statistiques[2],
+                    pouvoir: character.statistiques[3]
+                },
+                experience: character.experience,
+                evolution: {
+                    niveau_suivant: character.niveau + 1,
+                    augmentation: {
+                        force: character.evolution[0],
+                        agilite: character.evolution[1],
+                        defense: character.evolution[2],
+                        pouvoir: character.evolution[3]
+                    }
+                },
+                equipements_ids: character.equipements.map(e => e.id),
+                pouvoirs_ids: character.pouvoirs.map(p => p.id)
+            })
+        };
+    
+        try {
+            const response = await fetch(`${ENDPOINT}characters/${character.id}`, options);
+            if (!response.ok) throw new Error("Échec de la mise à jour du personnage");
+            console.log(`Personnage ${character.name} mis à jour avec succès`);
+        } catch (err) {
+            console.error("Erreur lors de la mise à jour du personnage", err);
+        }
+    };
+    
+
+}

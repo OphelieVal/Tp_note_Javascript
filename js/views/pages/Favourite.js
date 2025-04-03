@@ -6,7 +6,7 @@ export default class Favourite{
         let favoris = Favoris.getFavoris();
 
         if (favoris.length === 0) {
-            return `<h2>Vous n'avez pas de personnages favoris pour le moment ... </h2>`;
+            return `<h2 class="title">Vous n'avez pas de personnages favoris pour le moment ... </h2>`;
         }
 
         try {
@@ -33,12 +33,12 @@ export default class Favourite{
                 <head>
                     <link rel="stylesheet" href="js/views/static/css/favourite.css">
                 </head>
-                <h2> Retrouvez vos personnages favouris ! </h2>
+                <h2 class="title"> RETROUVEZ VOS PERSONNAGES FAVORIS ! </h2>
                 <div id="favourites-list">${charactersHTML}</div>
             `;
         } catch (err) {
             console.error("❌ Erreur lors du chargement des favoris :", err);
-            return `<h2>⭐ Liste des favoris</h2><p>Erreur lors du chargement des favoris.</p>`;
+            return `<h2 class="title">⭐ Liste des favoris</h2><p>Erreur lors du chargement des favoris.</p>`;
         }
     }
 

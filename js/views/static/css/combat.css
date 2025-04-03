@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.title-container {
+  color: #000000;
+}
+
+#selection-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.character-slot {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+.character-slot select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Style du bouton "Choisir" */
+.select-button {
+  background-color: #007bff; /* Bleu vif */
+  color: white; /* Texte blanc */
+  border: none; /* Pas de bordure */
+  padding: 10px 15px; /* Espace intérieur */
+  font-size: 16px; /* Taille du texte */
+  border-radius: 8px; /* Coins arrondis */
+  cursor: pointer; /* Curseur interactif */
+  transition: all 0.3s ease; /* Animation fluide */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Effet au survol */
+.select-button:hover {
+  background-color: #0056b3; /* Bleu foncé */
+  transform: scale(1.05); /* Légère augmentation */
+}
+
+/* Effet au clic */
+.select-button:active {
+  background-color: #003f80; /* Encore plus foncé */
+  transform: scale(0.95); /* Légère réduction */
+}
+
+#fight-button {
+  background: #d32f2f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#fight-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+#fight-button:hover:not(:disabled) {
+  background: #b71c1c;
+}
+
+#fight-result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #d30fff;
+}

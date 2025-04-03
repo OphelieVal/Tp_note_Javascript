@@ -2,13 +2,15 @@ import Favourite from "./views/pages/Favourite.js";
 import CharacterAll from "./views/pages/CharacterAll.js";
 import Utils from "./services/outils/Utils.js";
 import DetailsCharacter from "./views/pages/DetailsCharacter.js";
+import CharacterFight from "./views/pages/CharacterFight.js";
 import JsonProvider from "./services/provider/JsonProvider.js";
 
 const routes = {
     '/' : CharacterAll,
     '/characters' : CharacterAll,
     "/character/:id": DetailsCharacter,
-    '/favourite' : Favourite
+    '/favourite' : Favourite,
+    '/combat' : CharacterFight
 };
 
 const router = async () => {
@@ -31,6 +33,11 @@ const router = async () => {
     }
 
     if (page instanceof DetailsCharacter) {
+        content.innerHTML = await page.render();
+        await page.afterRender();
+    }
+
+    if (page instanceof CharacterFight) {
         content.innerHTML = await page.render();
         await page.afterRender();
     }
