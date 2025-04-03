@@ -95,42 +95,50 @@ export class Character {
     }
 
     ajouter_equipement(equipement) {
-        if (!this._equipements.some(e => e.id === equipement.id)) {
-            this._equipements.push(equipement);
-            this.saveToLocalStorage();
+        if (!this.equipements) {
+            this.equipements = []; // Initialisez la liste si elle est vide
+        }
+        // Vérifiez si l'équipement est déjà présent
+        if (!this.equipements.some(e => e.id === equipement.id)) {
+            this.equipements.push(equipement); // Ajoutez l'équipement
+        } else {
+            console.log("L'équipement est déjà ajouté.");
         }
     }
  
-        supprimer_equipement(equipmentId) {
-            this._equipements = this._equipements.filter(e => e._id !== equipmentId);
-            this.saveToLocalStorage();
+    supprimer_equipement(equipmentId) {
+        this._equipements = this._equipements.filter(e => e._id !== equipmentId);
+        this.saveToLocalStorage();
+    }
+    
+    saveToLocalStorage() {
+        let storedCharacters = JSON.parse(localStorage.getItem("characters")) || [];
+        let index = storedCharacters.findIndex(c => Number(c._id) === Number(this._id));
+        
+        // Préparez les données à sauvegarder (sans méthodes ou classes)
+        const characterData = {
+            _id: this._id,
+            _name: this._name,
+            _img: this._img,
+            _race: this._race,
+            _classe: this._classe,
+            _niveau: this._niveau,
+            _statistiques: this._statistiques,
+            _experience: this._experience,
+            _evolution: this._evolution,
+            _niveau_suivant: this._niveau_suivant,
+            _equipements: this._equipements, // Liste d'objets simples
+            _pouvoirs: this._pouvoirs // Liste d'objets simples
+        };
+    
+        if (index !== -1) {
+            storedCharacters[index] = characterData; // Met à jour le personnage existant
+        } else {
+            storedCharacters.push(characterData); // Ajoute un nouveau personnage
         }
     
-        saveToLocalStorage() {
-            let characters = JSON.parse(localStorage.getItem("characters")) || [];
-            // Trouver l'index du personnage courant
-            const index = characters.findIndex(c => c._id === this._id);
-            
-            if (index !== -1) {
-                // Mettre à jour le personnage dans le tableau
-                characters[index] = {
-                    _id: this._id,
-                    _name: this._name,
-                    _img: this._img,
-                    _race: this._race,
-                    _classe: this._classe,
-                    _niveau: this._niveau,
-                    _statistiques: this._statistiques,
-                    _experience: this._experience,
-                    _evolution: this._evolution,
-                    _niveau_suivant: this._niveau_suivant,
-                    _equipements: this._equipements,
-                    _pouvoirs: this._pouvoirs
-                };
-                localStorage.setItem("characters", JSON.stringify(characters));
-            }
-        }
-
+        localStorage.setItem("characters", JSON.stringify(storedCharacters));
+    }
     }
         
   
