@@ -899,6 +899,16 @@
   ],
   "equipements": [
     {
+      "id": "1",
+      "nom": "Epée",
+      "type": "Arme",
+      "bonus": {
+        "defense": 20,
+        "pouvoir": 15
+      },
+      "img": "./../js/views/static/img/equipements/equipement1.jpg"
+    },
+    {
       "id": "2",
       "nom": "Cape des Ombres",
       "type": "Armure",

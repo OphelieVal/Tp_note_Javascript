@@ -45,21 +45,33 @@ export default class JsonProvider {
                     return pouvoirsAll.find(p => Number(p.id) === Number(id));
                 });
                 let carac = new Character(
-                    character_data.id,
-                    character_data.name,
-                    character_data.img,
-                    character_data.race,
-                    character_data.classe,
-                    character_data.niveau,
-                    [character_data.statistiques.force, character_data.statistiques.agilite, character_data.statistiques.defense, character_data.statistiques.pouvoir],
-                    character_data.experience,
-                    [character_data.evolution.augmentation.force, character_data.evolution.augmentation.agilite, character_data.evolution.augmentation.defense, character_data.evolution.augmentation.pouvoir],
-                    character_data.evolution.niveau_suivant,
-                    equipements_obj,
-                    pouvoirs_obj);
+                    character_data.id || "0",
+                    character_data.name || "Nom inconnu",
+                    character_data.img || "",
+                    character_data.race || "Race inconnue",
+                    character_data.classe || "Classe inconnue",
+                    character_data.niveau || 0,
+                    [
+                        character_data.statistiques?.force || 0,
+                        character_data.statistiques?.agilite || 0,
+                        character_data.statistiques?.defense || 0,
+                        character_data.statistiques?.pouvoir || 0
+                    ],
+                    character_data.experience || 0,
+                    [
+                        character_data.evolution?.augmentation?.force || 0,
+                        character_data.evolution?.augmentation?.agilite || 0,
+                        character_data.evolution?.augmentation?.defense || 0,
+                        character_data.evolution?.augmentation?.pouvoir || 0
+                    ],
+                    character_data.evolution?.niveau_suivant || 0,
+                    equipements_obj || [],
+                    pouvoirs_obj || []
+                );
                 charactersAll.push(carac);
            
             });
+            console.log(pouvoirsAll);
             return {charactersAll, equipementsAll, pouvoirsAll};
         } catch (err) {
             console.log('Error getting documents',err);
@@ -77,7 +89,7 @@ export default class JsonProvider {
               new Equipement(e._id, e._nom, e._type, e._bonus, e._img)
             );
             let pouvoirs = characterData._pouvoirs.map(p =>
-              new Pouvoir(p._id, p._nom, p._description)
+              new Pouvoir(p._id, p._nom, p._description, p._img)
             );
             let character = new Character(
               characterData._id,
