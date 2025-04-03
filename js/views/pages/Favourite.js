@@ -21,7 +21,7 @@ export default class Favourite{
                 return `
                 <a href="#/character/${character.id}" class="character-link">
                 <li class="character-item" data-id="${character.id}">
-                  <img src="${character.img}" alt="Image de ${character.name}">
+                  <img src="${character.img}" alt="Image de ${character.name}" loading="lazy">
                   <p>${character.name}</p>
                   <p>Niveau : ${character.niveau}</p>
                 </li>

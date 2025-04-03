@@ -22,7 +22,7 @@ export default class DetailsCharacter{
             .filter(e => e !== undefined)
             .map(e => {
               return `<div class="equipement-card" data-id="${e.id}">
-                        <img src="${e.img}" alt="${e.nom}" class="equipement-image">
+                        <img src="${e.img}" alt="${e.nom}" class="equipement-image" loading="lazy">
                         <div class="equipement-info">
                           <strong>${e.nom}</strong>
                         </div>
@@ -47,7 +47,7 @@ export default class DetailsCharacter{
             </head>
             <h2>${character.name}</h2>
             <section id="character">
-                <img src="${character.img}" alt="Image de ${character.name}">
+                <img src="${character.img}" alt="Image de ${character.name}" loading="lazy">
                 <!-- Système de notation -->
                 <div id="rating">
                     <span class="star" data-value="1">⭐</span>
@@ -223,7 +223,7 @@ async function loadAvailableEquipements() {
         console.log("Équipements récupérés :", equipementsAll); // Vérifiez les données récupérées
         equipementList.innerHTML = equipementsAll.map(equip => `
             <div class="available-equipement" data-id="${equip.id}">
-                <img src="${equip.img}" alt="${equip.nom}">
+                <img src="${equip.img}" alt="${equip.nom}" loading="lazy">
                 <div>
                     <strong>${equip.nom}</strong>
                     <p>Type: ${equip.type}</p>

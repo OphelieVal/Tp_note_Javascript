@@ -76,9 +76,7 @@ export default class JsonProvider {
             let equipements = characterData._equipements.map(e =>
               new Equipement(e._id, e._nom, e._type, e._bonus, e._img)
             );
-            let pouvoirs = characterData._pouvoirs.map(p =>
-              new Pouvoir(p._id, p._nom, p._description, p._img)
-            );
+            let pouvoirs = [];
             let character = new Character(
               characterData._id,
               characterData._name,
