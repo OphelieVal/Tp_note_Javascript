@@ -183,19 +183,19 @@ export default class CharacterFight {
 
     while (personnage.experience >= expMax) {
       console.log(personnage.experience);
-        // ✅ Augmenter le niveau
+        // Augmenter le niveau
         personnage.niveau++;
 
-        // ✅ Appliquer les augmentations
+        // Appliquer les augmentations
         personnage.statistiques[0] += personnage.evolution[0];
         personnage.statistiques[1] += personnage.evolution[1];
         personnage.statistiques[2] += personnage.evolution[2];
         personnage.statistiques[3] += personnage.evolution[3];
 
-        // ✅ Retirer l'expérience utilisée pour monter de niveau
+        // Retirer l'expérience utilisée pour monter de niveau
         personnage.experience -= expMax;
 
-        // ✅ Recalculer la nouvelle limite d'expérience
+        // Recalculer la nouvelle limite d'expérience
         expMax = personnage.niveau * 2 * 1000;
 
 
@@ -211,7 +211,7 @@ export default class CharacterFight {
         });
     }
 
-    // ✅ Mise à jour du personnage dans le JSON via API
+    // Mise à jour du personnage dans le JSON via API
     await JsonProvider.updateCharacter(personnage);
     console.log(personnage);
   }

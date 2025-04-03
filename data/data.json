@@ -6,12 +6,17 @@
       "img": "./../js/views/static/img/character1.jpeg",
       "race": "Humain",
       "classe": "Souverain de l'Ombre",
-      "niveau": 150,
+      "niveau": 151,
       "note": 5,
-      "statistiques": {},
-      "experience": 212980,
+      "statistiques": {
+        "force": 1009,
+        "agilite": 1009,
+        "defense": 805,
+        "pouvoir": 1015
+      },
+      "experience": 8380,
       "evolution": {
-        "niveau_suivant": 151,
+        "niveau_suivant": 152,
         "augmentation": {
           "force": 10,
           "agilite": 10,
