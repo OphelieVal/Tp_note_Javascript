@@ -6,17 +6,17 @@
       "img": "./../js/views/static/img/character1.jpeg",
       "race": "Humain",
       "classe": "Souverain de l'Ombre",
-      "niveau": 151,
+      "niveau": 152,
       "note": 5,
       "statistiques": {
-        "force": 1009,
-        "agilite": 1009,
-        "defense": 805,
-        "pouvoir": 1015
+        "force": 1019,
+        "agilite": 1019,
+        "defense": 810,
+        "pouvoir": 1030
       },
-      "experience": 143960,
+      "experience": 19490,
       "evolution": {
-        "niveau_suivant": 152,
+        "niveau_suivant": 153,
         "augmentation": {
           "force": 10,
           "agilite": 10,
@@ -47,7 +47,7 @@
         "defense": 286,
         "pouvoir": 325
       },
-      "experience": 7160,
+      "experience": 69460,
       "evolution": {
         "niveau_suivant": 105,
         "augmentation": {
@@ -600,17 +600,17 @@
       "img": "./../js/views/static/img/character19.jpeg",
       "race": "Ombre",
       "classe": "Chevalier",
-      "niveau": 90,
+      "niveau": 91,
       "note": 5,
       "statistiques": {
-        "force": 500,
-        "agilite": 350,
-        "defense": 400,
-        "pouvoir": 300
+        "force": 505,
+        "agilite": 354,
+        "defense": 405,
+        "pouvoir": 304
       },
-      "experience": 90000,
+      "experience": 2800,
       "evolution": {
-        "niveau_suivant": 91,
+        "niveau_suivant": 92,
         "augmentation": {
           "force": 5,
           "agilite": 4,
@@ -619,12 +619,12 @@
         }
       },
       "equipements_ids": [
-        3,
-        9
+        "3",
+        "9"
       ],
       "pouvoirs_ids": [
-        2,
-        4
+        "2",
+        "4"
       ]
     },
     {

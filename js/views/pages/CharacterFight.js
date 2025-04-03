@@ -36,6 +36,7 @@ export default class CharacterFight {
         </div>
         <button id="fight-button" disabled>Combattre</button>
         <div id="fight-result"></div>
+        <section id="character"></section>
         `;
         return view;
     }
@@ -189,7 +190,7 @@ export default class CharacterFight {
           <p>Le personnage remporte <strong>${expGagnee} EXP</strong> !</p>
           
         `;        
-      }, 3000);
+      }, 2000);
 
       await this.ajouterExperience(gagnant, expGagnee);
   }
@@ -199,6 +200,7 @@ export default class CharacterFight {
     personnage.experience += expGagnee;
     let expMax = personnage.niveau * 2000;
     
+
 
     while (personnage.experience >= expMax) {
       console.log(personnage.experience);
@@ -216,21 +218,43 @@ export default class CharacterFight {
         // Recalculer la nouvelle limite d'expérience
         expMax = personnage.niveau * 2 * 1000;
 
-
-
-        Swal.fire({
-          title: "Félicitations!",
-          text: "Votre personnage a évolué !",
-          confirmButtonText: "OK", 
-          allowOutsideClick: false,
-          allowEscapeKey: false, 
-          allowEnterKey: false, 
-          backdrop: true,
-        });
+        setTimeout(() => {
+          Swal.fire({
+            title: "Félicitations!",
+            text: "Votre personnage a évolué !",
+            confirmButtonText: "OK", 
+            allowOutsideClick: false,
+            allowEscapeKey: false, 
+            allowEnterKey: false, 
+            backdrop: true,
+          });
+        }, 2000);
     }
 
     // Mise à jour du personnage dans le JSON via API
     await JsonProvider.updateCharacter(personnage);
+    setTimeout(() => {
+      document.getElementById('character').innerHTML = `
+          <img src="${personnage.img}" alt="Image de ${personnage.name}">
+          <p><strong>Race :</strong> ${personnage.race}</p>
+          <p><strong>Classe :</strong> ${personnage.classe}</p>
+          <p><strong>Niveau :</strong> ${personnage.niveau}</p>
+
+          <h3>Statistiques</h3>
+            <ul>
+              <li><strong>Force :</strong> ${personnage.statistiques[0]}</li>
+              <li><strong>Agilité :</strong> ${personnage.statistiques[1]}</li>
+              <li><strong>Défense :</strong> ${personnage.statistiques[2]}</li>
+              <li><strong>Pouvoir :</strong> ${personnage.statistiques[3]}</li>
+            </ul>
+
+            <hr />
+
+          <h3>Expérience et Évolution</h3>
+            <p><strong>Expérience :</strong> ${personnage.experience} XP</p>
+            <p><strong>Expérience nécessaire pour l'évolution:</strong> ${expMax} XP</p>
+      `;
+    }, 2000);
     console.log(personnage);
   }
 }
