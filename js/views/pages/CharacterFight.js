@@ -136,7 +136,7 @@ export default class CharacterFight {
       // Récupération des personnages sélectionnés
       let data = await JsonProvider.fetchCharacters();
       let { charactersAll } = data;
-  
+
       const character1 = charactersAll.find(c => c.id == this.selectedCharacters[0]);
       const character2 = charactersAll.find(c => c.id == this.selectedCharacters[1]);
 
@@ -151,20 +151,39 @@ export default class CharacterFight {
 
       console.log(character1.statistiques);
       console.log(character2.statistiques);
-  
+
+      const calculerBonusTotal = (character) => {
+        let totalBonus = 0;
+    
+        character.equipements.forEach(equip => {
+            Object.values(equip.bonus).forEach(valeur => {
+                totalBonus += valeur;
+            });
+        });
+    
+        return totalBonus;
+      };
+   
       // Calcul des stats totales
       const statsTotal1 = 
       Number(character1.statistiques[0]) + 
       Number(character1.statistiques[1]) +
       Number(character1.statistiques[2]) + 
-      Number(character1.statistiques[3]);
+      Number(character1.statistiques[3]) +
+      calculerBonusTotal(character1);
   
+
       const statsTotal2 = 
       Number(character2.statistiques[0]) + 
       Number(character2.statistiques[1]) +
       Number(character2.statistiques[2]) + 
-      Number(character2.statistiques[3]);
-  
+      Number(character2.statistiques[3]) +
+      calculerBonusTotal(character2);
+
+      console.log(calculerBonusTotal(character1));
+      console.log(calculerBonusTotal(character2));
+
+
       console.log("Stats total 1 :", statsTotal1);                    
       console.log("Stats total 2 :", statsTotal2);
 

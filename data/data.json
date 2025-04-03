@@ -14,7 +14,7 @@
         "defense": 810,
         "pouvoir": 1030
       },
-      "experience": 19490,
+      "experience": 217440,
       "evolution": {
         "niveau_suivant": 153,
         "augmentation": {
@@ -146,7 +146,7 @@
         "defense": 710,
         "pouvoir": 912
       },
-      "experience": 4480,
+      "experience": 20690,
       "evolution": {
         "niveau_suivant": 132,
         "augmentation": {
@@ -575,7 +575,7 @@
         "defense": 550,
         "pouvoir": 650
       },
-      "experience": 120000,
+      "experience": 203300,
       "evolution": {
         "niveau_suivant": 121,
         "augmentation": {
@@ -586,12 +586,12 @@
         }
       },
       "equipements_ids": [
-        2,
-        9
+        "2",
+        "9"
       ],
       "pouvoirs_ids": [
-        1,
-        5
+        "1",
+        "5"
       ]
     },
     {
