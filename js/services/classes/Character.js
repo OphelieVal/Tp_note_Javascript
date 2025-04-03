@@ -86,21 +86,27 @@ export class Character {
         return this._pouvoirs;
     }
 
-    ajouter_pouvoir(val) {
-        this._equipements.append(val);
+    ajouter_pouvoir(pouvoir) {
+        if (!this.pouvoirs) {
+            this.pouvoirs = [];
+        }
+        if (!this.pouvoirs.some(p => p.id === pouvoir.id)) {
+            this.pouvoirs.push(pouvoirs); // Ajoutez l'équipement
+        } else {
+            console.log("L'pouvoirs est déjà ajouté.");
+        }
     }
 
-    supprimer_pouvoir(val){
-        this._equipements.remove(val);
-    }
+    supprimer_pouvoir(pouvoirId){
+        this._pouvoirs = this._pouvoirs.filter(p => p._id !== pouvoirId);
+        this.saveToLocalStorage();    }
 
     ajouter_equipement(equipement) {
         if (!this.equipements) {
-            this.equipements = []; // Initialisez la liste si elle est vide
+            this.equipements = []; 
         }
-        // Vérifiez si l'équipement est déjà présent
         if (!this.equipements.some(e => e.id === equipement.id)) {
-            this.equipements.push(equipement); // Ajoutez l'équipement
+            this.equipements.push(equipement);
         } else {
             console.log("L'équipement est déjà ajouté.");
         }
@@ -115,7 +121,6 @@ export class Character {
         let storedCharacters = JSON.parse(localStorage.getItem("characters")) || [];
         let index = storedCharacters.findIndex(c => Number(c._id) === Number(this._id));
         
-        // Préparez les données à sauvegarder (sans méthodes ou classes)
         const characterData = {
             _id: this._id,
             _name: this._name,
@@ -127,14 +132,14 @@ export class Character {
             _experience: this._experience,
             _evolution: this._evolution,
             _niveau_suivant: this._niveau_suivant,
-            _equipements: this._equipements, // Liste d'objets simples
-            _pouvoirs: this._pouvoirs // Liste d'objets simples
+            _equipements: this._equipements, 
+            _pouvoirs: this._pouvoirs 
         };
     
         if (index !== -1) {
-            storedCharacters[index] = characterData; // Met à jour le personnage existant
+            storedCharacters[index] = characterData; 
         } else {
-            storedCharacters.push(characterData); // Ajoute un nouveau personnage
+            storedCharacters.push(characterData); 
         }
     
         localStorage.setItem("characters", JSON.stringify(storedCharacters));

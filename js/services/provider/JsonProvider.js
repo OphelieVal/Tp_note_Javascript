@@ -33,7 +33,7 @@ export default class JsonProvider {
             });
 
             pouvJSON.forEach(pouvoir_data => {
-                let pouv = new Pouvoir(pouvoir_data.id, pouvoir_data.nom, pouvoir_data.description);
+                let pouv = new Pouvoir(pouvoir_data.id, pouvoir_data.nom, pouvoir_data.description, pouvoir_data.img);
                 pouvoirsAll.push(pouv);
             });
 
@@ -41,9 +41,9 @@ export default class JsonProvider {
                 let equipements_obj = character_data.equipements_ids
                     .map(id => equipementsAll.find(e => Number(e.id) === Number(id)));
 
-                let pouvoirs_obj = character_data.pouvoirs_ids.map(id => {
-                    return pouvoirsAll.find(p => Number(p.id) === Number(id));
-                });
+                let pouvoirs_obj = character_data.pouvoirs_ids
+                .map(id => pouvoirsAll.find(p => Number(p.id) === Number(id)));
+                
                 let carac = new Character(
                     character_data.id,
                     character_data.name,
@@ -77,7 +77,7 @@ export default class JsonProvider {
               new Equipement(e._id, e._nom, e._type, e._bonus, e._img)
             );
             let pouvoirs = characterData._pouvoirs.map(p =>
-              new Pouvoir(p._id, p._nom, p._description)
+              new Pouvoir(p._id, p._nom, p._description, p._img)
             );
             let character = new Character(
               characterData._id,
