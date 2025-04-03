@@ -11,12 +11,9 @@ export default class Favourite{
 
         try {
             let { charactersAll } = await JsonProvider.fetchCharacters();
-            console.log("📜 Liste complète des personnages :", charactersAll);
-
+            
             let favorisCharacters = charactersAll.filter(c => favoris.includes(String(c.id)));
-            console.log("🌟 Personnages favoris :", favorisCharacters);
-
-
+        
             let charactersHTML = favorisCharacters.map(character => {
                 return `
                 <a href="#/character/${character.id}" class="character-link">
@@ -37,8 +34,7 @@ export default class Favourite{
                 <div id="favourites-list">${charactersHTML}</div>
             `;
         } catch (err) {
-            console.error("❌ Erreur lors du chargement des favoris :", err);
-            return `<h2 class="title">⭐ Liste des favoris</h2><p>Erreur lors du chargement des favoris.</p>`;
+            return `<h2 class="title">Liste des favoris</h2><p>Erreur lors du chargement des favoris.</p>`;
         }
     }
 

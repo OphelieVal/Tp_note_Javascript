@@ -113,7 +113,7 @@
         "defense": 405,
         "pouvoir": 557
       },
-      "experience": 12000,
+      "experience": 24340,
       "evolution": {
         "niveau_suivant": 112,
         "augmentation": {
@@ -468,17 +468,17 @@
       "img": "./../js/views/static/img/character15.jpeg",
       "race": "Humain",
       "classe": "Fighter",
-      "niveau": 72,
+      "niveau": 73,
       "note": 3,
       "statistiques": {
-        "force": 280,
-        "agilite": 420,
-        "defense": 200,
-        "pouvoir": 210
+        "force": 286,
+        "agilite": 430,
+        "defense": 203,
+        "pouvoir": 213
       },
-      "experience": 72000,
+      "experience": 6670,
       "evolution": {
-        "niveau_suivant": 73,
+        "niveau_suivant": 74,
         "augmentation": {
           "force": 6,
           "agilite": 10,
@@ -487,12 +487,12 @@
         }
       },
       "equipements_ids": [
-        1,
-        2
+        "1",
+        "2"
       ],
       "pouvoirs_ids": [
-        1,
-        9
+        "1",
+        "9"
       ]
     },
     {
