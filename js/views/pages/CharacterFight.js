@@ -116,6 +116,22 @@ export default class CharacterFight {
         }
     }
     async fight() {
+      const fightResultDiv = document.getElementById("fight-result");
+      // Affichage de la barre de chargement
+      fightResultDiv.innerHTML = `
+        <div class="loading-bar-container">
+            <div class="loading-bar" id="loading-bar"></div>
+        </div>
+        <p>Combat en cours... ⏳</p>
+    `;
+
+      let loadingBar = document.getElementById("loading-bar");
+
+      // Lancer l'animation de la barre de chargement
+      setTimeout(() => {
+          loadingBar.style.width = "100%";
+      }, 100); 
+
       // Récupération des personnages sélectionnés
       let data = await JsonProvider.fetchCharacters();
       let { charactersAll } = data;
@@ -167,10 +183,12 @@ export default class CharacterFight {
       // Calcul de l'expérience gagnée (proportionnelle à la différence de stats)
       expGagnee = Math.abs(statsTotal1 - statsTotal2) * 10;
 
-      document.getElementById("fight-result").innerHTML = `
+      setTimeout(() => {
+        document.getElementById("fight-result").innerHTML = `
           <p>${gagnant.name} a gagné le combat !</p>
           <p>Le personnage remporte <strong>${expGagnee} EXP</strong> !</p>
-      `;
+        `;        
+      }, 3000);
 
       await this.ajouterExperience(gagnant, expGagnee);
   }
