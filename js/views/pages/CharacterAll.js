@@ -16,7 +16,7 @@ export default class CharacterAll {
               return `
               <a href="#/character/${character.id}" class="character-link">
                 <li class="character-item" data-id="${character.id}">
-                  <img src="${character.img}" alt="Image de ${character.name}">
+                  <img loading="lazy" src="${character.img}" alt="Image de ${character.name}">
                   <p>${character.name}</p>
                   <p>Niveau : ${character.niveau}</p>
                 </li>
@@ -48,7 +48,7 @@ export default class CharacterAll {
               return `
                 <a href="#/character/${char.id}" class="character-link">
                   <li class="character-item" data-id="${char.id}">
-                    <img src="${char.img}" alt="Image de ${char.name}">
+                    <img loading="lazy" src="${char.img}" alt="Image de ${char.name}">
                     <p>${char.name}</p>
                     <p>Niveau : ${char.niveau}</p>
                   </li>
