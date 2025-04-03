@@ -36,7 +36,6 @@ export default class DetailsCharacter{
             : "<p>Aucun équipement</p>";
 
 
-
         let pouvoirsHTML = character.pouvoirs.length > 0
             ? character.pouvoirs.map(p => `<li><strong>${p.nom}</strong>: ${p.description}</li>`).join("")
             : "<li>Aucun pouvoir</li>";
